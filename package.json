@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "type": "module",
-  "description": "Static site build voor het CSIR Control-register",
+  "description": "Static site build voor het CSIR-Control-Register",
   "license": "EUPL-1.2",
   "scripts": {
     "build": "node site/build.mjs"
