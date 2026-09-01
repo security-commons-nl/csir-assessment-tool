@@ -1,0 +1,5238 @@
+{
+ "versie": "2026-09",
+ "bron": {
+  "richtlijn": "Cybersecurity Implementatierichtlijn Objecten (CSIR) 3.0, definitief concept 14-09-2021",
+  "gestripte_variant": "CSIR 3.4, gestripte variant voor aanbestedingen; hoofdstuk 2 en de bijlagen zijn identiek aan 3.0",
+  "uitgever": "Rijkswaterstaat en Het Waterschapshuis",
+  "auteursrecht": "De eisteksten, maatregelteksten, niveaumarkeringen en drempels zijn woordelijk overgenomen uit de Cybersecurity Implementatierichtlijn Objecten (CSIR); het auteursrecht daarop ligt bij Rijkswaterstaat en Het Waterschapshuis. EUPL-1.2 dekt alleen de opzet van dit register: de indeling, de rekenregels, de pagina en de documentatie.",
+  "werkboek_versie": "1.3",
+  "werkboek_sha256": "7dcdca411ef5205f6dc95e78f816b2addc6e3892db66f43e83794331eff853cc",
+  "classificatie_sha256": "e68d27f1171829a4b61d78209844d2e98422044e8b03a8067787d752ebf41fe3",
+  "gegenereerd_door": "register/haal_bron.py; wijzig de werkboeken, niet dit bestand met de hand"
+ },
+ "keuzes": {
+  "van_toepassing": [
+   "Ja",
+   "Nee",
+   "N.v.t. (buiten scope)"
+  ],
+  "status": [
+   "Nog te doen",
+   "In uitvoering",
+   "Geïmplementeerd",
+   "Explain (afwijking)",
+   "N.v.t."
+  ],
+  "functiebox": [
+   "A",
+   "B",
+   "C",
+   "D",
+   "E"
+  ],
+  "ja_nee": [
+   "Ja",
+   "Nee"
+  ]
+ },
+ "functiebox_niveau": {
+  "A": 4,
+  "B": 3,
+  "C": 2,
+  "D": 1,
+  "E": 1
+ },
+ "classificatie": {
+  "ernst": [
+   {
+    "score": 1,
+    "label": "Klein",
+    "functiebox": "E",
+    "niveau": 1
+   },
+   {
+    "score": 2,
+    "label": "Matig",
+    "functiebox": "D",
+    "niveau": 1
+   },
+   {
+    "score": 3,
+    "label": "Behoorlijk",
+    "functiebox": "C",
+    "niveau": 2
+   },
+   {
+    "score": 4,
+    "label": "Ernstig",
+    "functiebox": "B",
+    "niveau": 3
+   },
+   {
+    "score": 5,
+    "label": "Catastrofaal",
+    "functiebox": "A",
+    "niveau": 4
+   }
+  ],
+  "criteria": [
+   {
+    "id": "veiligheid",
+    "titel": "Veiligheid medewerker en/of publiek",
+    "uitleg": "Uitgedrukt in aantal incidenten, \ngewonden met blijvend letsel en doden.",
+    "drempels": {
+     "1": "Te verwaarlozen impact op mens.\n(Bijvoorbeeld EHBO zonder verzuim.)",
+     "2": "Incident met gewonden, ziekenhuisopname en verzuim > 2 weken bij één of meer personen.",
+     "3": "Incident met gewonden, \nblijvend letsel bij één of meer personen.",
+     "4": "Incident met doden of gewonden, blijvend letsel bij meer dan 50 personen.",
+     "5": "Incident met doden en gewonden, langdurige ziekenhuisopname, blijvend letsel bij meer dan 500 personen."
+    }
+   },
+   {
+    "id": "maatschappij",
+    "titel": "Maatschappelijke gevolgen",
+    "uitleg": "Aantal personen met ernstige maatschappelijke of overlevingsproblemen langer dan één week.\n\nGeografisch gebied met ernstige maatschappelijke of overlevingsproblemen langer dan één week.",
+    "drempels": {
+     "1": "< 1000 personen.",
+     "2": "< 10.000 personen.",
+     "3": "< 50.000 personen.",
+     "4": "< 500.000 personen.",
+     "5": "Gevolgen voor meerdere steden en meer dan 500.000 personen."
+    }
+   },
+   {
+    "id": "financieel",
+    "titel": "Financiële (economische) en/of herstelschade",
+    "uitleg": "Totaalsom van:\n- Directe financiële (economische) schade\n- Herstelkosten.\n- Daling inkomen.",
+    "drempels": {
+     "1": "< € 500k.",
+     "2": "< € 5M.",
+     "3": "<  € 50M.",
+     "4": "<  € 500M.",
+     "5": "> € 500M."
+    }
+   },
+   {
+    "id": "cascade",
+    "titel": "Cascade/domino effecten",
+    "uitleg": "Aantal geraakte andere eigen primaire processen en/of keten processen.\nAndere vitale sectoren die ook uitvallen.",
+    "drempels": {
+     "1": "Geen cascade / domino effecten",
+     "2": "Gedeeltelijke uitval van één ander proces in de keten.",
+     "3": "Volledige uitval van één ander proces in de keten.",
+     "4": "Volledige uitval van meerdere processen in de keten.",
+     "5": "Gedeeltelijke of volledige uitval van één of meerdere vitale sectoren."
+    }
+   },
+   {
+    "id": "ecologie",
+    "titel": "Ecologische schade",
+    "uitleg": "Omvang gebied met ecologische schade en/of hersteltijd bepaald ernst van de schade.",
+    "drempels": {
+     "1": "Omvang  < r 0,5km of \nhersteltijd < 1dag.",
+     "2": "Omvang  < r 2,5km of\nhersteltijd < 10 dagen.",
+     "3": "Omvang  < r 5km of \nhersteltijd < 100 dagen.",
+     "4": "Omvang  < r 20km of\nhersteltijd < 1000 dagen.",
+     "5": "Omvang  > r 20km of\nhersteltijd  > 1000 dagen."
+    }
+   },
+   {
+    "id": "imago",
+    "titel": "Imago en politieke schade",
+    "uitleg": "Gericht op verwachte commotie en/of \ngevolgen voor het bestuur van de organisatie.",
+    "drempels": {
+     "1": "Interne commotie.",
+     "2": "Lokale commotie.",
+     "3": "Regionale commotie of\nopstappen bestuurder.",
+     "4": "Landelijke commotie of\nopstappen bestuur.",
+     "5": "Internationale commotie of\nlangdurig geen college."
+    }
+   }
+  ],
+  "hoofdtaken": [
+   "Transporteren afvalwater",
+   "Zuiveren afvalwater",
+   "Verwerken en afzetten slib",
+   "Beheer hoeveelheid water",
+   "Beheer waterkeringen",
+   "(Vaar)wegen",
+   "Kantoren",
+   "Tunnel",
+   "Gemaal",
+   "Brug",
+   "Sluis",
+   "Verkeersregelinstallatie",
+   "Parkeergarage",
+   "Overige (Beschrijf bij opmerking)"
+  ],
+  "rekenregel_standaard": "gemiddelde",
+  "toelichting_rekenregel": "Het formulier neemt het afgeronde gemiddelde van de zes scores (ROUND(som/6;0), half naar boven). De tool toont daarnaast de strengste lezing (de hoogste score). Welke lezing de CSIR bedoelt is een open vraag aan de opsteller; tot die is beantwoord volgt de tool het formulier."
+ },
+ "paragrafen": [
+  {
+   "id": "§2.1.1",
+   "ouder": "§2.1",
+   "thema": "Fysieke toegangsbeveiliging — IA-gerelateerde ruimten",
+   "maatregelen": 32
+  },
+  {
+   "id": "§2.1.2",
+   "ouder": "§2.1",
+   "thema": "Fysieke toegangsbeveiliging — terreinen en gebouwen",
+   "maatregelen": 33
+  },
+  {
+   "id": "§2.2",
+   "ouder": "§2.2",
+   "thema": "Logische toegang",
+   "maatregelen": 31
+  },
+  {
+   "id": "§2.3",
+   "ouder": "§2.3",
+   "thema": "Beveiligingsincidenten & incident response",
+   "maatregelen": 15
+  },
+  {
+   "id": "§2.4.1",
+   "ouder": "§2.4",
+   "thema": "Netwerkkoppelingen",
+   "maatregelen": 16
+  },
+  {
+   "id": "§2.4.2",
+   "ouder": "§2.4",
+   "thema": "Cryptografie",
+   "maatregelen": 7
+  },
+  {
+   "id": "§2.5.1",
+   "ouder": "§2.5",
+   "thema": "Bescherming tegen kwetsbaarheden — Anti-malware",
+   "maatregelen": 10
+  },
+  {
+   "id": "§2.5.2",
+   "ouder": "§2.5",
+   "thema": "Bescherming tegen kwetsbaarheden — Hardening",
+   "maatregelen": 10
+  },
+  {
+   "id": "§2.5.3",
+   "ouder": "§2.5",
+   "thema": "Bescherming tegen kwetsbaarheden — Patching",
+   "maatregelen": 8
+  },
+  {
+   "id": "§2.6",
+   "ouder": "§2.6",
+   "thema": "Logging & monitoring",
+   "maatregelen": 33
+  },
+  {
+   "id": "§2.7.1",
+   "ouder": "§2.7",
+   "thema": "Bewustwording & training — Medewerkers",
+   "maatregelen": 27
+  },
+  {
+   "id": "§2.7.2",
+   "ouder": "§2.7",
+   "thema": "Bewustwording & training — Managers",
+   "maatregelen": 6
+  },
+  {
+   "id": "§2.8",
+   "ouder": "§2.8",
+   "thema": "Gecontroleerd wijzigen",
+   "maatregelen": 15
+  },
+  {
+   "id": "§2.9",
+   "ouder": "§2.9",
+   "thema": "Beheer & onderhoud",
+   "maatregelen": 18
+  },
+  {
+   "id": "§2.10",
+   "ouder": "§2.10",
+   "thema": "Back-ups",
+   "maatregelen": 7
+  }
+ ],
+ "controls": [
+  {
+   "id": "VSP-1",
+   "blad": "VSP",
+   "nr": 1,
+   "bio_bron": "5.1.1",
+   "eis": "Top eis/doel: Gevaar of schade veroorzaakt door verstoring, uitval of misbruik van IA/PA/OT dient voorkomen te worden en indien er toch schade is ontstaan dient deze te worden hersteld.",
+   "sjabloon": false,
+   "aangeroepen": [],
+   "bijlagen": [],
+   "kort": "Top eis/doel: gevaar of schade door verstoring, uitval of misbruik van IA/PA/OT voorkomen en, indien toch schade, herstellen."
+  },
+  {
+   "id": "VSP-2",
+   "blad": "VSP",
+   "nr": 2,
+   "bio_bron": "5.1.1.1",
+   "eis": "De (beheer)processen dienen ingericht en onderhouden te worden conform de van toepassing verklaarde proces controls waarbij cybersecurity weerstandsniveau 1 wordt aangehouden voor de Objecten tenzij er voor de Objecten een ander cybersecurity weerstandsniveau is aangegeven.",
+   "sjabloon": false,
+   "aangeroepen": [],
+   "bijlagen": [],
+   "kort": "(Beheer)processen inrichten en onderhouden conform de van toepassing verklaarde proces­controls, met weerstandsniveau 1 (tenzij een ander niveau is aangegeven)."
+  },
+  {
+   "id": "VSP-3",
+   "blad": "VSP",
+   "nr": 3,
+   "bio_bron": "5.1.1.1",
+   "eis": "Indien de Cybersecurity Implementatierichtlijn Objecten en bijlagen niet voorzien in maatregelen voor de invulling van de cybersecurity controls, dient de NEN-ISO/IEC 27002 en de IEC 62443 gevolgd te worden voor de te nemen beheersmaatregelen.",
+   "sjabloon": false,
+   "aangeroepen": [],
+   "bijlagen": [],
+   "kort": "Indien CSIR en bijlagen niet voorzien in maatregelen: NEN-ISO/IEC 27002 en IEC 62443 volgen."
+  },
+  {
+   "id": "VSP-4",
+   "blad": "VSP",
+   "nr": 4,
+   "bio_bron": "5.1.1.1",
+   "eis": "Minimaal een keer per jaar wordt een audit uitgevoerd naar de opzet, het bestaan en de werking van de getroffen cybersecuritymaatregelen voor IA/PA/OT en gerapporteerd.",
+   "sjabloon": false,
+   "aangeroepen": [],
+   "bijlagen": [],
+   "kort": "Minimaal jaarlijks een audit op opzet, bestaan en werking van de cybersecuritymaatregelen voor IA/PA/OT, met rapportage."
+  },
+  {
+   "id": "VSP-5",
+   "blad": "VSP",
+   "nr": 5,
+   "bio_bron": "5.1.1.1",
+   "eis": "Bij uitbestedingen dient de contractant medewerking te verlenen aan het wijzigen en/of aanvullen van de beveiligingseisen voor IA/PA/OT, zoals volgend uit de PDCA-cyclus.",
+   "sjabloon": false,
+   "aangeroepen": [],
+   "bijlagen": [],
+   "kort": "Bij uitbesteding: contractant verleent medewerking aan het wijzigen/aanvullen van beveiligingseisen (PDCA-cyclus)."
+  },
+  {
+   "id": "VSP-6",
+   "blad": "VSP",
+   "nr": 6,
+   "bio_bron": "5.1.1.1",
+   "eis": "Cybersecurity dient als integraal onderdeel van het Project Management Plan te worden uitgewerkt en ter acceptatie te worden voorgelegd aan de verantwoordelijke.",
+   "sjabloon": false,
+   "aangeroepen": [],
+   "bijlagen": [],
+   "kort": "Cybersecurity als integraal onderdeel van het Project Management Plan uitwerken en ter acceptatie voorleggen."
+  },
+  {
+   "id": "VSP-7",
+   "blad": "VSP",
+   "nr": 7,
+   "bio_bron": "5.1.1.1",
+   "eis": "Het principe van \"comply or explain\" dient aangehouden te worden voor voorgeschreven controls en maatregelen waarbij afwijkingen en tijdelijk uitgestelde implementaties vastgelegd dienen te worden in het Cybersecurity Dossier / Cybersecurity Beveiligingsplan als non compliancy.",
+   "sjabloon": false,
+   "aangeroepen": [],
+   "bijlagen": [
+    "B",
+    "C"
+   ],
+   "kort": "'Comply or explain' aanhouden; afwijkingen en uitgestelde implementaties vastleggen in het Cybersecurity Dossier / Beveiligingsplan als non-compliancy."
+  },
+  {
+   "id": "VSP-8",
+   "blad": "VSP",
+   "nr": 8,
+   "bio_bron": "5.1.1.1",
+   "eis": "Tijdelijke uitgestelde implementaties van de cybersecurity controls en maatregelen of afwijkende implementaties zoals vastgelegd in het Cybersecurity Dossier / Cybersecurity Beveiligingsplan dienen aan de hand van een risicoafweging eventueel ook overgenomen te worden in de explain administratie.",
+   "sjabloon": false,
+   "aangeroepen": [],
+   "bijlagen": [
+    "C"
+   ],
+   "kort": "Tijdelijk uitgestelde of afwijkende implementaties o.b.v. risicoafweging ook opnemen in de explain-administratie."
+  },
+  {
+   "id": "VSP-9",
+   "blad": "VSP",
+   "nr": 9,
+   "bio_bron": "5.1.1.1",
+   "eis": "De uitwerking van de controls voor de IA/PA/OT dient vastgelegd en onderhouden te worden in de template \"Cybersecurity Dossier/Cybersecurity Beveiligingsplan\". Bij uitbesteding dient het “Cybersecurity Dossier/Cybersecurity Beveiligingsplan” ter acceptatie te worden voorgelegd aan de verantwoordelijke. Een template voor het “Cybersecurity Dossier/Cybersecurity Beveiligingsplan” is beschikbaar.",
+   "sjabloon": false,
+   "aangeroepen": [],
+   "bijlagen": [
+    "B"
+   ],
+   "kort": "Uitwerking van de controls vastleggen en onderhouden in de template 'Cybersecurity Dossier / Beveiligingsplan'; bij uitbesteding ter acceptatie voorleggen."
+  },
+  {
+   "id": "VSP-10",
+   "blad": "VSP",
+   "nr": 10,
+   "bio_bron": "5.1.1.1",
+   "eis": "De werking van de beschreven maatregelen in het Cybersecurity Dossier/Cybersecurity Beveiligingsplan/security by design documentatie dient in lijn met de PDCA cyclus jaarlijks geëvalueerd en waar nodig geactualiseerd te worden..",
+   "sjabloon": false,
+   "aangeroepen": [],
+   "bijlagen": [
+    "B"
+   ],
+   "kort": "Werking van de maatregelen in het dossier jaarlijks evalueren en waar nodig actualiseren (PDCA)."
+  },
+  {
+   "id": "VSP-11",
+   "blad": "VSP",
+   "nr": 11,
+   "bio_bron": "5.1.1.1",
+   "eis": "Leveranciers met datanetwerkkoppelingen aan de datanetwerkinfrastructuur verlenen medewerking aan het risico gestuurd (laten) (pen)testen van delen van hun datanetwerkinfrastructuur.",
+   "sjabloon": false,
+   "aangeroepen": [],
+   "bijlagen": [],
+   "kort": "Leveranciers met datanetwerkkoppelingen verlenen medewerking aan risicogestuurd (laten) (pen)testen."
+  },
+  {
+   "id": "VSP-12",
+   "blad": "VSP",
+   "nr": 12,
+   "bio_bron": "5.1.1.1",
+   "eis": "Leveranciers met datanetwerkkoppelingen aan de datanetwerkinfrastructuur verlenen medewerking aan het risico gestuurd (laten) monitoren van delen van hun datanetwerkinfrastructuur.",
+   "sjabloon": false,
+   "aangeroepen": [],
+   "bijlagen": [],
+   "kort": "Leveranciers met datanetwerkkoppelingen verlenen medewerking aan risicogestuurd (laten) monitoren."
+  },
+  {
+   "id": "VSP-13",
+   "blad": "VSP",
+   "nr": 13,
+   "bio_bron": "5.1.1.1",
+   "eis": "Voor datanetwerkinfrastructuur worden alleen door de organisatie vertrouwde en of geaccrediteerde producten en diensten ingezet.",
+   "sjabloon": false,
+   "aangeroepen": [],
+   "bijlagen": [],
+   "kort": "Voor datanetwerkinfrastructuur alleen door de organisatie vertrouwde en/of geaccrediteerde producten en diensten inzetten."
+  },
+  {
+   "id": "VSP-14",
+   "blad": "VSP",
+   "nr": 14,
+   "bio_bron": "5.1.1.1",
+   "eis": "Voor datanetwerkinfrastructuur dient men uit te gaan van de situatie dat een aanval op de ICT en IA-systemen succesvol kan zijn (Assume Breach) en dat de organisatie hierop kan reageren via een incident response en recovery plan.",
+   "sjabloon": false,
+   "aangeroepen": [],
+   "bijlagen": [],
+   "kort": "Uitgaan van 'Assume Breach': aanname dat een aanval succesvol kan zijn en dat de organisatie hierop kan reageren via incident response en recovery plan."
+  },
+  {
+   "id": "VSP-15",
+   "blad": "VSP",
+   "nr": 15,
+   "bio_bron": "5.1.1.1",
+   "eis": "Een Recovery Plan dient opgesteld en onderhouden te worden conform de bijlage CSR 15 \"Recovery Plan\".",
+   "sjabloon": false,
+   "aangeroepen": [],
+   "bijlagen": [
+    "CSR 15"
+   ],
+   "kort": "Recovery Plan opstellen en onderhouden conform bijlage CSR 15 'Recovery Plan'."
+  },
+  {
+   "id": "VSP-16",
+   "blad": "VSP",
+   "nr": 16,
+   "bio_bron": "6.1.1",
+   "eis": "De cybersecurity verantwoordelijkheden met in achtneming van functiescheiding dienen op de daartoe geëigende plaatsen binnen de (project)organisatie belegd te worden. Daarbij dient een security functionaris met relevante kwalificaties te worden aangesteld.",
+   "sjabloon": false,
+   "aangeroepen": [],
+   "bijlagen": [],
+   "kort": "Cybersecurity-verantwoordelijkheden met functiescheiding beleggen; een gekwalificeerde security functionaris aanstellen."
+  },
+  {
+   "id": "VSP-17",
+   "blad": "VSP",
+   "nr": 17,
+   "bio_bron": "6.1.1",
+   "eis": "Een sleutelfunctionaris dient te worden aangesteld die verantwoordelijk is en over de relevante kwalificaties beschikt voor de werkzaamheden met betrekking tot cybersecurity.",
+   "sjabloon": false,
+   "aangeroepen": [],
+   "bijlagen": [],
+   "kort": "Een gekwalificeerde sleutelfunctionaris aanstellen, verantwoordelijk voor de cybersecurity-werkzaamheden."
+  },
+  {
+   "id": "VSP-18",
+   "blad": "VSP",
+   "nr": 18,
+   "bio_bron": "6.2.1",
+   "eis": "Bij koppeling van randapparatuur aan de IA/PA/OT dient bijlage CSR 04 \"Het veilig koppelen van beheer- en onderhoudsapparatuur aan ICT- en IA-systemen\" aangehouden te worden voor bescherming tegen malware.",
+   "sjabloon": false,
+   "aangeroepen": [],
+   "bijlagen": [
+    "CSR 4"
+   ],
+   "kort": "Bij koppeling van randapparatuur aan IA/PA/OT bijlage CSR 04 aanhouden ter bescherming tegen malware."
+  },
+  {
+   "id": "VSP-19",
+   "blad": "VSP",
+   "nr": 19,
+   "bio_bron": "6.2.1.2",
+   "eis": "Leveranciers dienen maximale hardening na te streven voor de (rand)apparatuur en delen van hun datanetwerkinfrastructuur die nodig is voor het kunnen beheren en onderhouden van de IA/PA/OT systemen en datanetwerkinfrastructuur.",
+   "sjabloon": false,
+   "aangeroepen": [],
+   "bijlagen": [],
+   "kort": "Leveranciers streven maximale hardening na voor (rand)apparatuur en datanetwerk­infrastructuur nodig voor beheer/onderhoud."
+  },
+  {
+   "id": "VSP-20",
+   "blad": "VSP",
+   "nr": 20,
+   "bio_bron": "6.2.2",
+   "eis": "Remote toegang en/of beheer op afstand voor IA/PA/OT dient te verlopen via centrale beveiligde voorzieningen die gemonitord worden.",
+   "sjabloon": false,
+   "aangeroepen": [],
+   "bijlagen": [],
+   "kort": "Remote toegang en/of beheer op afstand verloopt via centrale beveiligde, gemonitorde voorzieningen."
+  },
+  {
+   "id": "VSP-21",
+   "blad": "VSP",
+   "nr": 21,
+   "bio_bron": "7.1.1",
+   "eis": "Medewerkers dienen voor zover relevant voor hun functie geheimhouding in acht te nemen en over een Verklaring Omtrent het Gedrag (VOG) te beschikken.",
+   "sjabloon": false,
+   "aangeroepen": [],
+   "bijlagen": [],
+   "kort": "Medewerkers nemen (voor zover relevant) geheimhouding in acht en beschikken over een VOG."
+  },
+  {
+   "id": "VSP-22",
+   "blad": "VSP",
+   "nr": 22,
+   "bio_bron": "7.1.2",
+   "eis": "Management draagt er zorg voor dat medewerkers hun verantwoordelijkheden voor cybersecurity evenals de huis- en gedragsregels zoals vastgelegd in bijlage CSR 17 \"Beveiligingshuisregels\" kennen en naleven.",
+   "sjabloon": false,
+   "aangeroepen": [],
+   "bijlagen": [
+    "CSR 17"
+   ],
+   "kort": "Management borgt dat medewerkers hun cybersecurity-verantwoordelijkheden en de huis-/gedragsregels (bijlage CSR 17) kennen en naleven."
+  },
+  {
+   "id": "VSP-23",
+   "blad": "VSP",
+   "nr": 23,
+   "bio_bron": "7.2.1",
+   "eis": "Management vereist dat contractanten en alle medewerkers de cybersecurity eisen en maatregelen voor IA/PA/OT toepassen in overeenstemming met de vastgestelde beleidsregels en procedures.",
+   "sjabloon": false,
+   "aangeroepen": [],
+   "bijlagen": [],
+   "kort": "Management vereist dat contractanten en medewerkers de cybersecurity-eisen voor IA/PA/OT toepassen conform beleid en procedures."
+  },
+  {
+   "id": "VSP-24",
+   "blad": "VSP",
+   "nr": 24,
+   "bio_bron": "7.2.1 / 7.2.2",
+   "eis": "Maatregelen inzake bewustwording en training dienen conform paragraaf 2.7 \"Maatregelen Bewustwording en Training\" van de Cybersecurity Implementatierichtlijn Objecten getroffen te worden voor zover relevant voor hun functie voor de eigen medewerkers en die van (zelfstandige) hulppersonen.",
+   "sjabloon": false,
+   "aangeroepen": [
+    "§2.7"
+   ],
+   "bijlagen": [],
+   "kort": "Bewustwording en training conform paragraaf 2.7."
+  },
+  {
+   "id": "VSP-25",
+   "blad": "VSP",
+   "nr": 25,
+   "bio_bron": "8.1.1",
+   "eis": "Alle Configuration Items (CI's) van de IA/PA/OT geregistreerd en actueel te worden gehouden via het wijzigingsproces. Indien registratie wordt geregeld vanuit bestaande asset management of maintenance tooling, dient ten minste informatie te worden verwerktconform de beschrijving zoals opgenomen in bijlage CSR 16 “Registratie CI items”.",
+   "sjabloon": false,
+   "aangeroepen": [],
+   "bijlagen": [
+    "CSR 16"
+   ],
+   "kort": "Alle Configuration Items (CI's) van IA/PA/OT registreren en actueel houden via het wijzigingsproces; conform bijlage CSR 16."
+  },
+  {
+   "id": "VSP-26",
+   "blad": "VSP",
+   "nr": 26,
+   "bio_bron": "8.1.3",
+   "eis": "Alle beschikbaar gestelde toegangsmiddelen (waaronder tokens en pasjes tot objecten, data, en IA/PA/OT) dienen alleen te worden gebruikt voor het doel waarvoor en onder de voorwaarden waaronder deze zijn verstrekt, waarbij de beveiligingsmaatregelen niet mogen worden omzeild.",
+   "sjabloon": false,
+   "aangeroepen": [],
+   "bijlagen": [],
+   "kort": "Toegangsmiddelen (tokens, pasjes) alleen gebruiken voor het verstrekte doel; beveiligingsmaatregelen niet omzeilen."
+  },
+  {
+   "id": "VSP-27",
+   "blad": "VSP",
+   "nr": 27,
+   "bio_bron": "8.1.4",
+   "eis": "Alle verstrekte bedrijfsmiddelen aan gebruikers dienen voor zover relevant bij beëindiging van de opdracht of contract teruggegeven te worden.",
+   "sjabloon": false,
+   "aangeroepen": [],
+   "bijlagen": [],
+   "kort": "Verstrekte bedrijfsmiddelen teruggeven bij beëindiging van opdracht of contract."
+  },
+  {
+   "id": "VSP-28",
+   "blad": "VSP",
+   "nr": 28,
+   "bio_bron": "8.2.1",
+   "eis": "Informatie behoort te worden geclassificeerd met betrekking tot wettelijke eisen, waarde, belang en gevoeligheid voor onbevoegde bekendmaking of wijziging. Voor het omgaan met vertrouwelijke informatie dient bijlage CSR 1 \"Omgaan met vertrouwelijke Informatie en Documenten\" gevolgd te worden.",
+   "sjabloon": false,
+   "aangeroepen": [],
+   "bijlagen": [
+    "CSR 1"
+   ],
+   "kort": "Informatie classificeren (wettelijke eisen, waarde, gevoeligheid); omgaan met vertrouwelijke informatie conform bijlage CSR 1."
+  },
+  {
+   "id": "VSP-29",
+   "blad": "VSP",
+   "nr": 29,
+   "bio_bron": "8.3.2.1 / 18.1.3",
+   "eis": "De Informatievoorziening die benodigd is voor de opbouw en het onderhoud van registraties en bestanden en die onderdelen die benodigd zijn bij de verwerking van geclassificeerde informatie en documenten, dient in overeenstemming met wettelijke, regelgevende en contractuele eisen te worden beveiligd zodanig dat deze zijn beschermd tegen verlies, ongeautoriseerde kennisname en ongeautoriseerde wijziging.",
+   "sjabloon": false,
+   "aangeroepen": [],
+   "bijlagen": [],
+   "kort": "Informatievoorziening beveiligen conform wettelijke, regelgevende en contractuele eisen (tegen verlies, ongeautoriseerde kennisname en wijziging)."
+  },
+  {
+   "id": "VSP-30",
+   "blad": "VSP",
+   "nr": 30,
+   "bio_bron": "8.3.2.2",
+   "eis": "Bij beëindiging van de opdracht en/of contract dienen alle gegevens, registraties en bestanden overgedragen te worden voor zover dat niet al is gebeurd via het opleverdossier. Datgene wat achterblijft in de Informatievoorziening van de leverancier dient verwijderd en vernietigd en/of gewist te worden.",
+   "sjabloon": false,
+   "aangeroepen": [],
+   "bijlagen": [],
+   "kort": "Bij beëindiging opdracht/contract gegevens, registraties en bestanden overdragen; resterende data verwijderen, vernietigen en/of wissen."
+  },
+  {
+   "id": "VSP-31",
+   "blad": "VSP",
+   "nr": 31,
+   "bio_bron": "8.3.2.2",
+   "eis": "Voor het verwijderen en vernietigen of hergebruik van ICT en IA componenten en de aanwezige gegevens hierop dient gehandeld te worden conform bijlage CSR 23 \"Verwijdering en vernietiging van informatie en apparatuur\".",
+   "sjabloon": false,
+   "aangeroepen": [],
+   "bijlagen": [
+    "CSR 23"
+   ],
+   "kort": "Verwijdering/vernietiging of hergebruik van ICT- en IA-componenten conform bijlage CSR 23."
+  },
+  {
+   "id": "VSP-32",
+   "blad": "VSP",
+   "nr": 32,
+   "bio_bron": "9.1.1",
+   "eis": "Voor de logische toegang tot IA/PA/OT en de fysieke toegang tot de IA/PA/OT gerelateerde ruimten dienen maatregelen te worden getroffen conform paragraaf 2.2 \"Maatregelen logische toegang\" van de Cybersecurity Implementatierichtlijn Objecten.",
+   "sjabloon": false,
+   "aangeroepen": [
+    "§2.2"
+   ],
+   "bijlagen": [],
+   "kort": "Logische toegang tot IA/PA/OT en fysieke toegang tot IA/PA/OT-ruimten conform paragraaf 2.2."
+  },
+  {
+   "id": "VSP-33",
+   "blad": "VSP",
+   "nr": 33,
+   "bio_bron": "9.1.1",
+   "eis": "De personele toegang tot objecten en of het complex dient vorm te krijgen conform bijlage CSR 2 “Personele toegang \".",
+   "sjabloon": false,
+   "aangeroepen": [],
+   "bijlagen": [
+    "CSR 2"
+   ],
+   "kort": "Personele toegang tot objecten/complex conform bijlage CSR 2."
+  },
+  {
+   "id": "VSP-34",
+   "blad": "VSP",
+   "nr": 34,
+   "bio_bron": "9.2.1",
+   "eis": "Een formele en actueel gehouden procedure voor registratie en afmelding van toegangsrechten dient ingeregeld te worden voor:\n• de fysieke toegang van medewerkers tot IA/PA/OT gerelateerde ruimten;\n• de logische toegang voor medewerkers tot IA/PA/OT door middel van accounts, autorisaties en bijbehorende middelen",
+   "sjabloon": false,
+   "aangeroepen": [],
+   "bijlagen": [],
+   "kort": "Formele, actueel gehouden procedure voor registratie en afmelding van toegangsrechten (fysiek én logisch)."
+  },
+  {
+   "id": "VSP-35",
+   "blad": "VSP",
+   "nr": 35,
+   "bio_bron": "9.3.1",
+   "eis": "Gebruikers en beheerders dienen te handelen conform de bijlage CSR 7 \"Wachtwoorden\" voor zorgvuldige omgang met de aan hun toevertrouwde accounts en bijbehorende wachtwoorden.",
+   "sjabloon": false,
+   "aangeroepen": [],
+   "bijlagen": [
+    "CSR 7"
+   ],
+   "kort": "Gebruikers en beheerders handelen conform bijlage CSR 7 'Wachtwoorden'."
+  },
+  {
+   "id": "VSP-36",
+   "blad": "VSP",
+   "nr": 36,
+   "bio_bron": "9.4.2.2",
+   "eis": "Remote toegang en/of beheer op afstand voor IA/PA/OT dient via centrale beveiligde voorzieningen te verlopen die gemonitord wordt.",
+   "sjabloon": false,
+   "aangeroepen": [],
+   "bijlagen": [],
+   "kort": "Remote toegang/beheer verloopt via centrale beveiligde, gemonitorde voorzieningen."
+  },
+  {
+   "id": "VSP-37",
+   "blad": "VSP",
+   "nr": 37,
+   "bio_bron": "9.4.2.2",
+   "eis": "Remote toegang en/of beheer op afstand tot de IA/PA/OT dient via een formele procedure aangevraagd te worden. Voor de aangevraagde toegang wordt een risicoafweging gemaakt en de toegekende rechten vastgelegd.",
+   "sjabloon": false,
+   "aangeroepen": [],
+   "bijlagen": [],
+   "kort": "Remote toegang via een formele procedure aanvragen; risicoafweging maken en toegekende rechten vastleggen."
+  },
+  {
+   "id": "VSP-38",
+   "blad": "VSP",
+   "nr": 38,
+   "bio_bron": "10.1.1",
+   "eis": "Bij inzet van cryptografie ter bescherming van de vertrouwelijkheid, authenticiteit en/of integriteit van de informatie dient paragraaf 2.4.2 “Cryptografie” van de Cybersecurity Implementatierichtlijn Objecten gevolgd te worden.",
+   "sjabloon": false,
+   "aangeroepen": [
+    "§2.4.2"
+   ],
+   "bijlagen": [],
+   "kort": "Bij inzet van cryptografie paragraaf 2.4.2 'Cryptografie' volgen."
+  },
+  {
+   "id": "VSP-39",
+   "blad": "VSP",
+   "nr": 39,
+   "bio_bron": "11.1.2",
+   "eis": "De (beheer)processen voor de fysieke beveiliging van het complex evenals de gebouwen en ruimten hierbinnen dienen conform paragraaf 2.1.2 “Maatregelen fysieke toegangsbeveiliging terreinen en gebouwen” en CSR 24 “Fysieke beveiliging” ingevuld te worden.",
+   "sjabloon": false,
+   "aangeroepen": [
+    "§2.1.2"
+   ],
+   "bijlagen": [
+    "CSR 24"
+   ],
+   "kort": "Beheerprocessen fysieke beveiliging complex/gebouwen/ruimten conform paragraaf 2.1.2 en CSR 24."
+  },
+  {
+   "id": "VSP-40",
+   "blad": "VSP",
+   "nr": 40,
+   "bio_bron": "11.1.2",
+   "eis": "De (beheer)processen voor fysieke toegangsbeveiliging van de IA/PA/OT gerelateerde ruimten (waaronder bedien- en technische ruimten) binnen complex en/of object dient conform paragraaf 2.1.1 “Maatregelen fysieke toegangsbeveiliging IA-gerelateerde ruimten” van Cybersecurity Implementatierichtlijn Objecten ingevuld te worden.",
+   "sjabloon": false,
+   "aangeroepen": [
+    "§2.1.1"
+   ],
+   "bijlagen": [],
+   "kort": "Beheerprocessen fysieke toegangsbeveiliging IA/PA/OT-ruimten (bedien-/technische ruimten) conform paragraaf 2.1.1."
+  },
+  {
+   "id": "VSP-41",
+   "blad": "VSP",
+   "nr": 41,
+   "bio_bron": "11.2.6",
+   "eis": "Van IA/PA/OT systemen die geplaatst zijn buiten de object gebouwen dient de gegenereerde alarmmelding na ongeautoriseerde fysieke opening van de kast of ruimte evenals de alarmmelding bij ongeautoriseerde logische toegang tot het datanetwerk in de kast of ruimte opgevolgd te worden.",
+   "sjabloon": false,
+   "aangeroepen": [],
+   "bijlagen": [],
+   "kort": "Alarmmelding bij ongeautoriseerde fysieke opening van kast/ruimte én bij ongeautoriseerde logische toegang tot het datanetwerk erin, opvolgen."
+  },
+  {
+   "id": "VSP-42",
+   "blad": "VSP",
+   "nr": 42,
+   "bio_bron": "11.2.7",
+   "eis": "Alle onderdelen van de apparatuur die opslagmedia bevatten, behoren te worden geverifieerd om te waarborgen dat gevoelige gegevens en in licentie gegeven software voorafgaand aan verwijdering of hergebruik zijn verwijderd of betrouwbaar veilig zijn overschreven.",
+   "sjabloon": false,
+   "aangeroepen": [],
+   "bijlagen": [],
+   "kort": "Opslagmedia verifiëren op verwijdering van gevoelige gegevens en gelicentieerde software vóór verwijdering of hergebruik."
+  },
+  {
+   "id": "VSP-43",
+   "blad": "VSP",
+   "nr": 43,
+   "bio_bron": "12.1.1",
+   "eis": "Documenten dienen opgesteld en onderhouden te worden voor de bediening, het beheer, het onderhoud en de technische ondersteuning van IA/PA/OT.",
+   "sjabloon": false,
+   "aangeroepen": [],
+   "bijlagen": [],
+   "kort": "Documenten opstellen en onderhouden voor bediening, beheer, onderhoud en technische ondersteuning van IA/PA/OT."
+  },
+  {
+   "id": "VSP-44",
+   "blad": "VSP",
+   "nr": 44,
+   "bio_bron": "12.1.2",
+   "eis": "Voor het doorvoeren van wijzigingen aan IA/PA/OT dient een wijzigingsprocedure te bestaan conform paragraaf 2.8 \"Maatregelen gecontroleerd wijzigen\" van de Cybersecurity Implementatierichtlijn Objecten.",
+   "sjabloon": false,
+   "aangeroepen": [
+    "§2.8"
+   ],
+   "bijlagen": [],
+   "kort": "Wijzigingsprocedure voor IA/PA/OT conform paragraaf 2.8."
+  },
+  {
+   "id": "VSP-45",
+   "blad": "VSP",
+   "nr": 45,
+   "bio_bron": "12.2.1",
+   "eis": "Voor de IA/PA/OT systemen die niet beschermd worden door antimalware oplossingen dient ten minste een keer per jaar conform de bijlage CSR 11 \"Malware scanning en opschoning middels een usb\" een scan op malware op de IA/PA/OT systemen uitgevoerd en eventuele malware verwijderd te worden.",
+   "sjabloon": false,
+   "aangeroepen": [],
+   "bijlagen": [
+    "CSR 11"
+   ],
+   "kort": "IA/PA/OT-systemen zonder antimalware minimaal jaarlijks scannen op malware conform bijlage CSR 11."
+  },
+  {
+   "id": "VSP-46",
+   "blad": "VSP",
+   "nr": 46,
+   "bio_bron": "12.3.1",
+   "eis": "Een proces voor back-ups en recovery dient conform paragraaf 2.10 \"Maatregelen Back- ups” van de Cybersecurity Implementatierichtlijn Objecten en de template in bijlage CSR 18 \"Back-up en Recovery\" ingericht en jaarlijks beproefd te worden.",
+   "sjabloon": false,
+   "aangeroepen": [
+    "§2.10"
+   ],
+   "bijlagen": [
+    "CSR 18"
+   ],
+   "kort": "Back-up- en recoveryproces conform paragraaf 2.10 en template CSR 18; jaarlijks beproeven."
+  },
+  {
+   "id": "VSP-47",
+   "blad": "VSP",
+   "nr": 47,
+   "bio_bron": "12.4.1",
+   "eis": "De logbestanden van gebeurtenissen die gebruikersactiviteiten, uitzonderingen en informatiebeveiligingsgebeurtenissen registreren, behoren te worden gemaakt, bewaard en conform paragraaf 2.6 “Maatregelen logging en monitoring” van de Cybersecurity Implementatierichtlijn Objecten regelmatig te worden beoordeeld op onregelmatigheden en gerapporteerd.",
+   "sjabloon": false,
+   "aangeroepen": [
+    "§2.6"
+   ],
+   "bijlagen": [],
+   "kort": "Logbestanden maken, bewaren en regelmatig beoordelen op onregelmatigheden conform paragraaf 2.6."
+  },
+  {
+   "id": "VSP-48",
+   "blad": "VSP",
+   "nr": 48,
+   "bio_bron": "12.4.1.3",
+   "eis": "Objecten dienen op een risico gestuurde manier te worden gemonitord door een SIEM en/of SOC middels detectievoorzieningen.",
+   "sjabloon": false,
+   "aangeroepen": [],
+   "bijlagen": [],
+   "kort": "Objecten risicogestuurd monitoren door een SIEM en/of SOC met detectievoorzieningen."
+  },
+  {
+   "id": "VSP-49",
+   "blad": "VSP",
+   "nr": 49,
+   "bio_bron": "12.4.1.3",
+   "eis": "Bij nieuwbouw en/of renovatie van objecten dient het object conform paragraaf 2.6 \"Maatregelen logging en monitoring\" van de Cybersecurity Implementatierichtlijn Objecten technisch voorbereid te worden op het kunnen koppelen voor monitoring door een SIEM en/of SOC middels detectievoorzieningen.",
+   "sjabloon": false,
+   "aangeroepen": [
+    "§2.6"
+   ],
+   "bijlagen": [],
+   "kort": "Bij nieuwbouw/renovatie technisch voorbereiden op SIEM/SOC-koppeling conform paragraaf 2.6."
+  },
+  {
+   "id": "VSP-50",
+   "blad": "VSP",
+   "nr": 50,
+   "bio_bron": "12.4.1.4",
+   "eis": "Bij ontdekte nieuwe dreigingen (aanvallen) via de operationele detectievoorzieningen worden deze binnen geldende juridische kaders verplicht gedeeld binnen de overheid, waaronder met het NCSC (alleen voor rijksoverheidsorganisaties) of via de sectorale CERT (voor andere overheidsorganisaties), middels (bij voorkeur geautomatiseerde) threat intelligence sharing mechanismen.",
+   "sjabloon": false,
+   "aangeroepen": [],
+   "bijlagen": [],
+   "kort": "Ontdekte nieuwe dreigingen binnen juridische kaders verplicht delen (NCSC / sectorale CERT) via threat-intelligence-sharing."
+  },
+  {
+   "id": "VSP-51",
+   "blad": "VSP",
+   "nr": 51,
+   "bio_bron": "12.6.1",
+   "eis": "Voor het patchen van de IA/PA/OT systemen binnen het reguliere onderhoudsschema dient gehandeld te worden conform paragraaf 2.5 \"Maatregelen bescherming tegen kwetsbaarheden\" van de Cybersecurity Implementatierichtlijn Objecten en de bijlage CSR 8 \"Patch Management\".",
+   "sjabloon": false,
+   "aangeroepen": [
+    "§2.5"
+   ],
+   "bijlagen": [
+    "CSR 8"
+   ],
+   "kort": "Patchen van IA/PA/OT binnen het reguliere onderhoudsschema conform paragraaf 2.5 en bijlage CSR 8."
+  },
+  {
+   "id": "VSP-52",
+   "blad": "VSP",
+   "nr": 52,
+   "bio_bron": "12.6.1.1",
+   "eis": "Als de kans op misbruik en de verwachte schade beide hoog zijn (NCSC-classificatie kwetsbaarheidswaarschuwingen), dienen patches als spoedpatches behandeld te worden.",
+   "sjabloon": false,
+   "aangeroepen": [],
+   "bijlagen": [],
+   "kort": "Spoedpatches behandelen als kans op misbruik én verwachte schade beide hoog zijn (NCSC-classificatie)."
+  },
+  {
+   "id": "VSP-53",
+   "blad": "VSP",
+   "nr": 53,
+   "bio_bron": "12.6.1.1",
+   "eis": "In het geval dat er binnen het reguliere onderhoud en beheer programmering de IA/PA/OT systemen niet worden gepatcht, moet dit gemotiveerd worden gerapporteerd en formeel mee worden ingestemd.",
+   "sjabloon": false,
+   "aangeroepen": [],
+   "bijlagen": [],
+   "kort": "Niet-patchen binnen regulier onderhoud gemotiveerd rapporteren en formeel laten instemmen."
+  },
+  {
+   "id": "VSP-54",
+   "blad": "VSP",
+   "nr": 54,
+   "bio_bron": "13.1.1",
+   "eis": "Voor datanetwerkkoppelingen dienen maatregelen getroffen te worden conform paragraaf 2.4.1 \"Netwerkkoppelingen \" van de Cybersecurity Implementatierichtlijn Objecten en bijlage CSR 03 \"Architectuur objectnetwerk\".",
+   "sjabloon": false,
+   "aangeroepen": [
+    "§2.4.1"
+   ],
+   "bijlagen": [
+    "CSR 3"
+   ],
+   "kort": "Datanetwerkkoppelingen conform paragraaf 2.4.1 en bijlage CSR 03."
+  },
+  {
+   "id": "VSP-55",
+   "blad": "VSP",
+   "nr": 55,
+   "bio_bron": "13.1.2.3",
+   "eis": "Bij uitvoering van beheer en onderhoudswerkzaamheden dienen geen rechtstreekse koppelingen met het internet, draadloze voorzieningen (WiFi, GPRS/UMTS etc.) of inbelvoorzieningen te worden gemaakt met de IA/PA/OT.",
+   "sjabloon": false,
+   "aangeroepen": [],
+   "bijlagen": [],
+   "kort": "Bij beheer/onderhoud geen rechtstreekse koppelingen met internet, draadloze voorzieningen of inbelvoorzieningen met IA/PA/OT."
+  },
+  {
+   "id": "VSP-56",
+   "blad": "VSP",
+   "nr": 56,
+   "bio_bron": "13.1.3",
+   "eis": "De lokale datanetwerkinrichting voor procesautomatisering dient conform paragraaf 2.4.1 \"Netwerkkoppelingen\" van de Cybersecurity Implementatierichtlijn Objecten en bijlage CSR 3 \"Architectuur objectnetwerk\" vorm gegeven en ter acceptatie voorgelegd te worden.",
+   "sjabloon": false,
+   "aangeroepen": [
+    "§2.4.1"
+   ],
+   "bijlagen": [
+    "CSR 3"
+   ],
+   "kort": "Lokale datanetwerkinrichting procesautomatisering conform paragraaf 2.4.1 en CSR 3; ter acceptatie voorleggen."
+  },
+  {
+   "id": "VSP-57",
+   "blad": "VSP",
+   "nr": 57,
+   "bio_bron": "13.1.3",
+   "eis": "Alle wijzigingen aan het objectdatanetwerk dienen bijgehouden te worden en de lokale objectdatanetwerktopologie (schema’s) dient actueel te zijn, waarbij een zodanig detailniveau beschikbaar is, dat alle datanetwerkkoppelingen en objectdatanetwerkcomponenten met bijbehorende informatie beschikbaar is in een CMDB of vergelijkbare tooling.",
+   "sjabloon": false,
+   "aangeroepen": [],
+   "bijlagen": [],
+   "kort": "Wijzigingen aan het objectdatanetwerk bijhouden; topologie/schema's actueel in een CMDB (of vergelijkbare tooling)."
+  },
+  {
+   "id": "VSP-58",
+   "blad": "VSP",
+   "nr": 58,
+   "bio_bron": "14.1.1",
+   "eis": "Bij het uitvoeren van beheer en onderhoud werkzaamheden dienen de maatregelen zoals beschreven in paragraaf 2.9 \"Maatregelen beheer en onderhoud\" van de Cybersecurity Implementatierichtlijn Objecten in acht genomen te worden.",
+   "sjabloon": false,
+   "aangeroepen": [
+    "§2.9"
+   ],
+   "bijlagen": [],
+   "kort": "Beheer- en onderhoudswerkzaamheden conform paragraaf 2.9."
+  },
+  {
+   "id": "VSP-59",
+   "blad": "VSP",
+   "nr": 59,
+   "bio_bron": "14.1.1.1",
+   "eis": "Bij nieuwbouw en renovatieprojecten dient voorafgaande aan het ontwerpproces van de ICT en IA systemen een risicoanalyse en risicoafweging conform de NEN-ISO/IEC- 27005 of gelijkwaardig gemaakt en maatregelen genomen te worden. In de exploitatiefase dient de risicoanalyse ten minste jaarlijks uitgevoerd en opgevolgd te worden met maatregelen.",
+   "sjabloon": false,
+   "aangeroepen": [],
+   "bijlagen": [],
+   "kort": "Risicoanalyse (NEN-ISO/IEC 27005 of gelijkwaardig) vóór ontwerp bij nieuwbouw/renovatie; in exploitatie minimaal jaarlijks."
+  },
+  {
+   "id": "VSP-60",
+   "blad": "VSP",
+   "nr": 60,
+   "bio_bron": "14.2.1.1",
+   "eis": "Voor de ontwikkeling en onderhoud van software dienen de gangbare principes en de voorgeschreven maatregelen uit het document Secure Software Development van het Centrum voor Informatiebeveiliging en Privacy (CIP) gevolgd te worden.",
+   "sjabloon": false,
+   "aangeroepen": [],
+   "bijlagen": [],
+   "kort": "Ontwikkeling en onderhoud van software conform het document 'Secure Software Development' (CIP)."
+  },
+  {
+   "id": "VSP-61",
+   "blad": "VSP",
+   "nr": 61,
+   "bio_bron": "14.2.5",
+   "eis": "De cybersecurity eisen zijn onverkort van toepassing voor de inrichting en onderhoud van de permanente test-/ontwikkelomgeving voor IA/PA/OT systemen.",
+   "sjabloon": false,
+   "aangeroepen": [],
+   "bijlagen": [],
+   "kort": "Cybersecurity-eisen zijn onverkort van toepassing op de permanente test-/ontwikkelomgeving voor IA/PA/OT."
+  },
+  {
+   "id": "VSP-62",
+   "blad": "VSP",
+   "nr": 62,
+   "bio_bron": "14.2.6.1",
+   "eis": "Bij inkoop en aanbestedingen dient conform de leidraad “ Nationale Veiligheid bij inkoop en aanbestedingen” een risicoanalyse en afweging gemaakt en maatregelen genomen te worden. Eventueel dient aanvullend een lijst van uitgesloten producten te worden opgesteld.",
+   "sjabloon": false,
+   "aangeroepen": [],
+   "bijlagen": [],
+   "kort": "Risicoanalyse bij inkoop/aanbesteding conform leidraad 'Nationale Veiligheid bij inkoop en aanbestedingen'; evt. lijst uitgesloten producten."
+  },
+  {
+   "id": "VSP-63",
+   "blad": "VSP",
+   "nr": 63,
+   "bio_bron": "14.2.6.1",
+   "eis": "In het geval dat de onderdelen van de opdracht worden ingekocht of uitbesteed, dient ook een risicoanalyse en afweging te worden gemaakt conform de leidraad “Nationale Veiligheid bij inkoop en aanbestedingen”.",
+   "sjabloon": false,
+   "aangeroepen": [],
+   "bijlagen": [],
+   "kort": "Idem risicoanalyse bij inkoop of uitbesteding van onderdelen van de opdracht."
+  },
+  {
+   "id": "VSP-64",
+   "blad": "VSP",
+   "nr": 64,
+   "bio_bron": "14.2.7",
+   "eis": "IA/PA/OT systemen dienen als integraal onderdeel van de FAT, SAT en SIT ook getest te worden op technische naleving van beveiligingseisen en het aantoonbaar maken van de werking van de security functies en maatregelen.",
+   "sjabloon": false,
+   "aangeroepen": [],
+   "bijlagen": [],
+   "kort": "IA/PA/OT als integraal onderdeel van FAT, SAT en SIT testen op technische naleving van beveiligingseisen."
+  },
+  {
+   "id": "VSP-65",
+   "blad": "VSP",
+   "nr": 65,
+   "bio_bron": "14.2.7 / 18.2.3.1",
+   "eis": "De IA/PA/OT systemen dienen conform het (pen)testbeleid en testprocedure van de organisatie onderworpen te worden aan (geautomatiseerde) kwetsbaarheidsscans of pentesten.",
+   "sjabloon": false,
+   "aangeroepen": [],
+   "bijlagen": [],
+   "kort": "IA/PA/OT onderwerpen aan (geautomatiseerde) kwetsbaarheidsscans of pentesten conform het testbeleid."
+  },
+  {
+   "id": "VSP-66",
+   "blad": "VSP",
+   "nr": 66,
+   "bio_bron": "15.1.1 / 18.1.3",
+   "eis": "Op basis van risicoanalyse dienen maatregelen tegen spionage te worden genomen, zodanig dat de documenten met betrekking tot IA/PA/OT, waaronder documentatie, offertes, contracten, IP-tabellen, netwerkschema's, modellen, tekeningen en berekeningen, zijn beveiligd tegen verlies en ongeautoriseerde kennisname en ongeautoriseerde wijziging.",
+   "sjabloon": false,
+   "aangeroepen": [],
+   "bijlagen": [],
+   "kort": "Maatregelen tegen spionage o.b.v. risicoanalyse; documentatie (schema's, IP-tabellen, tekeningen) beveiligen tegen verlies/kennisname/wijziging."
+  },
+  {
+   "id": "VSP-67",
+   "blad": "VSP",
+   "nr": 67,
+   "bio_bron": "15.1.1.3",
+   "eis": "Met alle leveranciers die als bewerker voor of namens de organisatie persoonsgegevens verwerken, worden verwerkersovereenkomsten gesloten waarin alle wettelijk vereiste afspraken zijn vastgesteld.",
+   "sjabloon": false,
+   "aangeroepen": [],
+   "bijlagen": [],
+   "kort": "Verwerkersovereenkomsten sluiten met leveranciers die persoonsgegevens verwerken."
+  },
+  {
+   "id": "VSP-68",
+   "blad": "VSP",
+   "nr": 68,
+   "bio_bron": "15.1.2.6",
+   "eis": "In inkoopcontracten wordt expliciet de mogelijkheid van een externe audit opgenomen waarmee de betrouwbaarheid van de geleverde dienst kan worden getoetst.",
+   "sjabloon": false,
+   "aangeroepen": [],
+   "bijlagen": [],
+   "kort": "In inkoopcontracten expliciet de mogelijkheid van een externe audit opnemen."
+  },
+  {
+   "id": "VSP-69",
+   "blad": "VSP",
+   "nr": 69,
+   "bio_bron": "15.2.1",
+   "eis": "Ten minste jaarlijks dienen de maatregelen voor cybersecurity te worden gemonitord, gemeten, geanalyseerd en geëvalueerd.",
+   "sjabloon": false,
+   "aangeroepen": [],
+   "bijlagen": [],
+   "kort": "Minimaal jaarlijks de cybersecuritymaatregelen monitoren, meten, analyseren en evalueren."
+  },
+  {
+   "id": "VSP-70",
+   "blad": "VSP",
+   "nr": 70,
+   "bio_bron": "16.1.1",
+   "eis": "Een centraal meldpunt dient ingesteld te worden voor de registratie, het oplossen en rapportage van beveiligingsincidenten conform paragraaf 2.3 \"Maatregelen beveiligingsincidenten en incident response plan\" van de Cybersecurity Implementatierichtlijn Objecten en bijlage CSR 14 \"Incident Response\".",
+   "sjabloon": false,
+   "aangeroepen": [
+    "§2.3"
+   ],
+   "bijlagen": [
+    "CSR 14"
+   ],
+   "kort": "Centraal meldpunt voor registratie, oplossing en rapportage van beveiligingsincidenten conform paragraaf 2.3 en bijlage CSR 14."
+  },
+  {
+   "id": "VSP-71",
+   "blad": "VSP",
+   "nr": 71,
+   "bio_bron": "16.1.2.4",
+   "eis": "Beveiligingsincidenten dienen direct gemeld te worden. Maandelijks dient een rapportage te verstrekt te worden van alle beveiligingsincidenten en van alle maatregelen die ter zake getroffen zijn.",
+   "sjabloon": false,
+   "aangeroepen": [],
+   "bijlagen": [],
+   "kort": "Beveiligingsincidenten direct melden; maandelijks rapporteren over incidenten en getroffen maatregelen."
+  },
+  {
+   "id": "VSP-72",
+   "blad": "VSP",
+   "nr": 72,
+   "bio_bron": "16.1.2.4 / 16.1.3",
+   "eis": "De security incidenten dienen maandelijks conform de bijlage CSR 21 \"Uniform aanleveren van incidentrapportages\" gerapporteerd te worden.",
+   "sjabloon": false,
+   "aangeroepen": [],
+   "bijlagen": [
+    "CSR 21"
+   ],
+   "kort": "Maandelijkse incidentrapportage conform bijlage CSR 21."
+  },
+  {
+   "id": "VSP-73",
+   "blad": "VSP",
+   "nr": 73,
+   "bio_bron": "16.1.3.1",
+   "eis": "Een Coordinated Vulnerability Disclosure (CVD) procedure is ingericht en gepubliceerd conform de leidraad van het Nationaal Cyber Security Centrum.",
+   "sjabloon": false,
+   "aangeroepen": [],
+   "bijlagen": [],
+   "kort": "Een Coordinated Vulnerability Disclosure (CVD)-procedure inrichten en publiceren conform de NCSC-leidraad."
+  },
+  {
+   "id": "VSP-74",
+   "blad": "VSP",
+   "nr": 74,
+   "bio_bron": "16.1.5",
+   "eis": "Maatregelen dienen getroffen te worden voor opvolging van cybersecurity inbreuken en of verhoogde dreiging conform paragraaf 2.3 \"Maatregelen beveiligingsincidenten en incident response plan\" van de Cybersecurity Implementatierichtlijn Objecten en bijlage CSR 13 \"Handelswijze bij SOC incident melding en verhoogde dreiging\".",
+   "sjabloon": false,
+   "aangeroepen": [
+    "§2.3"
+   ],
+   "bijlagen": [
+    "CSR 13"
+   ],
+   "kort": "Opvolging van inbreuken/verhoogde dreiging conform paragraaf 2.3 en bijlage CSR 13."
+  },
+  {
+   "id": "VSP-75",
+   "blad": "VSP",
+   "nr": 75,
+   "bio_bron": "16.1.5",
+   "eis": "Conform paragraaf 2.3 \"Maatregelen beveiligingsincidenten en incident response plan\" van de Cybersecurity Implementatierichtlijn Objecten en bijlage CSR 14 \"Incident response\" dient een Incident Response Plan te worden opgesteld en gevolgd.",
+   "sjabloon": false,
+   "aangeroepen": [
+    "§2.3"
+   ],
+   "bijlagen": [
+    "CSR 14"
+   ],
+   "kort": "Incident Response Plan opstellen en volgen conform paragraaf 2.3 en bijlage CSR 14."
+  },
+  {
+   "id": "VSP-76",
+   "blad": "VSP",
+   "nr": 76,
+   "bio_bron": "16.1.6",
+   "eis": "De opgetreden beveiligingsincidenten dienen geanalyseerd en maatregelen getroffen te worden om herhaling te voorkomen. De jaarlijkse analyse van alle beveiligingsincidenten dient vastgelegd te worden in het gevraagde product Cybersecurity Dossier / Cybersecurity Beveiligingsplan.",
+   "sjabloon": false,
+   "aangeroepen": [],
+   "bijlagen": [
+    "B"
+   ],
+   "kort": "Beveiligingsincidenten analyseren en herhaling voorkomen; jaarlijkse analyse vastleggen in het Cybersecurity Dossier."
+  },
+  {
+   "id": "VSP-77",
+   "blad": "VSP",
+   "nr": 77,
+   "bio_bron": "16.1.6.1",
+   "eis": "Een geborgd proces voor Probleembeheer dient te bestaan voor beheersing van incidenten waarvoor nog geen oplossing voorhanden is en waarmee op proactieve wijze nieuwe incidenten voorkomen en/of de gevolgen beperkt kunnen worden.",
+   "sjabloon": false,
+   "aangeroepen": [],
+   "bijlagen": [],
+   "kort": "Een geborgd proces voor Probleembeheer voor incidenten zonder directe oplossing."
+  },
+  {
+   "id": "VSP-78",
+   "blad": "VSP",
+   "nr": 78,
+   "bio_bron": "16.1.7",
+   "eis": "In voorkomende gevallen dient cybersecurity bewijsmateriaal verzameld, bewaard en beschikbaar gesteld te worden aan onderzoekers.",
+   "sjabloon": false,
+   "aangeroepen": [],
+   "bijlagen": [],
+   "kort": "Cybersecurity-bewijsmateriaal verzamelen, bewaren en beschikbaar stellen aan onderzoekers."
+  },
+  {
+   "id": "VSP-79",
+   "blad": "VSP",
+   "nr": 79,
+   "bio_bron": "17.2.2",
+   "eis": "Een continuïteitsplan dient ontwikkeld en onderhouden te worden om voorbereid te zijn op de gevolgen van onderbreking van nutsvoorzieningen (stroomuitval) voor de IA/PA/OT conform de bijlage CSR 12 \"Continuïteitsplan voor energievoorziening\".",
+   "sjabloon": false,
+   "aangeroepen": [],
+   "bijlagen": [
+    "CSR 12"
+   ],
+   "kort": "Continuïteitsplan energievoorziening ontwikkelen en onderhouden conform bijlage CSR 12."
+  },
+  {
+   "id": "VSP-80",
+   "blad": "VSP",
+   "nr": 80,
+   "bio_bron": "17.2.3",
+   "eis": "Minimaal jaarlijks dienen de ontwikkelde continuïteitsplannen uitgevoerd te worden om te bewerkstelligen dat ze actueel en doeltreffend blijven.",
+   "sjabloon": false,
+   "aangeroepen": [],
+   "bijlagen": [],
+   "kort": "Continuïteitsplannen minimaal jaarlijks uitvoeren om ze actueel en doeltreffend te houden."
+  },
+  {
+   "id": "VSP-81",
+   "blad": "VSP",
+   "nr": 81,
+   "bio_bron": "18.1.1",
+   "eis": "De voor de IA/PA/OT systemen relevante wet en regelgeving dient vastgesteld, gedocumenteerd, gevolgd en actueel te worden gehouden.",
+   "sjabloon": false,
+   "aangeroepen": [],
+   "bijlagen": [],
+   "kort": "Relevante wet- en regelgeving voor IA/PA/OT vaststellen, documenteren, volgen en actueel houden."
+  },
+  {
+   "id": "VSP-82",
+   "blad": "VSP",
+   "nr": 82,
+   "bio_bron": "18.1.2",
+   "eis": "Het intellectueel eigendomsrecht of gebruiksrecht en de oplevering van programmatuur voor IA/PA/OT systemen dient conform de bijlage CSR 19 \"Intellectueel Eigendom\" vorm gegeven te worden.",
+   "sjabloon": false,
+   "aangeroepen": [],
+   "bijlagen": [
+    "CSR 19"
+   ],
+   "kort": "Intellectueel eigendom/gebruiksrecht en oplevering van programmatuur conform bijlage CSR 19."
+  },
+  {
+   "id": "VSP-83",
+   "blad": "VSP",
+   "nr": 83,
+   "bio_bron": "18.1.4",
+   "eis": "Privacy en bescherming van persoonsgegevens behoren, voor zover van toepassing, te worden gewaarborgd in overeenstemming met relevante wet- en regelgeving.",
+   "sjabloon": false,
+   "aangeroepen": [],
+   "bijlagen": [],
+   "kort": "Privacy en bescherming van persoonsgegevens waarborgen conform wet- en regelgeving."
+  },
+  {
+   "id": "VSP-84",
+   "blad": "VSP",
+   "nr": 84,
+   "bio_bron": "18.1.4",
+   "eis": "In voorkomende gevallen dient bij verwerking van persoonsgegevens en andere tot natuurlijke personen herleidbare gegevens een verwerkersovereenkomst afgesloten te worden.",
+   "sjabloon": false,
+   "aangeroepen": [],
+   "bijlagen": [],
+   "kort": "Verwerkersovereenkomst afsluiten bij verwerking van persoonsgegevens."
+  },
+  {
+   "id": "VSP-85",
+   "blad": "VSP",
+   "nr": 85,
+   "bio_bron": "18.1.4",
+   "eis": "Bij beheer en onderhoudswerkzaamheden aan videocamera’s en/of systemen waarin camerabeelden zijn opgeslagen, dient bijlage CSR 20 \"Camera’s en omgang met camerabeelden \" gevolgd te worden.",
+   "sjabloon": false,
+   "aangeroepen": [],
+   "bijlagen": [
+    "CSR 20"
+   ],
+   "kort": "Beheer/onderhoud aan camera's en camerabeeld-systemen conform bijlage CSR 20."
+  },
+  {
+   "id": "VSP-86",
+   "blad": "VSP",
+   "nr": 86,
+   "bio_bron": "18.2.1.1",
+   "eis": "De controls voor IA/PA/OT dienen integraal onderdeel uit te maken van het Information Security Management Systeem (ISMS) van de organisatie.",
+   "sjabloon": false,
+   "aangeroepen": [],
+   "bijlagen": [],
+   "kort": "De controls voor IA/PA/OT integraal onderdeel maken van het ISMS van de organisatie."
+  },
+  {
+   "id": "VSP-87",
+   "blad": "VSP",
+   "nr": 87,
+   "bio_bron": "18.2.2",
+   "eis": "Management beoordeelt regelmatig de naleving van IA/PA/OT controls en maatregelen door medewerkers en (zelfstandige) hulppersonen.",
+   "sjabloon": false,
+   "aangeroepen": [],
+   "bijlagen": [],
+   "kort": "Management beoordeelt regelmatig de naleving van IA/PA/OT-controls en -maatregelen."
+  },
+  {
+   "id": "VSP-88",
+   "blad": "VSP",
+   "nr": 88,
+   "bio_bron": "18.2.2",
+   "eis": "Management draagt zorg dat medewerkers en ingehuurden kennis nemen van de huisregels zoals opgenomen in bijlage CSR 17 \"Beveiligingshuisregels\" en deze naleven.",
+   "sjabloon": false,
+   "aangeroepen": [],
+   "bijlagen": [
+    "CSR 17"
+   ],
+   "kort": "Management borgt kennisname en naleving van de huisregels (bijlage CSR 17)."
+  },
+  {
+   "id": "VSP-89",
+   "blad": "VSP",
+   "nr": 89,
+   "bio_bron": "18.2.3.1",
+   "eis": "In de exploitatiefase (beheerfase) dienen de IA/PA/OT systemen conform het (pen)testbeleid van de organisatie periodiek onderworpen te worden (geautomatiseerde) kwetsbaarheidsscans of pentesten.",
+   "sjabloon": false,
+   "aangeroepen": [],
+   "bijlagen": [],
+   "kort": "In de exploitatiefase periodiek (geautomatiseerde) kwetsbaarheidsscans of pentesten conform het testbeleid."
+  },
+  {
+   "id": "VSE-1",
+   "blad": "VSE",
+   "nr": 1,
+   "bio_bron": "5.1.1",
+   "eis": "Top eis/doel: De IA/PA/OT dient zodanig te worden ingericht en onderhouden, dat gevaar of schade veroorzaakt door verstoring, uitval of misbruik van IA/PA/OT wordt voorkomen en indien er toch schade is ontstaan deze te herstellen.",
+   "sjabloon": false,
+   "aangeroepen": [],
+   "bijlagen": [],
+   "kort": "Top eis/doel: IA/PA/OT zodanig inrichten en onderhouden dat gevaar of schade door verstoring, uitval of misbruik wordt voorkomen en, indien toch schade, hersteld."
+  },
+  {
+   "id": "VSE-2",
+   "blad": "VSE",
+   "nr": 2,
+   "bio_bron": "5.1.1.1",
+   "eis": "De IA/PA/OT dient ingericht en onderhouden te worden conform de van toepassing verklaarde systeem controls waarbij cybersecurity weerstandsniveau 1 wordt aangehouden voor de Objecten tenzij er voor de Objecten een ander cybersecurity weerstandsniveau is aangegeven. Lijst Objecten: {object} – cybersecurity weerstandsniveau {niveau}",
+   "sjabloon": true,
+   "aangeroepen": [],
+   "bijlagen": [],
+   "kort": "IA/PA/OT inrichten en onderhouden conform de van toepassing verklaarde systeemcontrols, met het gekozen weerstandsniveau (blad Instellingen). — Lijst Objecten: {object} — niveau {niveau}."
+  },
+  {
+   "id": "VSE-3",
+   "blad": "VSE",
+   "nr": 3,
+   "bio_bron": "5.1.1.1",
+   "eis": "De beveiliging van de IA/PA/OT dient volgens het principe van gelaagde beveiliging te worden uitgevoerd.",
+   "sjabloon": false,
+   "aangeroepen": [],
+   "bijlagen": [],
+   "kort": "De beveiliging van IA/PA/OT uitvoeren volgens het principe van gelaagde beveiliging (defense in depth)."
+  },
+  {
+   "id": "VSE-4",
+   "blad": "VSE",
+   "nr": 4,
+   "bio_bron": "6.2.1.2",
+   "eis": "Leveranciers dienen maximale hardening na te streven voor de (rand)apparatuur en delen van zijn datanetwerkinfrastructuur die nodig is voor het kunnen beheren en onderhouden van de IA/PA/OT systemen en datanetwerkinfrastructuur van de objecteigenaar.",
+   "sjabloon": false,
+   "aangeroepen": [],
+   "bijlagen": [],
+   "kort": "Leveranciers streven maximale hardening na voor (rand)apparatuur en datanetwerk­infrastructuur nodig voor beheer/onderhoud."
+  },
+  {
+   "id": "VSE-5",
+   "blad": "VSE",
+   "nr": 5,
+   "bio_bron": "9.1.1",
+   "eis": "Voor de identificatie, authenticatie en autorisatie oplossing dienen maatregelen geïmplementeerd te worden conform paragraaf 2.2 \"Maatregelen logische toegang\" van de Cybersecurity Implementatierichtlijn Objecten.",
+   "sjabloon": false,
+   "aangeroepen": [
+    "§2.2"
+   ],
+   "bijlagen": [],
+   "kort": "Voor de identificatie-, authenticatie- en autorisatie-oplossing (IAA) maatregelen implementeren conform paragraaf 2.2."
+  },
+  {
+   "id": "VSE-6",
+   "blad": "VSE",
+   "nr": 6,
+   "bio_bron": "9.3.1",
+   "eis": "IA/PA/OT systemen dienen de gestelde eisen en functionaliteit ten aanzien van wachtwoorden zoals vastgelegd in bijlage CSR 7 \"Wachtwoorden\" te ondersteunen.",
+   "sjabloon": false,
+   "aangeroepen": [],
+   "bijlagen": [
+    "CSR 7"
+   ],
+   "kort": "IA/PA/OT-systemen ondersteunen de eisen en functionaliteit voor wachtwoorden conform bijlage CSR 7."
+  },
+  {
+   "id": "VSE-7",
+   "blad": "VSE",
+   "nr": 7,
+   "bio_bron": "10.1.1",
+   "eis": "Bij inzet van cryptografie ter bescherming van de vertrouwelijkheid, authenticiteit en/of integriteit van de informatie dient paragraaf 2.42 “Cryptografie” van de Cybersecurity Implementatierichtlijn Objecten gevolgd te worden.",
+   "sjabloon": false,
+   "aangeroepen": [
+    "§2.4.2"
+   ],
+   "bijlagen": [],
+   "kort": "Bij inzet van cryptografie paragraaf 2.4.2 'Cryptografie' volgen."
+  },
+  {
+   "id": "VSE-8",
+   "blad": "VSE",
+   "nr": 8,
+   "bio_bron": "10.1.1",
+   "eis": "Bij inzet van versleuteling dient de gekozen versleuteling en de onderliggende algoritmes en instellingen uitsluitend de duiding “goed” te hebben zoals aangegeven in de meest actuele versie van het NCSC document “Richtlijnen voor Transport Layer Security”.",
+   "sjabloon": false,
+   "aangeroepen": [],
+   "bijlagen": [],
+   "kort": "Gekozen versleuteling, algoritmes en instellingen uitsluitend duiding 'goed' (NCSC-richtlijnen TLS)."
+  },
+  {
+   "id": "VSE-9",
+   "blad": "VSE",
+   "nr": 9,
+   "bio_bron": "10.1.1",
+   "eis": "Bij inzet van cryptografie dienen PKI-Overheid certificaten gebruikt te worden voor communicatie met externe netwerken. Voor interne netwerken kan gekozen worden voor een eigen PKI infrastructuur.",
+   "sjabloon": false,
+   "aangeroepen": [],
+   "bijlagen": [],
+   "kort": "PKI-Overheid-certificaten voor externe netwerken; voor interne netwerken kan een eigen PKI-infrastructuur."
+  },
+  {
+   "id": "VSE-10",
+   "blad": "VSE",
+   "nr": 10,
+   "bio_bron": "11.1.1",
+   "eis": "De fysieke beveiliging van het terrein, de gebouwen en ruimten hierbinnen dienen conform paragraaf 2.1.2 “Maatregelen fysieke toegangsbeveiliging terreinen en gebouwen” en CSR 24 “Fysieke beveiliging” ingevuld te worden.",
+   "sjabloon": false,
+   "aangeroepen": [
+    "§2.1.2"
+   ],
+   "bijlagen": [
+    "CSR 24"
+   ],
+   "kort": "Fysieke beveiliging van terrein, gebouwen en ruimten conform paragraaf 2.1.2 en CSR 24."
+  },
+  {
+   "id": "VSE-11",
+   "blad": "VSE",
+   "nr": 11,
+   "bio_bron": "11.1.1.1",
+   "eis": "De fysieke toegangsbeveiligingseisen van de IA/PA/OT gerelateerde ruimten (waaronder bedien- en technische ruimten) dient conform paragraaf 2.1.1 “Maatregelen fysieke toegangsbeveiliging IA-gerelateerde ruimten” van Cybersecurity Implementatierichtlijn Objecten ingevuld te worden.",
+   "sjabloon": false,
+   "aangeroepen": [
+    "§2.1.1"
+   ],
+   "bijlagen": [],
+   "kort": "Fysieke toegangsbeveiliging IA/PA/OT-ruimten (bedien-/technische ruimten) conform paragraaf 2.1.1."
+  },
+  {
+   "id": "VSE-12",
+   "blad": "VSE",
+   "nr": 12,
+   "bio_bron": "11.1.4",
+   "eis": "De binnen het complex en/of objecten te plaatsen IA/PA/OT middelen dienen te worden beschermd tegen schade en storing.",
+   "sjabloon": false,
+   "aangeroepen": [],
+   "bijlagen": [],
+   "kort": "Binnen complex/objecten geplaatste IA/PA/OT-middelen beschermen tegen schade en storing."
+  },
+  {
+   "id": "VSE-13",
+   "blad": "VSE",
+   "nr": 13,
+   "bio_bron": "11.1.4 / 11.2.6",
+   "eis": "Op basis van een risicoanalyse en risicoafweging dienen IA/PA/OT systemen buiten de object gebouwen, in afsluitbare kasten of ruimten geplaatst te worden die bij ongeautoriseerde fysieke opening van de kast of ruimte en bij ongeautoriseerde logische toegang tot het datanetwerk in de kast of ruimte een alarmmelding genereert.",
+   "sjabloon": false,
+   "aangeroepen": [],
+   "bijlagen": [],
+   "kort": "IA/PA/OT buiten de objectgebouwen in afsluitbare kasten/ruimten plaatsen die bij ongeautoriseerde opening of logische toegang een alarmmelding genereren."
+  },
+  {
+   "id": "VSE-14",
+   "blad": "VSE",
+   "nr": 14,
+   "bio_bron": "11.2.1 / 11.2.3",
+   "eis": "Voedings- en telecommunicatiekabels die voor dataverkeer of ondersteunende informatiediensten worden toegepast dienen tegen interceptie, verstoring of schade te worden beschermd.",
+   "sjabloon": false,
+   "aangeroepen": [],
+   "bijlagen": [],
+   "kort": "Voedings- en telecommunicatiekabels voor dataverkeer beschermen tegen interceptie, verstoring of schade."
+  },
+  {
+   "id": "VSE-15",
+   "blad": "VSE",
+   "nr": 15,
+   "bio_bron": "12.1.4",
+   "eis": "De ontwikkel-, test-, acceptatie-, productie-, en leeromgeving dient gescheiden te zijn om het risico van onbevoegde toegang tot of veranderingen aan de productie omgeving te verlagen.",
+   "sjabloon": false,
+   "aangeroepen": [],
+   "bijlagen": [],
+   "kort": "Ontwikkel-, test-, acceptatie-, productie- en leeromgeving (OTAPL) scheiden."
+  },
+  {
+   "id": "VSE-16",
+   "blad": "VSE",
+   "nr": 16,
+   "bio_bron": "12.2.1",
+   "eis": "De IA/PA/OT dient beschermd te zijn tegen malware conform de maatregelen uit paragraaf 2.5.1 \"Antimalware\" van de Cybersecurity Implementatierichtlijn Objecten.",
+   "sjabloon": false,
+   "aangeroepen": [
+    "§2.5.1"
+   ],
+   "bijlagen": [],
+   "kort": "IA/PA/OT beschermen tegen malware conform paragraaf 2.5.1 'Antimalware'."
+  },
+  {
+   "id": "VSE-17",
+   "blad": "VSE",
+   "nr": 17,
+   "bio_bron": "12.2.1",
+   "eis": "De IA/PA/OT systemen dienen gehardend te worden conform paragraaf 2.5.2. \"Hardening\" van de Cybersecurity Implementatierichtlijn Objecten en de bijlage CSR 9 \"Hardening\".",
+   "sjabloon": false,
+   "aangeroepen": [
+    "§2.5.2"
+   ],
+   "bijlagen": [
+    "CSR 9"
+   ],
+   "kort": "IA/PA/OT-systemen hardenen conform paragraaf 2.5.2 'Hardening' en bijlage CSR 9."
+  },
+  {
+   "id": "VSE-18",
+   "blad": "VSE",
+   "nr": 18,
+   "bio_bron": "12.3.1",
+   "eis": "De integriteit en beschikbaarheid van de IA/PA/OT software van het Object dient geborgd te worden door het maken van back-ups conform paragraaf 2.10 \"Maatregelen back-ups\" van de Cybersecurity Implementatierichtlijn Objecten en bijlage CSR 18 \"Back-up en recovery\".",
+   "sjabloon": false,
+   "aangeroepen": [
+    "§2.10"
+   ],
+   "bijlagen": [
+    "CSR 18"
+   ],
+   "kort": "Integriteit en beschikbaarheid van de IA/PA/OT-software borgen met back-ups conform paragraaf 2.10 en bijlage CSR 18."
+  },
+  {
+   "id": "VSE-19",
+   "blad": "VSE",
+   "nr": 19,
+   "bio_bron": "12.4.1",
+   "eis": "De IA/PA/OT systemen van het object dienen de activiteiten van gebruikers, beheerders, uitzonderingen en informatiebeveiligingsgebeurtenissen vast te leggen in logbestanden conform paragraaf 2.6 \"Maatregelen logging en monitoring\" van de Cybersecurity Implementatierichtlijn Objecten en bijlage CSR 10 \"Logging\".",
+   "sjabloon": false,
+   "aangeroepen": [
+    "§2.6"
+   ],
+   "bijlagen": [
+    "CSR 10"
+   ],
+   "kort": "IA/PA/OT-systemen leggen activiteiten van gebruikers/beheerders, uitzonderingen en beveiligingsgebeurtenissen vast conform paragraaf 2.6 en bijlage CSR 10."
+  },
+  {
+   "id": "VSE-20",
+   "blad": "VSE",
+   "nr": 20,
+   "bio_bron": "12.4.1",
+   "eis": "Voor de IA/PA/OT systemen van het object dient een syslog server ingericht te worden conform CSR 10 “Logging” die de syslog events van de verschillende ICT en IA systemen verzamelt en toegankelijk maakt voor analysedoeleinden en automatische waarschuwingen door een SIEM en/of SOC.",
+   "sjabloon": false,
+   "aangeroepen": [],
+   "bijlagen": [
+    "CSR 10"
+   ],
+   "kort": "Een syslog-server inrichten conform CSR 10 die syslog-events verzamelt en toegankelijk maakt voor SIEM/SOC-analyse."
+  },
+  {
+   "id": "VSE-21",
+   "blad": "VSE",
+   "nr": 21,
+   "bio_bron": "12.4.1.3",
+   "eis": "Bij nieuwbouw en/of renovatie van de IA/PA/OT dient conform paragraaf 2.6 \"Maatregelen logging en monitoring\" van de Cybersecurity Implementatierichtlijn Objecten technisch voorbereid te worden om te kunnen koppelen aan een SIEM en/of SOC voor monitoring middels detectievoorzieningen.",
+   "sjabloon": false,
+   "aangeroepen": [
+    "§2.6"
+   ],
+   "bijlagen": [],
+   "kort": "Bij nieuwbouw/renovatie IA/PA/OT technisch voorbereiden op koppeling aan SIEM/SOC conform paragraaf 2.6."
+  },
+  {
+   "id": "VSE-22",
+   "blad": "VSE",
+   "nr": 22,
+   "bio_bron": "12.4.1.3",
+   "eis": "Bij nieuwbouw en/of renovatie van de IA/PA/OT dient het objectdatanetwerk voorzien te worden van analysepoorten door poorten in het lokale objectdatanetwerk tot analyse poort te configureren.",
+   "sjabloon": false,
+   "aangeroepen": [],
+   "bijlagen": [],
+   "kort": "Objectdatanetwerk voorzien van analysepoorten (poorten configureren tot analysepoort)."
+  },
+  {
+   "id": "VSE-23",
+   "blad": "VSE",
+   "nr": 23,
+   "bio_bron": "13.1.1",
+   "eis": "De datanetwerkkoppelingen van de IA/PA/OT systemen dienen uitgevoerd te zijn conform paragraaf 2.4.1 \"Netwerkkoppelingen\" van de Cybersecurity Implementatierichtlijn Objecten en de bijlage CSR 3 \"Architectuur objectnetwerken\".",
+   "sjabloon": false,
+   "aangeroepen": [
+    "§2.4.1"
+   ],
+   "bijlagen": [
+    "CSR 3"
+   ],
+   "kort": "Datanetwerkkoppelingen van IA/PA/OT conform paragraaf 2.4.1 en bijlage CSR 3."
+  },
+  {
+   "id": "VSE-24",
+   "blad": "VSE",
+   "nr": 24,
+   "bio_bron": "13.1.1",
+   "eis": "Alle datanetwerkverbindingen van de IA/PA/OT systemen dienen strikt en uitsluitend te verlopen via de centrale beveiligde voorzieningen en aansluitvoorwaarden van de eigen organisatie. Directe vaste of draadloze datanetwerkverbindingen van het eigen IA/PA/OT netwerk met andere datanetwerken dan die van de eigen organisatie is strikt verboden.",
+   "sjabloon": false,
+   "aangeroepen": [],
+   "bijlagen": [],
+   "kort": "Alle verbindingen strikt via centrale beveiligde voorzieningen; directe (vaste/draadloze) externe verbindingen zijn verboden."
+  },
+  {
+   "id": "VSE-25",
+   "blad": "VSE",
+   "nr": 25,
+   "bio_bron": "13.1.1",
+   "eis": "Het aantal datanetwerkkoppelingen tussen de IA/PA/OT en andere externe datanetwerken dient geminimaliseerd te worden conform paragraaf 2.4 \"Maatregelen netwerkkoppelingen en cryptografie\" van de Cybersecurity Implementatierichtlijn Objecten en de bijlage CSR 3 \"Architectuur objectnetwerk\".",
+   "sjabloon": false,
+   "aangeroepen": [
+    "§2.4"
+   ],
+   "bijlagen": [
+    "CSR 3"
+   ],
+   "kort": "Aantal koppelingen tussen IA/PA/OT en externe datanetwerken minimaliseren conform paragraaf 2.4 en bijlage CSR 3."
+  },
+  {
+   "id": "VSE-26",
+   "blad": "VSE",
+   "nr": 26,
+   "bio_bron": "13.1.2.3",
+   "eis": "Voor draadloze verbindingen dient paragraaf 2.4 \"Maatregelen netwerkkoppelingen en cryptografie\" van de Cybersecurity Implementatierichtlijn Objecten en bijlage CSR 5 \"Draadloze netwerken\" gevolgd te worden.",
+   "sjabloon": false,
+   "aangeroepen": [
+    "§2.4"
+   ],
+   "bijlagen": [
+    "CSR 5"
+   ],
+   "kort": "Voor draadloze verbindingen paragraaf 2.4 en bijlage CSR 5 volgen."
+  },
+  {
+   "id": "VSE-27",
+   "blad": "VSE",
+   "nr": 27,
+   "bio_bron": "13.1.3",
+   "eis": "Voor IA/PA/OT dient gebruik gemaakt te worden van een eigen gecompartimenteerde datanetwerk dat van de kantoorautomatisering is afgescheiden. De scheiding kan fysiek of logisch zijn.",
+   "sjabloon": false,
+   "aangeroepen": [],
+   "bijlagen": [],
+   "kort": "Eigen gecompartimenteerd datanetwerk, gescheiden van de kantoorautomatisering (fysiek of logisch)."
+  },
+  {
+   "id": "VSE-28",
+   "blad": "VSE",
+   "nr": 28,
+   "bio_bron": "13.1.3",
+   "eis": "Segmentering van dataverkeersstromen voor productie, beheer en OTA dient toegepast te worden binnen de lokale objectdatanetwerken van het Systeem voor de IA/PA/OT toepassingen.",
+   "sjabloon": false,
+   "aangeroepen": [],
+   "bijlagen": [],
+   "kort": "Segmentering van dataverkeersstromen voor productie, beheer en OTA binnen het objectdatanetwerk."
+  },
+  {
+   "id": "VSE-29",
+   "blad": "VSE",
+   "nr": 29,
+   "bio_bron": "13.1.3",
+   "eis": "De lokale datanetwerkinrichting voor procesautomatisering dient conform paragraaf 2.4.1 \"Netwerkkoppelingen\" van de Cybersecurity Implementatierichtlijn Objecten en de bijlage CSR 3 \"Architectuur objectnetwerk\" vorm gegeven te worden.",
+   "sjabloon": false,
+   "aangeroepen": [
+    "§2.4.1"
+   ],
+   "bijlagen": [
+    "CSR 3"
+   ],
+   "kort": "Lokale datanetwerkinrichting procesautomatisering conform paragraaf 2.4.1 en bijlage CSR 3."
+  },
+  {
+   "id": "VSE-30",
+   "blad": "VSE",
+   "nr": 30,
+   "bio_bron": "14.1.1",
+   "eis": "De IA/PA/OT systemen dienen voorzien te worden van invoer en uitvoer validatie controles om eventueel corrumperen van informatie door verwerkingsfouten of opzettelijke handelingen traceerbaar te maken.",
+   "sjabloon": false,
+   "aangeroepen": [],
+   "bijlagen": [],
+   "kort": "IA/PA/OT-systemen voorzien van invoer- en uitvoervalidatie om corruptie van informatie traceerbaar te maken."
+  },
+  {
+   "id": "VSE-31",
+   "blad": "VSE",
+   "nr": 31,
+   "bio_bron": "14.1.1",
+   "eis": "Voor beheer en onderhoud van de IA/PA/OT systemen dient paragraaf 2.9 van de Cybersecurity Implementatierichtlijn Objecten gevolgd te worden.",
+   "sjabloon": false,
+   "aangeroepen": [
+    "§2.9"
+   ],
+   "bijlagen": [],
+   "kort": "Beheer en onderhoud van IA/PA/OT conform paragraaf 2.9."
+  },
+  {
+   "id": "VSE-32",
+   "blad": "VSE",
+   "nr": 32,
+   "bio_bron": "14.1.1",
+   "eis": "Bij inzet van (web)applicaties voor beheer of onderhoud van IA/PA/OT systemen dient de beveiliging van de in te zetten (web)applicaties ingericht te zijn conform de \"ICT Beveiligingsrichtlijnen Webapplicaties\" van het Nationaal Cyber Security Centrum.",
+   "sjabloon": false,
+   "aangeroepen": [],
+   "bijlagen": [],
+   "kort": "(Web)applicaties voor beheer/onderhoud inrichten conform de 'ICT Beveiligingsrichtlijnen Webapplicaties' (NCSC)."
+  },
+  {
+   "id": "VSE-33",
+   "blad": "VSE",
+   "nr": 33,
+   "bio_bron": "14.1.1",
+   "eis": "Voor Internet of Things (IoT) dient bijlage CSR 06 “IoT” gevolgd te worden.",
+   "sjabloon": false,
+   "aangeroepen": [],
+   "bijlagen": [
+    "CSR 6"
+   ],
+   "kort": "Voor Internet of Things (IoT) bijlage CSR 06 volgen."
+  },
+  {
+   "id": "VSE-34",
+   "blad": "VSE",
+   "nr": 34,
+   "bio_bron": "14.1.1",
+   "eis": "Bij inzet van virtualisatie toepassingen dient bijlage CSR 22 “Virtualisatie” gevolgd te volgen.",
+   "sjabloon": false,
+   "aangeroepen": [],
+   "bijlagen": [
+    "CSR 22"
+   ],
+   "kort": "Bij virtualisatie bijlage CSR 22 volgen."
+  },
+  {
+   "id": "VSE-35",
+   "blad": "VSE",
+   "nr": 35,
+   "bio_bron": "14.2.1.1",
+   "eis": "Voor de ontwikkeling en onderhoud van software dienen de gangbare principes en de voorgeschreven maatregelen uit het document Secure Software Development van het Centrum voor Informatiebeveiliging en Privacy (CIP) gevolgd te worden.",
+   "sjabloon": false,
+   "aangeroepen": [],
+   "bijlagen": [],
+   "kort": "Ontwikkeling en onderhoud van software conform 'Secure Software Development' (CIP)."
+  },
+  {
+   "id": "VSE-36",
+   "blad": "VSE",
+   "nr": 36,
+   "bio_bron": "14.2.5",
+   "eis": "De cybersecurity eisen zijn onverkort van toepassing voor de inrichting en onderhoud van de (permanente) test-/ontwikkelomgeving voor IA/PA/OT systemen inclusief de vereisten uit paragraaf uit paragraaf 2.8 van de Cybersecurity Implementatierichtlijn Objecten.",
+   "sjabloon": false,
+   "aangeroepen": [
+    "§2.8"
+   ],
+   "bijlagen": [],
+   "kort": "Cybersecurity-eisen van toepassing op de (permanente) test-/ontwikkelomgeving, inclusief de vereisten uit paragraaf 2.8."
+  },
+  {
+   "id": "VSE-37",
+   "blad": "VSE",
+   "nr": 37,
+   "bio_bron": "14.2.7",
+   "eis": "IA/PA/OT systemen dienen als integraal onderdeel van de FAT, SAT en SIT ook getest te worden op technische naleving van beveiligingseisen en het aantoonbaar maken van de werking van de security functies en maatregelen.",
+   "sjabloon": false,
+   "aangeroepen": [],
+   "bijlagen": [],
+   "kort": "IA/PA/OT als integraal onderdeel van FAT, SAT en SIT testen op technische naleving van beveiligingseisen."
+  },
+  {
+   "id": "VSE-38",
+   "blad": "VSE",
+   "nr": 38,
+   "bio_bron": "16.1.5",
+   "eis": "IA/PA/OT systemen dienen in geval van een aanval, incident of calamiteiten naar een vooraf gedefinieerde veilige situatie, ofwel fail-safe design (bijvoorbeeld: unpowered, hold of fixed) te schakelen conform paragraaf 2.3 van de Cybersecurity Implementatierichtlijn Objecten.",
+   "sjabloon": false,
+   "aangeroepen": [
+    "§2.3"
+   ],
+   "bijlagen": [],
+   "kort": "IA/PA/OT bij aanval, incident of calamiteit naar een vooraf gedefinieerde veilige situatie (fail-safe: unpowered/hold/fixed) schakelen conform paragraaf 2.3."
+  }
+ ],
+ "maatregelen": [
+  {
+   "code": "FR1",
+   "paragraaf": "§2.1.1",
+   "thema": "Fysieke toegangsbeveiliging — IA-gerelateerde ruimten",
+   "groep": "VRKI-referentie",
+   "tekst": "VRKI-referentie: 1",
+   "niveaus": [
+    1
+   ]
+  },
+  {
+   "code": "FR2",
+   "paragraaf": "§2.1.1",
+   "thema": "Fysieke toegangsbeveiliging — IA-gerelateerde ruimten",
+   "groep": "VRKI-referentie",
+   "tekst": "VRKI-referentie: 2",
+   "niveaus": [
+    2
+   ]
+  },
+  {
+   "code": "FR3",
+   "paragraaf": "§2.1.1",
+   "thema": "Fysieke toegangsbeveiliging — IA-gerelateerde ruimten",
+   "groep": "VRKI-referentie",
+   "tekst": "VRKI-referentie: 3",
+   "niveaus": [
+    3
+   ]
+  },
+  {
+   "code": "FR4",
+   "paragraaf": "§2.1.1",
+   "thema": "Fysieke toegangsbeveiliging — IA-gerelateerde ruimten",
+   "groep": "VRKI-referentie",
+   "tekst": "VRKI-referentie: 4",
+   "niveaus": [
+    4
+   ]
+  },
+  {
+   "code": "FR5",
+   "paragraaf": "§2.1.1",
+   "thema": "Fysieke toegangsbeveiliging — IA-gerelateerde ruimten",
+   "groep": "Toegangsbeheer",
+   "tekst": "Sleutel: Toegang middels een fysieke sleutel (voor normering zie Bouwkundige maatregelen/sluitwerk).",
+   "niveaus": [
+    1
+   ]
+  },
+  {
+   "code": "FR6",
+   "paragraaf": "§2.1.1",
+   "thema": "Fysieke toegangsbeveiliging — IA-gerelateerde ruimten",
+   "groep": "Toegangsbeheer",
+   "tekst": "Sleutel: Toegang middels een fysieke sleutel (voor normering zie Bouwkundige maatregelen/sluitwerk).",
+   "niveaus": [
+    2
+   ]
+  },
+  {
+   "code": "FR7",
+   "paragraaf": "§2.1.1",
+   "thema": "Fysieke toegangsbeveiliging — IA-gerelateerde ruimten",
+   "groep": "Toegangsbeheer",
+   "tekst": "Online toegangscontrolesysteem (zie CSR 24).",
+   "niveaus": [
+    3,
+    4
+   ]
+  },
+  {
+   "code": "FR8",
+   "paragraaf": "§2.1.1",
+   "thema": "Fysieke toegangsbeveiliging — IA-gerelateerde ruimten",
+   "groep": "Toegangsproces",
+   "tekst": "Lokaal geldende regels en processen zijn van toepassing.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "FR9",
+   "paragraaf": "§2.1.1",
+   "thema": "Fysieke toegangsbeveiliging — IA-gerelateerde ruimten",
+   "groep": "Organisatorisch",
+   "tekst": "O1: Standaard organisatorische maatregelen.",
+   "niveaus": [
+    1,
+    2
+   ]
+  },
+  {
+   "code": "FR10",
+   "paragraaf": "§2.1.1",
+   "thema": "Fysieke toegangsbeveiliging — IA-gerelateerde ruimten",
+   "groep": "Organisatorisch",
+   "tekst": "O2: Als O1 met daarbij een omschrijving van de specifieke organisatorische maatregelen die zijn toegespitst op het risico- object.",
+   "niveaus": [
+    3,
+    4
+   ]
+  },
+  {
+   "code": "FR11",
+   "paragraaf": "§2.1.1",
+   "thema": "Fysieke toegangsbeveiliging — IA-gerelateerde ruimten",
+   "groep": "Bouwkundig",
+   "tekst": "BK2: Bouwkundige maatregelen met prestatie-eis van 3 minuten inbraakwerendheid.",
+   "niveaus": [
+    1,
+    2
+   ]
+  },
+  {
+   "code": "FR12",
+   "paragraaf": "§2.1.1",
+   "thema": "Fysieke toegangsbeveiliging — IA-gerelateerde ruimten",
+   "groep": "Bouwkundig",
+   "tekst": "BK3: Bouwkundige maatregelen met prestatie-eis van 5 minuten inbraakwerendheid.",
+   "niveaus": [
+    3
+   ]
+  },
+  {
+   "code": "FR13",
+   "paragraaf": "§2.1.1",
+   "thema": "Fysieke toegangsbeveiliging — IA-gerelateerde ruimten",
+   "groep": "Bouwkundig",
+   "tekst": "BK4: Bouwkundige maatregelen met prestatie-eis van 10 minuten inbraakwerendheid.",
+   "niveaus": [
+    4
+   ]
+  },
+  {
+   "code": "FR14",
+   "paragraaf": "§2.1.1",
+   "thema": "Fysieke toegangsbeveiliging — IA-gerelateerde ruimten",
+   "groep": "Compartimentering",
+   "tekst": "CO2: Compartimentering met prestatie-eis van 3 minuten inbraakwerendheid.",
+   "niveaus": [
+    1,
+    2
+   ]
+  },
+  {
+   "code": "FR15",
+   "paragraaf": "§2.1.1",
+   "thema": "Fysieke toegangsbeveiliging — IA-gerelateerde ruimten",
+   "groep": "Compartimentering",
+   "tekst": "CO3: Compartimentering met prestatie-eis van 5 minuten inbraakwerendheid.",
+   "niveaus": [
+    3
+   ]
+  },
+  {
+   "code": "FR16",
+   "paragraaf": "§2.1.1",
+   "thema": "Fysieke toegangsbeveiliging — IA-gerelateerde ruimten",
+   "groep": "Compartimentering",
+   "tekst": "CO4: Compartimentering met prestatie-eis van 10 minuten inbraakwerendheid.",
+   "niveaus": [
+    4
+   ]
+  },
+  {
+   "code": "FR17",
+   "paragraaf": "§2.1.1",
+   "thema": "Fysieke toegangsbeveiliging — IA-gerelateerde ruimten",
+   "groep": "Compartimentering",
+   "tekst": "ME2: Meeneem beperkende maatregel met prestatie-eis van 3 minuten diefstalvertraging.",
+   "niveaus": [
+    1,
+    2
+   ]
+  },
+  {
+   "code": "FR18",
+   "paragraaf": "§2.1.1",
+   "thema": "Fysieke toegangsbeveiliging — IA-gerelateerde ruimten",
+   "groep": "Compartimentering",
+   "tekst": "ME3: Meeneem beperkende maatregel met prestatie-eis van 5 minuten diefstalvertraging.",
+   "niveaus": [
+    3
+   ]
+  },
+  {
+   "code": "FR19",
+   "paragraaf": "§2.1.1",
+   "thema": "Fysieke toegangsbeveiliging — IA-gerelateerde ruimten",
+   "groep": "Compartimentering",
+   "tekst": "ME4: Meeneem beperkende maatregel met prestatie-eis van 10 minuten diefstalvertraging.",
+   "niveaus": [
+    4
+   ]
+  },
+  {
+   "code": "FR20",
+   "paragraaf": "§2.1.1",
+   "thema": "Fysieke toegangsbeveiliging — IA-gerelateerde ruimten",
+   "groep": "Elektronische maatregelen",
+   "tekst": "EL2: Grade 2",
+   "niveaus": [
+    1,
+    2
+   ]
+  },
+  {
+   "code": "FR21",
+   "paragraaf": "§2.1.1",
+   "thema": "Fysieke toegangsbeveiliging — IA-gerelateerde ruimten",
+   "groep": "Elektronische maatregelen",
+   "tekst": "EL3: Grade 2 / Grade 3",
+   "niveaus": [
+    3
+   ]
+  },
+  {
+   "code": "FR22",
+   "paragraaf": "§2.1.1",
+   "thema": "Fysieke toegangsbeveiliging — IA-gerelateerde ruimten",
+   "groep": "Elektronische maatregelen",
+   "tekst": "EL4: Grade 3 + maatwerk",
+   "niveaus": [
+    4
+   ]
+  },
+  {
+   "code": "FR23",
+   "paragraaf": "§2.1.1",
+   "thema": "Fysieke toegangsbeveiliging — IA-gerelateerde ruimten",
+   "groep": "Elektronische maatregelen",
+   "tekst": "SD1: De schildetectie bestaat uit openstand detectie op nooduitgangen.",
+   "niveaus": [
+    1,
+    2
+   ]
+  },
+  {
+   "code": "FR24",
+   "paragraaf": "§2.1.1",
+   "thema": "Fysieke toegangsbeveiliging — IA-gerelateerde ruimten",
+   "groep": "Elektronische maatregelen",
+   "tekst": "SD2: Schildetectie bestaat uit detectie, met als doel inbraaksignalering bij de eerste aanval op vaste en beweegbare gevelelementen van of voor, de periferie van ruimten waar de attractieve goederen zich bevinden.",
+   "niveaus": [
+    3
+   ]
+  },
+  {
+   "code": "FR25",
+   "paragraaf": "§2.1.1",
+   "thema": "Fysieke toegangsbeveiliging — IA-gerelateerde ruimten",
+   "groep": "Elektronische maatregelen",
+   "tekst": "SD3: Schildetectie als bij SD2 met als aanvulling dat (bereikbare) wanden, vloeren en daken zijn voorzien van geschikte detectie.",
+   "niveaus": [
+    4
+   ]
+  },
+  {
+   "code": "FR26",
+   "paragraaf": "§2.1.1",
+   "thema": "Fysieke toegangsbeveiliging — IA-gerelateerde ruimten",
+   "groep": "Alarmtransmissie",
+   "tekst": "AT2: ATS: SP2/DP1; security grade: 2; ontvangst PAC: T2",
+   "niveaus": [
+    1,
+    2
+   ]
+  },
+  {
+   "code": "FR27",
+   "paragraaf": "§2.1.1",
+   "thema": "Fysieke toegangsbeveiliging — IA-gerelateerde ruimten",
+   "groep": "Alarmtransmissie",
+   "tekst": "AT3: ATS: DP3; security grade: 3; ontvangst PAC: T4",
+   "niveaus": [
+    3
+   ]
+  },
+  {
+   "code": "FR28",
+   "paragraaf": "§2.1.1",
+   "thema": "Fysieke toegangsbeveiliging — IA-gerelateerde ruimten",
+   "groep": "Alarmtransmissie",
+   "tekst": "AT4: ATS: DP4; security grade 3; ontvangst PAC: T5",
+   "niveaus": [
+    4
+   ]
+  },
+  {
+   "code": "FR29",
+   "paragraaf": "§2.1.1",
+   "thema": "Fysieke toegangsbeveiliging — IA-gerelateerde ruimten",
+   "groep": "Reactie",
+   "tekst": "RE1: In deze situatie kan de alarmering door het inbraaksignaleringssysteem gemeld worden naar een (mobiele) telefoon (spraak, tekstbericht) die bereikbaar is. Bij bedrijven is dit een eis. De alarmopvolging kan geschieden door persoonlijke verificatie door de eigenaar of sleutelhouder(s).",
+   "niveaus": [
+    1
+   ]
+  },
+  {
+   "code": "FR30",
+   "paragraaf": "§2.1.1",
+   "thema": "Fysieke toegangsbeveiliging — IA-gerelateerde ruimten",
+   "groep": "Reactie",
+   "tekst": "RE2: Reactie alarmopvolging: alarmopvolging door sleutelhouder(s) die door de PAC worden gebeld. Bij de PAC moeten minimaal 3 sleutelhouders zijn opgegeven.",
+   "niveaus": [
+    2
+   ]
+  },
+  {
+   "code": "FR31",
+   "paragraaf": "§2.1.1",
+   "thema": "Fysieke toegangsbeveiliging — IA-gerelateerde ruimten",
+   "groep": "Reactie",
+   "tekst": "RE3: Reactie alarmopvolging: procedure als bij RE2 met de aanvulling dat voor de alarmopvolging een contract moet zijn gesloten met een door het Ministerie van Justitie en Veiligheid toegelaten particuliere beveiligingsorganisatie (geregistreerd middels ND nummer), die onder meer als sleutelhouder kan fungeren. Bij RE3 kan ook worden gekozen voor RE2 + technische alarmverificatie waarmee in plaats van alarmopvolging door een particuliere beveiligingsorganisatie alarmopvolging door een sleutelhouder samen met prioriteit 1 door de politie kan worden bereikt.",
+   "niveaus": [
+    3
+   ]
+  },
+  {
+   "code": "FR32",
+   "paragraaf": "§2.1.1",
+   "thema": "Fysieke toegangsbeveiliging — IA-gerelateerde ruimten",
+   "groep": "Reactie",
+   "tekst": "RE4: Reactie alarmopvolging: procedure als bij RE3 (dus opvolging door een particuliere beveiligingsorganisatie). Uitgangspunt is opvolgingstijd van maximaal 15 minuten door de particuliere beveiligingsorganisatie en een prioriteit 1 van de politie (15 minuten, na technisch alarmverificatie).",
+   "niveaus": [
+    4
+   ]
+  },
+  {
+   "code": "FTG1",
+   "paragraaf": "§2.1.2",
+   "thema": "Fysieke toegangsbeveiliging — terreinen en gebouwen",
+   "groep": "Fysieke afscherming terrein",
+   "tekst": "Afgebakend terrein dient te zijn voorzien van ten minste een Art. 461 bord",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "FTG2",
+   "paragraaf": "§2.1.2",
+   "thema": "Fysieke toegangsbeveiliging — terreinen en gebouwen",
+   "groep": "Fysieke afscherming terrein",
+   "tekst": "Hekwerk 2.00 meter (of daarmee gelijk te stellen afscherming)",
+   "niveaus": [
+    3
+   ]
+  },
+  {
+   "code": "FTG3",
+   "paragraaf": "§2.1.2",
+   "thema": "Fysieke toegangsbeveiliging — terreinen en gebouwen",
+   "groep": "Fysieke afscherming terrein",
+   "tekst": "Hekwerk 2.00 meter",
+   "niveaus": [
+    4
+   ]
+  },
+  {
+   "code": "FTG4",
+   "paragraaf": "§2.1.2",
+   "thema": "Fysieke toegangsbeveiliging — terreinen en gebouwen",
+   "groep": "Fysieke afscherming terrein",
+   "tekst": "Mechanische (loop)poort",
+   "niveaus": [
+    3
+   ]
+  },
+  {
+   "code": "FTG5",
+   "paragraaf": "§2.1.2",
+   "thema": "Fysieke toegangsbeveiliging — terreinen en gebouwen",
+   "groep": "Fysieke afscherming terrein",
+   "tekst": "Elektrische schuifpoort + intercom + mechanische looppoort",
+   "niveaus": [
+    4
+   ]
+  },
+  {
+   "code": "FTG6",
+   "paragraaf": "§2.1.2",
+   "thema": "Fysieke toegangsbeveiliging — terreinen en gebouwen",
+   "groep": "Fysieke afscherming gebouw/compartiment",
+   "tekst": "BK2: Bouwkundige maatregelen met prestatie-eis van 3 minuten inbraakwerendheid. CO2: Compartimentering met prestatie-eis van 3 minuten inbraakwerendheid.",
+   "niveaus": [
+    1,
+    2
+   ]
+  },
+  {
+   "code": "FTG7",
+   "paragraaf": "§2.1.2",
+   "thema": "Fysieke toegangsbeveiliging — terreinen en gebouwen",
+   "groep": "Fysieke afscherming gebouw/compartiment",
+   "tekst": "BK3: Bouwkundige maatregelen met prestatie-eis van 5 minuten inbraakwerendheid. CO3: Compartimentering met prestatie-eis van 5 minuten inbraakwerendheid.",
+   "niveaus": [
+    3
+   ]
+  },
+  {
+   "code": "FTG8",
+   "paragraaf": "§2.1.2",
+   "thema": "Fysieke toegangsbeveiliging — terreinen en gebouwen",
+   "groep": "Fysieke afscherming gebouw/compartiment",
+   "tekst": "BK4: Bouwkundige maatregelen met prestatie-eis van 10 minuten inbraakwerendheid. CO3: Compartimentering met prestatie-eis van 10 minuten inbraakwerendheid.",
+   "niveaus": [
+    4
+   ]
+  },
+  {
+   "code": "FTG9",
+   "paragraaf": "§2.1.2",
+   "thema": "Fysieke toegangsbeveiliging — terreinen en gebouwen",
+   "groep": "Toegangsbeheer",
+   "tekst": "Mechanisch sluitplan",
+   "niveaus": [
+    1
+   ]
+  },
+  {
+   "code": "FTG10",
+   "paragraaf": "§2.1.2",
+   "thema": "Fysieke toegangsbeveiliging — terreinen en gebouwen",
+   "groep": "Toegangsbeheer",
+   "tekst": "Elektromechanisch sluitsysteem",
+   "niveaus": [
+    2
+   ]
+  },
+  {
+   "code": "FTG11",
+   "paragraaf": "§2.1.2",
+   "thema": "Fysieke toegangsbeveiliging — terreinen en gebouwen",
+   "groep": "Toegangsbeheer",
+   "tekst": "Online toegangscontrolesysteem",
+   "niveaus": [
+    3,
+    4
+   ]
+  },
+  {
+   "code": "FTG12",
+   "paragraaf": "§2.1.2",
+   "thema": "Fysieke toegangsbeveiliging — terreinen en gebouwen",
+   "groep": "Inbraakdetectie",
+   "tekst": "EL3: Grade 2 / Grade 3",
+   "niveaus": [
+    3
+   ]
+  },
+  {
+   "code": "FTG13",
+   "paragraaf": "§2.1.2",
+   "thema": "Fysieke toegangsbeveiliging — terreinen en gebouwen",
+   "groep": "Inbraakdetectie",
+   "tekst": "EL4: Grade 3 + maatwerk",
+   "niveaus": [
+    4
+   ]
+  },
+  {
+   "code": "FTG14",
+   "paragraaf": "§2.1.2",
+   "thema": "Fysieke toegangsbeveiliging — terreinen en gebouwen",
+   "groep": "Inbraakdetectie",
+   "tekst": "SD2: Schildetectie bestaat uit detectie, met als doel inbraaksignalering bij de eerste aanval op vaste en beweegbare gevelelementen van of voor, de periferie van ruimten waar de attractieve goederen zich bevinden.",
+   "niveaus": [
+    3
+   ]
+  },
+  {
+   "code": "FTG15",
+   "paragraaf": "§2.1.2",
+   "thema": "Fysieke toegangsbeveiliging — terreinen en gebouwen",
+   "groep": "Inbraakdetectie",
+   "tekst": "SD3: Schildetectie als bij SD2 met als aanvulling dat (bereikbare) wanden, vloeren en daken zijn voorzien van geschikte detectie.",
+   "niveaus": [
+    4
+   ]
+  },
+  {
+   "code": "FTG16",
+   "paragraaf": "§2.1.2",
+   "thema": "Fysieke toegangsbeveiliging — terreinen en gebouwen",
+   "groep": "Inbraakdetectie",
+   "tekst": "AT3: ATS: DP3; security grade: 3; ontvangst PAC: T4",
+   "niveaus": [
+    3
+   ]
+  },
+  {
+   "code": "FTG17",
+   "paragraaf": "§2.1.2",
+   "thema": "Fysieke toegangsbeveiliging — terreinen en gebouwen",
+   "groep": "Inbraakdetectie",
+   "tekst": "AT4: ATS: DP4; security grade 3; ontvangst PAC: T5",
+   "niveaus": [
+    4
+   ]
+  },
+  {
+   "code": "FTG18",
+   "paragraaf": "§2.1.2",
+   "thema": "Fysieke toegangsbeveiliging — terreinen en gebouwen",
+   "groep": "Inbraakdetectie",
+   "tekst": "RE3: Reactie alarmopvolging: procedure als bij RE2 met de aanvulling dat voor de alarmopvolging een contract moet zijn gesloten met een door het Ministerie van Justitie en Veiligheid toegelaten particuliere beveiligingsorganisatie (geregistreerd middels ND nummer), die onder meer als sleutelhouder kan fungeren. Bij RE3 kan ook worden gekozen voor RE2 + technische alarmverificatie waarmee in plaats van alarmopvolging door een particuliere beveiligingsorganisatie alarmopvolging door een sleutelhouder samen met prioriteit 1 door de politie kan worden bereikt.",
+   "niveaus": [
+    3
+   ]
+  },
+  {
+   "code": "FTG19",
+   "paragraaf": "§2.1.2",
+   "thema": "Fysieke toegangsbeveiliging — terreinen en gebouwen",
+   "groep": "Inbraakdetectie",
+   "tekst": "RE4: Reactie alarmopvolging: procedure als bij RE3 (dus opvolging door een particuliere beveiligingsorganisatie). Uitgangspunt is opvolgingstijd van maximaal 15 minuten door de particuliere beveiligingsorganisatie en een prioriteit 1 van de politie (15 minuten, na technisch alarmverificatie).",
+   "niveaus": [
+    4
+   ]
+  },
+  {
+   "code": "FTG20",
+   "paragraaf": "§2.1.2",
+   "thema": "Fysieke toegangsbeveiliging — terreinen en gebouwen",
+   "groep": "Camera observatie",
+   "tekst": "Registratie terreintoegang(en)",
+   "niveaus": [
+    4
+   ]
+  },
+  {
+   "code": "FTG21",
+   "paragraaf": "§2.1.2",
+   "thema": "Fysieke toegangsbeveiliging — terreinen en gebouwen",
+   "groep": "Camera observatie",
+   "tekst": "Alarmverificatie d.m.v. camera observatie",
+   "niveaus": [
+    4
+   ]
+  },
+  {
+   "code": "FTG22",
+   "paragraaf": "§2.1.2",
+   "thema": "Fysieke toegangsbeveiliging — terreinen en gebouwen",
+   "groep": "Overig",
+   "tekst": "Schootstand signalering",
+   "niveaus": [
+    3,
+    4
+   ]
+  },
+  {
+   "code": "FTG23",
+   "paragraaf": "§2.1.2",
+   "thema": "Fysieke toegangsbeveiliging — terreinen en gebouwen",
+   "groep": "Verlichting",
+   "tekst": "Verlichting bij entreedeuren",
+   "niveaus": [
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "FTG24",
+   "paragraaf": "§2.1.2",
+   "thema": "Fysieke toegangsbeveiliging — terreinen en gebouwen",
+   "groep": "Verlichting",
+   "tekst": "Verlichting gevels",
+   "niveaus": [
+    4
+   ]
+  },
+  {
+   "code": "FTG25",
+   "paragraaf": "§2.1.2",
+   "thema": "Fysieke toegangsbeveiliging — terreinen en gebouwen",
+   "groep": "Verlichting",
+   "tekst": "Verlichting bij elektrische schuifpoort terrein",
+   "niveaus": [
+    4
+   ]
+  },
+  {
+   "code": "FTG26",
+   "paragraaf": "§2.1.2",
+   "thema": "Fysieke toegangsbeveiliging — terreinen en gebouwen",
+   "groep": "Organisatorisch",
+   "tekst": "Logboek beveiligingsinstallatie aanwezig",
+   "niveaus": [
+    3,
+    4
+   ]
+  },
+  {
+   "code": "FTG27",
+   "paragraaf": "§2.1.2",
+   "thema": "Fysieke toegangsbeveiliging — terreinen en gebouwen",
+   "groep": "Organisatorisch",
+   "tekst": "In- en uitschakelregistratie bij de PAC",
+   "niveaus": [
+    3,
+    4
+   ]
+  },
+  {
+   "code": "FTG28",
+   "paragraaf": "§2.1.2",
+   "thema": "Fysieke toegangsbeveiliging — terreinen en gebouwen",
+   "groep": "Organisatorisch",
+   "tekst": "Opslag materialen niet tegen gevels / hekwerken",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "FTG29",
+   "paragraaf": "§2.1.2",
+   "thema": "Fysieke toegangsbeveiliging — terreinen en gebouwen",
+   "groep": "Organisatorisch",
+   "tekst": "Actief beheer kluizen",
+   "niveaus": [
+    3,
+    4
+   ]
+  },
+  {
+   "code": "FTG30",
+   "paragraaf": "§2.1.2",
+   "thema": "Fysieke toegangsbeveiliging — terreinen en gebouwen",
+   "groep": "Organisatorisch",
+   "tekst": "Belangrijke faciliteiten niet voor iedereen toegankelijk",
+   "niveaus": [
+    3,
+    4
+   ]
+  },
+  {
+   "code": "FTG31",
+   "paragraaf": "§2.1.2",
+   "thema": "Fysieke toegangsbeveiliging — terreinen en gebouwen",
+   "groep": "Organisatorisch",
+   "tekst": "Geen aanwijzingen gebruiksdoel objecten",
+   "niveaus": [
+    3,
+    4
+   ]
+  },
+  {
+   "code": "FTG32",
+   "paragraaf": "§2.1.2",
+   "thema": "Fysieke toegangsbeveiliging — terreinen en gebouwen",
+   "groep": "Organisatorisch",
+   "tekst": "Zwaar gereedschap opgeslagen in een afgesloten kast/ruimte",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "FTG33",
+   "paragraaf": "§2.1.2",
+   "thema": "Fysieke toegangsbeveiliging — terreinen en gebouwen",
+   "groep": "Organisatorisch",
+   "tekst": "Brand- en sluitronde",
+   "niveaus": [
+    3,
+    4
+   ]
+  },
+  {
+   "code": "LM11",
+   "paragraaf": "§2.2",
+   "thema": "Logische toegang",
+   "groep": "Mens",
+   "tekst": "Voor bewustwording, gedragsregels en training van bedienaars, beheerders en overig ondersteunend personeel wordt verwezen naar paragraaf 2.7 de maatregelen-set “bewustwording en training” van de Cybersecurity Implementatierichtlijn Objecten.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "LP1",
+   "paragraaf": "§2.2",
+   "thema": "Logische toegang",
+   "groep": "Procedures & organisatie",
+   "tekst": "Er kunnen controles worden uitgevoerd op de naleving van het logische toegangsproces.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "LP2",
+   "paragraaf": "§2.2",
+   "thema": "Logische toegang",
+   "groep": "Procedures & organisatie",
+   "tekst": "Er dient door het management erop toe te worden gezien dat: a. de toegang voor de bedienaars en beheerders tot ICS/SCADA en overige ondersteunende ICT-systemen uitsluitend plaatsvindt, rol gebaseerd en op basis van het ‘need to have’ en 'segregation of duties' principe; b. de toewijzing en het gebruik van privileges van administrators en systeembeheerders beperkt dienen te blijven tot het strikt noodzakelijke; c. fysieke toegang tot objecten en ruimten waar zich informatie, software en andere bedrijfsmiddelen (o.a. apparatuur) bevinden, alsmede de logische toegang tot systemen, uitsluitend wordt toegestaan voor personen die hiertoe geautoriseerd zijn; d. disciplinaire maatregelen worden genomen bij misbruik van accounts en autorisaties.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "LP3",
+   "paragraaf": "§2.2",
+   "thema": "Logische toegang",
+   "groep": "Procedures & organisatie",
+   "tekst": "Er dient door het management erop toe te worden gezien dat: a. de toewijzing en het gebruik van privileges van software en apparatuur beperkt dienen te blijven tot het noodzakelijke, zodat alleen geauthentiseerde apparatuur toegang kan krijgen tot een vertrouwde zone; b. het voor een daartoe geautoriseerde gebruiker mogelijk is om privileges te koppelen aan rollen voor alle menselijke gebruikers; c. gebruikersaccounts door een procuratiehouder tijdelijk kunnen worden opgeschort.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "LP4",
+   "paragraaf": "§2.2",
+   "thema": "Logische toegang",
+   "groep": "Procedures & organisatie",
+   "tekst": "De toegangsrechten van alle gebruikers dienen minimaal eenmaal per halfjaar te worden beoordeeld en geactualiseerd in een formeel proces. Opvolging van de bevindingen is gedocumenteerd en wordt behandeld als een beveiligingsincident.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "LP5",
+   "paragraaf": "§2.2",
+   "thema": "Logische toegang",
+   "groep": "Procedures & organisatie",
+   "tekst": "De lokale logische toegang voor medewerkers (op basis van functieprofiel) tot de infrastructuur, ICT, ICS/SCADA systemen en de centrale en lokale objectnetwerken dient bij de hiertoe verantwoordelijk gestelde en gemandateerde lijnmanager te worden aangevraagd en goedgekeurd. Hierbij dient ten minste het volgende te worden gedocumenteerd: details van de accounthouder, autoriserend manager, permissies behorende bij het account, geautoriseerde apparatuur.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "LP6",
+   "paragraaf": "§2.2",
+   "thema": "Logische toegang",
+   "groep": "Procedures & organisatie",
+   "tekst": "Bij remote toegang om beheeractiviteiten uit te voeren dient gebruik te worden gemaakt van de door de objecteigenaar beschikbaar gestelde diensten die speciaal hiervoor zijn ingericht.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "LP7",
+   "paragraaf": "§2.2",
+   "thema": "Logische toegang",
+   "groep": "Procedures & organisatie",
+   "tekst": "Het gebruik van systeemhulpmiddelen die in staat zijn om beheersmaatregelen voor systemen en toepassingen te omzeilen behoort te worden beperkt en nauwkeurig te worden gecontroleerd.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "LP8",
+   "paragraaf": "§2.2",
+   "thema": "Logische toegang",
+   "groep": "Procedures & organisatie",
+   "tekst": "Beheerders, bedienaars en overig ondersteunend personeel wordt ondersteund in het beheren van hun wachtwoorden en krijgen hiertoe de beschikking over een wachtwoordkluis.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "LP9",
+   "paragraaf": "§2.2",
+   "thema": "Logische toegang",
+   "groep": "Procedures & organisatie",
+   "tekst": "Toepassingen, functionaliteit of apparatuur om de toegangseisen te passeren mogen niet worden gebruikt.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "LP10",
+   "paragraaf": "§2.2",
+   "thema": "Logische toegang",
+   "groep": "Procedures & organisatie",
+   "tekst": "Er dient een geborgde procedure te bestaan die de toewijzing en verspreiding van authenticatiemiddelen aan bedienaars, beheerders en overig ondersteunend personeel regelt alsmede het innemen daarvan bij functiewisseling of vertrek (in-, door- en uitstroming). In deze procedure dienen ook de voorgeschreven handelingen bij verlies, diefstal dan wel beschadiging te worden opgenomen.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "LP11",
+   "paragraaf": "§2.2",
+   "thema": "Logische toegang",
+   "groep": "Procedures & organisatie",
+   "tekst": "Accounts dienen op uniforme wijze te worden beheerd.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "LP12",
+   "paragraaf": "§2.2",
+   "thema": "Logische toegang",
+   "groep": "Procedures & organisatie",
+   "tekst": "De toegang voor beheer en onderhoud op afstand door een leverancier wordt alleen voor de geschatte duur van het beheer en onderhoud opengesteld op basis van een wijzigingsverzoek of storingsmelding. De toegang wordt bewaakt en afgesloten bij afmelding van het onderhoud, dan wel automatisch beëindigd na de vooraf ingestelde periode van openstelling.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "LP13",
+   "paragraaf": "§2.2",
+   "thema": "Logische toegang",
+   "groep": "Procedures & organisatie",
+   "tekst": "Systeemhulpmiddelen waarmee beheersmaatregelen kunnen worden omzeild dienen nauwkeurig te worden gecontroleerd en geminimaliseerd, waarbij uitsluitend bevoegd personeel toegang heeft tot deze hulpmiddelen en gebruik wordt gelogd en bewaard voor tenminste 6 maanden.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "LP14",
+   "paragraaf": "§2.2",
+   "thema": "Logische toegang",
+   "groep": "Procedures & organisatie",
+   "tekst": "Het overnemen van sessies op remote werkplekken vanuit een andere werkplek is alleen mogelijk via dezelfde beveiligde loginprocedure als waarmee de sessie is gecreëerd. Uitsluitend mag hiervan worden afgeweken na een expliciete risicoafweging op dit punt.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "LT1",
+   "paragraaf": "§2.2",
+   "thema": "Logische toegang",
+   "groep": "Techniek",
+   "tekst": "De logische toegang tot informatiesystemen en netwerk dient plaats te vinden na het succesvol doorlopen van het identificatie, authenticatie en autorisatieproces (IAA), waarbij de IAA-gegevens in principe in versleutelde vorm worden uitgewisseld en opgeslagen.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "LT2",
+   "paragraaf": "§2.2",
+   "thema": "Logische toegang",
+   "groep": "Techniek",
+   "tekst": "De toegang tot ICS/SCADA en overige ondersteunende ICT-systemen is geblokkeerd, tenzij het expliciet is toegestaan.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "LT3",
+   "paragraaf": "§2.2",
+   "thema": "Logische toegang",
+   "groep": "Techniek",
+   "tekst": "Voor bedienaars, beheerders en systemen worden unieke ID’s gehanteerd zodat uitgevoerde handelingen terug te leiden zijn tot een persoon of systeem.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "LT4",
+   "paragraaf": "§2.2",
+   "thema": "Logische toegang",
+   "groep": "Techniek",
+   "tekst": "Voor bedienaars, beheerders, software processen en systemen worden unieke ID’s gehanteerd zodat uitgevoerde handelingen terug te leiden zijn tot een persoon, software proces of systeem.",
+   "niveaus": [
+    3,
+    4
+   ]
+  },
+  {
+   "code": "LT5",
+   "paragraaf": "§2.2",
+   "thema": "Logische toegang",
+   "groep": "Techniek",
+   "tekst": "Het aantal gelijktijdige sessies dat kan worden opgezet door enige gebruiker (mens, software-proces of apparaat) dient te worden beperkt en instelbaar te zijn.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "LT6",
+   "paragraaf": "§2.2",
+   "thema": "Logische toegang",
+   "groep": "Techniek",
+   "tekst": "Toegang tot de programmabroncode behoort te worden beperkt.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "LT7",
+   "paragraaf": "§2.2",
+   "thema": "Logische toegang",
+   "groep": "Techniek",
+   "tekst": "(Standaard) wachtwoorden moeten door gebruikers bij het in gebruik nemen van de systemen gewijzigd kunnen worden .",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "LT8",
+   "paragraaf": "§2.2",
+   "thema": "Logische toegang",
+   "groep": "Techniek",
+   "tekst": "Wanneer systemen alleen met generieke accounts kunnen werken, moet dit worden gemotiveerd, vastgelegd en de risico’s in beeld gebracht en voorgelegd worden aan Opdrachtgever voor acceptatie van de afwijking om met generieke accounts te mogen werken.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "LT9",
+   "paragraaf": "§2.2",
+   "thema": "Logische toegang",
+   "groep": "Techniek",
+   "tekst": "Gedurende het gehele authenticatieproces dient er geen feedback te worden geven over de authenticatie-informatie.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "LT10",
+   "paragraaf": "§2.2",
+   "thema": "Logische toegang",
+   "groep": "Techniek",
+   "tekst": "Alvorens aan te melden dient een systeemnotificatie op het scherm te worden weergegeven. Hierin worden restricties omtrent (on)geautoriseerd systeemgebruik aangegeven, evenals logging en monitoring van het systeemgebruik.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "LT11",
+   "paragraaf": "§2.2",
+   "thema": "Logische toegang",
+   "groep": "Techniek",
+   "tekst": "Broncode van ontwikkelde programma’s dient te worden beschermd en toegang tot de code beperkt.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "LT12",
+   "paragraaf": "§2.2",
+   "thema": "Logische toegang",
+   "groep": "Techniek",
+   "tekst": "De logische toegang dient als volgt te worden ingevuld: a. Lokaal bediening – minimaal een user-ID en wachtwoord combinatie; b. Lokaal beheer en administrator accounts – ‘two-factor’ authenticatie (‘bezit’ plus ‘kennis’); c. Remote toegang voor beheer en onderhoud - ‘two-factor’ authenticatie en uitsluitend via de centrale beveiligde voorzieningen.",
+   "niveaus": [
+    1,
+    2
+   ]
+  },
+  {
+   "code": "LT13",
+   "paragraaf": "§2.2",
+   "thema": "Logische toegang",
+   "groep": "Techniek",
+   "tekst": "De logische toegang dient als volgt te worden ingevuld: a. Lokaal bediening, beheer en administrator accounts – elektronisch toegangsbeheersysteem (‘bezit’ plus ‘kennis’), bijvoorbeeld Rijkspas; b. Remote toegang voor beheer en onderhoud - ‘two-factor’ authenticatie en uitsluitend via de centrale beveiligde voorzieningen. c. Apparatuur en applicaties dienen bij onderlinge task-to-task communicatie uniek geauthentiseerd te worden middels Mac-adres, en/of IP-adres, device naam, elektronische sleutel, etc.",
+   "niveaus": [
+    3,
+    4
+   ]
+  },
+  {
+   "code": "LT14",
+   "paragraaf": "§2.2",
+   "thema": "Logische toegang",
+   "groep": "Techniek",
+   "tekst": "Het gebruik van sterke wachtwoorden en vervangingsfrequentie dient instelbaar te zijn en te worden afgedwongen.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "LT15",
+   "paragraaf": "§2.2",
+   "thema": "Logische toegang",
+   "groep": "Techniek",
+   "tekst": "Indien 10 keer achter elkaar een foutieve inlogpoging plaatsvindt, dient het account voor een minimale periode van 24 uur te worden geblokkeerd.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "LT16",
+   "paragraaf": "§2.2",
+   "thema": "Logische toegang",
+   "groep": "Techniek",
+   "tekst": "Bij het gebruik van een chipcardtoken of NFC-tokens voor toegang tot systemen wordt bij het verwijderen van het token de toegangsbeveiligingslock automatisch geactiveerd.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "IM1",
+   "paragraaf": "§2.3",
+   "thema": "Beveiligingsincidenten & incident response",
+   "groep": "Mens",
+   "tekst": "Voor bewustwording, gedragsregels en training van bedienaars, beheerders en overig ondersteunend personeel wordt verwezen naar paragraaf 2.7 de maatregelen-set “bewustwording en training” van de Cybersecurity Implementatierichtlijn Objecten.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "IP1",
+   "paragraaf": "§2.3",
+   "thema": "Beveiligingsincidenten & incident response",
+   "groep": "Procedures & organisatie",
+   "tekst": "Er dient een geborgde procedure te bestaan die regelt dat bedienaars, beheerders en overig ondersteunend personeel (zowel intern als extern) beveiligingsincidenten en zwakke plekken in de beveiliging zo snel mogelijk melden bij de daartoe ingerichte meldpunten. Van bedienaars, beheerders en overig ondersteunend personeel (zowel intern als extern) wordt geëist dat zij alle beveiligingsincidenten, verdachte of zwakke plekken in systemen of diensten registreren en rapporteren aan de Objectverantwoordelijke/-beheerder.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "IP2",
+   "paragraaf": "§2.3",
+   "thema": "Beveiligingsincidenten & incident response",
+   "groep": "Procedures & organisatie",
+   "tekst": "Er is een Incident Manager benoemd en bijbehorende verantwoordelijkheden voor Cybersecurity zijn vastgesteld.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "IP3",
+   "paragraaf": "§2.3",
+   "thema": "Beveiligingsincidenten & incident response",
+   "groep": "Procedures & organisatie",
+   "tekst": "Er bestaat een geborgde procedure voor de reactie op en eventuele escalatie van security incidenten. De security incidenten worden vastgelegd, gerapporteerd, gerouteerd, geanalyseerd, gekwantificeerd en afgewikkeld in relatie tot het betrouwbaarheidsniveau en de ernst van het incident. Bepaald wordt welke rolhouders aanspreekbaar zijn inzake storingen, security incidenten en zwakke plekken. De verantwoordelijkheden en incidentenprocedure moeten worden gecommuniceerd naar en worden besproken met de bedienaars, beheerders en overig ondersteunend personeel (zowel intern als extern).",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "IP4",
+   "paragraaf": "§2.3",
+   "thema": "Beveiligingsincidenten & incident response",
+   "groep": "Procedures & organisatie",
+   "tekst": "De verschillende incidentmanagementprocessen dienen op elkaar aan te sluiten.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "IP5",
+   "paragraaf": "§2.3",
+   "thema": "Beveiligingsincidenten & incident response",
+   "groep": "Procedures & organisatie",
+   "tekst": "Voor het afhandelen van urgente en niet-standaard security incidenten (bijv. bij computervirusinfecties en aanvallen via publieke netwerken zoals internet) wordt de Incident Manager van de objecteigenaar ingeschakeld.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "IP6",
+   "paragraaf": "§2.3",
+   "thema": "Beveiligingsincidenten & incident response",
+   "groep": "Procedures & organisatie",
+   "tekst": "Er dient een operationeel incident response plan te bestaan voor reactie op en afhandeling van incidenten en calamiteiten.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "IP7",
+   "paragraaf": "§2.3",
+   "thema": "Beveiligingsincidenten & incident response",
+   "groep": "Procedures & organisatie",
+   "tekst": "Er dient een operationeel recovery plan te bestaan voor recovery na incidenten of calamiteiten.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "IP8",
+   "paragraaf": "§2.3",
+   "thema": "Beveiligingsincidenten & incident response",
+   "groep": "Procedures & organisatie",
+   "tekst": "Jaarlijks dienen de incident response en recovery te worden beproefd aan de hand van een actueel oefenplan om te bewerkstelligen dat ze doeltreffend blijven. Onderdeel van de jaarlijkse oefening is het testen van de noodbediening.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "IP9",
+   "paragraaf": "§2.3",
+   "thema": "Beveiligingsincidenten & incident response",
+   "groep": "Procedures & organisatie",
+   "tekst": "Tijdens een calamiteit kan het noodzakelijk zijn om het object te evacueren of deuren die toegang bieden tot IA-systemen, te openen voor hulpdiensten. Hierdoor hebben ook kwaadwillenden op dat moment toegang tot de IA-systemen. De bescherming van de vitale delen van het IA-systeem dient gedurende calamiteiten te zijn geborgd middels een procedure.",
+   "niveaus": [
+    3,
+    4
+   ]
+  },
+  {
+   "code": "IT1",
+   "paragraaf": "§2.3",
+   "thema": "Beveiligingsincidenten & incident response",
+   "groep": "Techniek",
+   "tekst": "De ingebouwde beveiligingsfuncties, controlemechanismen en waarschuwingen die systemen genereren dienen te worden geactiveerd en benut voor registratie en rapportage van beveiligingsincidenten.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "IT2",
+   "paragraaf": "§2.3",
+   "thema": "Beveiligingsincidenten & incident response",
+   "groep": "Techniek",
+   "tekst": "Indien het control systeem niet meer normaal kan functioneren als gevolg van een aanval, dient het control system naar een vooraf gedefinieerde veilige situatie te schakelen (bijvoorbeeld: unpowered, hold of fixed).",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "IT3",
+   "paragraaf": "§2.3",
+   "thema": "Beveiligingsincidenten & incident response",
+   "groep": "Techniek",
+   "tekst": "Het ICS/SCADA systeem dient na onderbreking of falen terug te kunnen keren naar een bekende veilige staat.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "IT4",
+   "paragraaf": "§2.3",
+   "thema": "Beveiligingsincidenten & incident response",
+   "groep": "Techniek",
+   "tekst": "Het ICS/SCADA systeem en de bediening dienen te kunnen schakelen naar en van de geïnstalleerde noodstroomvoorziening zonder dat dit invloed heeft op de beveiligingsstatus van het object.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "IT5",
+   "paragraaf": "§2.3",
+   "thema": "Beveiligingsincidenten & incident response",
+   "groep": "Techniek",
+   "tekst": "In geval van een DOS-aanval dient het ICS/SCADA systeem in een beperkte modus te kunnen functioneren om ten minste de toegang tot de safety systemen te waarborgen.",
+   "niveaus": [
+    3,
+    4
+   ]
+  },
+  {
+   "code": "NM1",
+   "paragraaf": "§2.4.1",
+   "thema": "Netwerkkoppelingen",
+   "groep": "Mens",
+   "tekst": "Voor bewustwording, gedragsregels en training van bedienaars, beheerders en overig ondersteunend wordt verwezen naar paragraaf 2.7 de maatregelen-set “bewustwording en training” van de Cybersecurity Implementatierichtlijn Objecten.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "NP1",
+   "paragraaf": "§2.4.1",
+   "thema": "Netwerkkoppelingen",
+   "groep": "Procedures & organisatie",
+   "tekst": "Objectbeheerder draagt zorg voor en ziet erop toe dat alle datanetwerkverbindingen van het lokale objectnetwerk met het overkoepelende netwerk van de objecteigenaar strikt en uitsluitend plaatsvinden via de beveiligde centrale netwerkvoorzieningen en koppelpunten conform de aansluitvoorwaarden van de objecteigenaar. Rechtstreekse (vaste of draadloze) toegang tot het Systeem vanuit andere netwerken dan die van de objecteigenaar, of vice versa, is strikt verboden.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "NP2",
+   "paragraaf": "§2.4.1",
+   "thema": "Netwerkkoppelingen",
+   "groep": "Procedures & organisatie",
+   "tekst": "Objectbeheerder draagt zorg voor en ziet erop toe dat bij netwerkkoppelingen tussen het object en de centrale netwerken van de objecteigenaar de aansluitvoorwaarden van de objecteigenaar in acht worden genomen. Remote logische toegang van derden tot de aan het object gekoppelde systemen moet worden aangevraagd bij de objecteigenaar volgens de daartoe geldende procedures.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "NP3",
+   "paragraaf": "§2.4.1",
+   "thema": "Netwerkkoppelingen",
+   "groep": "Procedures & organisatie",
+   "tekst": "Objectbeheerder draagt zorg voor en ziet erop toe dat bij renovatie en nieuwbouw van lokale objectdatanetwerken afstemming plaatsvindt met objecteigenaar voor beoordeling en aansluiting van de lokale objectdatanetwerken aan de centrale netwerken, netwerkvoorzieningen, de netwerkarchitectuur inclusief security.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "NP4",
+   "paragraaf": "§2.4.1",
+   "thema": "Netwerkkoppelingen",
+   "groep": "Procedures & organisatie",
+   "tekst": "Objectbeheerder dient zorg te dragen dat het aantal data netwerkkoppelingen tussen ICS/SCADA systemen en andere datanetwerken beperkt blijft tot alleen de functioneel noodzakelijke, waarbij de koppeling een passende vorm van beveiliging kent en geen onacceptabele risico’s oplevert voor het object en de centrale netwerkdienstverlening. Voor elke koppeling is een risicoanalyse en afweging gemaakt. Streef naar maximale beveiliging en continue monitoring van deze netwerkkoppelingen.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "NP5",
+   "paragraaf": "§2.4.1",
+   "thema": "Netwerkkoppelingen",
+   "groep": "Procedures & organisatie",
+   "tekst": "Objectbeheerder draagt zorg voor en ziet erop toe dat het lokale objectdatanetwerk gehardend is door niet noodzakelijke netwerkservices uit te zetten (voor hardening zie ‘Maatregelen bescherming tegen kwetsbaarheden).",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "NP6",
+   "paragraaf": "§2.4.1",
+   "thema": "Netwerkkoppelingen",
+   "groep": "Procedures & organisatie",
+   "tekst": "Bij afname van netwerkdiensten via providers, of in het geval van samenwerkingsverbanden, dient geëist te worden dat maximale hardening is doorgevoerd op de ingezette netwerk componenten en of apparatuur.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "NP7",
+   "paragraaf": "§2.4.1",
+   "thema": "Netwerkkoppelingen",
+   "groep": "Procedures & organisatie",
+   "tekst": "Het koppelen van mobiele apparatuur van derden of removable media aan lokale ICS/SCADA systemen, lokale objectdatanetwerken of het overkoepelende datanetwerk van de objecteigenaar dient uitsluitend plaats te vinden na autorisatie van de hiertoe aangewezen en gemandateerde functionaris aan de kant van objectbeheerder.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "NP8",
+   "paragraaf": "§2.4.1",
+   "thema": "Netwerkkoppelingen",
+   "groep": "Procedures & organisatie",
+   "tekst": "Gestreefd moet worden naar maximale inzichtelijkheid van de datanetwerkkoppelingen van de objecten. Alle datanetwerkkoppelingen dienen in kaart te worden gebracht, zodat altijd duidelijk is via welk datanetwerkpad een actor (uiteindelijk) een object zou kunnen binnendringen, beginnend vanuit het internet.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "NP9",
+   "paragraaf": "§2.4.1",
+   "thema": "Netwerkkoppelingen",
+   "groep": "Procedures & organisatie",
+   "tekst": "Objectbeheerder draagt zorg voor de beschikbaarheid van de actuele configuratiegegevens van de lokale objectdatanetwerken door middel van een Configuration Management Database (CMDB).",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "NP10",
+   "paragraaf": "§2.4.1",
+   "thema": "Netwerkkoppelingen",
+   "groep": "Procedures & organisatie",
+   "tekst": "Objectbeheerder draagt zorg voor een geborgde procedure die aanhaakt op en opvolging geeft aan geregistreerde datanetwerk incidentmeldingen vanuit de objecteigenaar.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "NT1",
+   "paragraaf": "§2.4.1",
+   "thema": "Netwerkkoppelingen",
+   "groep": "Techniek",
+   "tekst": "ICS/SCADA en safety systemen, de ondersteunende systemen en besloten lokale objectnetwerken mogen alleen verbindingen hebben met kantoornetwerken indien deze verlopen via de beveiligde centrale voorzieningen van de objecteigenaar.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "NT2",
+   "paragraaf": "§2.4.1",
+   "thema": "Netwerkkoppelingen",
+   "groep": "Techniek",
+   "tekst": "Communicatie en functies van safety systemen zijn afgeschermd van overige communicatie.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "NT3",
+   "paragraaf": "§2.4.1",
+   "thema": "Netwerkkoppelingen",
+   "groep": "Techniek",
+   "tekst": "De gebruikte communicatiemethoden dienen de integriteit van de gegevensoverdracht te borgen, inclusief fysieke en omgevingsinvloeden op de integriteit van de gegevensoverdracht.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "NT4",
+   "paragraaf": "§2.4.1",
+   "thema": "Netwerkkoppelingen",
+   "groep": "Techniek",
+   "tekst": "De klokken van alle relevante informatie verwerkende systemen binnen een object behoren te worden gesynchroniseerd met één hiertoe aangewezen centrale referentietijdbron binnen het netwerk van de objecteigenaar.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "NT5",
+   "paragraaf": "§2.4.1",
+   "thema": "Netwerkkoppelingen",
+   "groep": "Techniek",
+   "tekst": "Een back-up voor de referentietijdbron lokaal dient te zijn ingericht, opdat tijdsynchronisatie kan plaatsvinden in geval dat de centrale referentietijdbron van objecteigenaar niet beschikbaar is.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "CM1",
+   "paragraaf": "§2.4.2",
+   "thema": "Cryptografie",
+   "groep": "Mens",
+   "tekst": "Voor bewustwording, gedragsregels en training van bedienaars, beheerders en overig ondersteunend personeel wordt verwezen naar paragraaf 2.7 de maatregelen-set “bewustwording en training” van de Cybersecurity Implementatierichtlijn Objecten.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "CP1",
+   "paragraaf": "§2.4.2",
+   "thema": "Cryptografie",
+   "groep": "Procedures & organisatie",
+   "tekst": "Bij gebruik van cryptografie dienen uitsluitend PKI-Overheid certificaten te worden ingezet voor communicatie met (externe) netwerken buiten de eigen infrastructuur.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "CP2",
+   "paragraaf": "§2.4.2",
+   "thema": "Cryptografie",
+   "groep": "Procedures & organisatie",
+   "tekst": "Bij gebruik van cryptografie dienen uitsluitend eigen (interne) PKI certificaten te worden ingezet voor communicatie binnen de interne infrastructuur.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "CP3",
+   "paragraaf": "§2.4.2",
+   "thema": "Cryptografie",
+   "groep": "Procedures & organisatie",
+   "tekst": "Ten minste de volgende onderwerpen dienen te zijn uitgewerkt in het cryptografiebeleid: a. Wanneer wordt cryptografie ingezet; b. Wie is verantwoordelijk voor de implementatie; c. Wie is verantwoordelijk voor het sleutelbeheer; d. Welke normen dienen als basis voor cryptografie en de op welke wijze worden de normen van het Forum Standaardisatie toegepast; e. Op welke wijze wordt het beschermingsniveau vastgesteld; f. Welke procedures gevolg worden voor de communicatie tussen organisaties onderling; g. Het gebruik, bescherming en levensduur van de cryptografische sleutels.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "CP4",
+   "paragraaf": "§2.4.2",
+   "thema": "Cryptografie",
+   "groep": "Procedures & organisatie",
+   "tekst": "Bij gebruik van cryptografie dient te worden gekozen voor cryptografische toepassingen die voldoen aan passende standaarden en is dit gedocumenteerd.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "CT1",
+   "paragraaf": "§2.4.2",
+   "thema": "Cryptografie",
+   "groep": "Techniek",
+   "tekst": "Bij inzet van versleuteling (cryptografie) dient de gekozen versleuteling en de onderliggende algoritmes en instellingen uitsluitend de duiding “goed” te hebben zoals aangegeven in de meest actuele versie van het NCSC document “Richtlijnen voor Transport Layer Security”.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "CT2",
+   "paragraaf": "§2.4.2",
+   "thema": "Cryptografie",
+   "groep": "Techniek",
+   "tekst": "Indien het configureren van de IA/PA/OT systemen op afstand plaatsvindt, dan dient dit over beveiligde verbindingen plaats te vinden. Inzet van onveilige communicatieprotocollen (FTP, Telnet, VNC en RDP) dient daarbij vermeden te worden. Indien het Systeem geen veilig communicatieprotocol ondersteunt dan mag enkel gemotiveerd en na goedkeuring het onveilige communicatieprotocol worden ingezet, mits er een additioneel versleuteld kanaal wordt toegepast (SSL, TLS, IPSEC etc.). De gekozen versleuteling en de onderliggende algoritmes en instellingen dienen dan uitsluitend de duiding “goed” te hebben zoals aangegeven in de meest actuele versie van het NCSC document “Richtlijnen voor Transport Layer Security”.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "AM1",
+   "paragraaf": "§2.5.1",
+   "thema": "Bescherming tegen kwetsbaarheden — Anti-malware",
+   "groep": "Mens",
+   "tekst": "Voor bewustwording, gedragsregels en training van bedienaars, beheerders en overig ondersteunend personeel wordt verwezen naar paragraaf 2.7 de maatregelen-set “bewustwording en training” van de Cybersecurity Implementatierichtlijn Objecten.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "AP1",
+   "paragraaf": "§2.5.1",
+   "thema": "Bescherming tegen kwetsbaarheden — Anti-malware",
+   "groep": "Procedures & organisatie",
+   "tekst": "Er dienen een geborgde procedures en voorzieningen te zijn voor detectie van en preventie tegen malware.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "AP2",
+   "paragraaf": "§2.5.1",
+   "thema": "Bescherming tegen kwetsbaarheden — Anti-malware",
+   "groep": "Procedures & organisatie",
+   "tekst": "Bij anti-virusupdates die vanaf Internet worden gedownload, wordt gecontroleerd dat met de juiste Internetsite contact is gelegd en/of wordt het gebruik van digitale handtekeningen geverifieerd met gebruik van een betrouwbare certificate authority.",
+   "niveaus": [
+    3,
+    4
+   ]
+  },
+  {
+   "code": "AP3",
+   "paragraaf": "§2.5.1",
+   "thema": "Bescherming tegen kwetsbaarheden — Anti-malware",
+   "groep": "Procedures & organisatie",
+   "tekst": "Er dient een recoveryplan te zijn, waarin zijn opgenomen: alle nodige voorzieningen voor back-up en herstel, kopieën van gegevens en programmatuur, evenals benodigde herstelmaatregelen na een incident zoals b.v. een besmetting met malware.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "AP4",
+   "paragraaf": "§2.5.1",
+   "thema": "Bescherming tegen kwetsbaarheden — Anti-malware",
+   "groep": "Procedures & organisatie",
+   "tekst": "Wanneer dagelijkse malware scanning niet mogelijk is dienen zowel intern ontworpen, als ingekochte systemen en applicaties ten minste jaarlijks te worden gescand op malware, alsook op fouten in code en generieke beveiligingskwetsbaarheden.",
+   "niveaus": [
+    3,
+    4
+   ]
+  },
+  {
+   "code": "AP5",
+   "paragraaf": "§2.5.1",
+   "thema": "Bescherming tegen kwetsbaarheden — Anti-malware",
+   "groep": "Procedures & organisatie",
+   "tekst": "Er wordt aantoonbaar zorg voor gedragen (en op toegezien) dat gegevensdragers, beheer- en onderhoudsapparatuur gecontroleerd zijn op en vrij zijn van malware voordat deze worden gekoppeld aan ICS/SCADA of overige ICT-systemen en lokale objectdatanetwerken.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "AT1",
+   "paragraaf": "§2.5.1",
+   "thema": "Bescherming tegen kwetsbaarheden — Anti-malware",
+   "groep": "Techniek",
+   "tekst": "Antimalware voorzieningen moeten worden ingezet, waarbij aantoonbaar kan worden gemaakt dat de antimalware software correct is geïnstalleerd en geconfigureerd. De juiste werking dient hierbij te kunnen worden aangetoond.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "AT2",
+   "paragraaf": "§2.5.1",
+   "thema": "Bescherming tegen kwetsbaarheden — Anti-malware",
+   "groep": "Techniek",
+   "tekst": "Antimalware voorzieningen moeten worden ingezet voor de in- en uitgangen tot de systeemzones. Zoals removable media, firewalls, unidirectional gateways, web servers, proxy servers en remote- access servers.",
+   "niveaus": [
+    3,
+    4
+   ]
+  },
+  {
+   "code": "AT3",
+   "paragraaf": "§2.5.1",
+   "thema": "Bescherming tegen kwetsbaarheden — Anti-malware",
+   "groep": "Techniek",
+   "tekst": "Updates van de signatures, anti-malwaresoftware en bijbehorende herstelsoftware dienen dagelijks plaats te vinden.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "AT4",
+   "paragraaf": "§2.5.1",
+   "thema": "Bescherming tegen kwetsbaarheden — Anti-malware",
+   "groep": "Techniek",
+   "tekst": "De anti-malware voorzieningen mogen geen invloed hebben op de werking en functionaliteit van in gebruik zijnde ICS/SCADA en ICT- systemen.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "HM1",
+   "paragraaf": "§2.5.2",
+   "thema": "Bescherming tegen kwetsbaarheden — Hardening",
+   "groep": "Mens",
+   "tekst": "Voor bewustwording, gedragsregels en training van bedienaars, beheerders en overig ondersteunend personeel wordt verwezen naar paragraaf 2.7 de maatregelen-set “bewustwording en training” van de Cybersecurity Implementatierichtlijn Objecten.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "HP1",
+   "paragraaf": "§2.5.2",
+   "thema": "Bescherming tegen kwetsbaarheden — Hardening",
+   "groep": "Procedures & organisatie",
+   "tekst": "Er dient een geborgde procedure te zijn voor het hardenen van ICS/SCADA en overige ondersteunde ICT-systemen en datanetwerkelementen.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "HP2",
+   "paragraaf": "§2.5.2",
+   "thema": "Bescherming tegen kwetsbaarheden — Hardening",
+   "groep": "Procedures & organisatie",
+   "tekst": "Hardware, software en netwerkapparatuur dienen veilig geconfigureerd te worden waarbij gebruik wordt gemaakt “good practice security baselines”.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "HP3",
+   "paragraaf": "§2.5.2",
+   "thema": "Bescherming tegen kwetsbaarheden — Hardening",
+   "groep": "Procedures & organisatie",
+   "tekst": "Het dient aantoonbaar te zijn welke hardening-methoden zijn gebruikt en hoe deze zijn toegepast. Hierbij wordt een vooraf opgesteld protocol gevolgd en is er een registratie van de uitgevoerde hardening activiteiten.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "HP4",
+   "paragraaf": "§2.5.2",
+   "thema": "Bescherming tegen kwetsbaarheden — Hardening",
+   "groep": "Procedures & organisatie",
+   "tekst": "Het inschakelen van uitgezette services en/of protocollen mag alleen door geautoriseerd personeel worden uitgevoerd en dient gedocumenteerd te worden.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "HT1",
+   "paragraaf": "§2.5.2",
+   "thema": "Bescherming tegen kwetsbaarheden — Hardening",
+   "groep": "Techniek",
+   "tekst": "Indien mogelijk dienen ICS/SCADA-systemen zodanig te worden (her)geconfigureerd dat auto-run van USB-tokens, USB harde schijven, mounted network shares of andere removable media niet is toegestaan. Ook dient het gebruik van mobiele code beperkt te worden, waarbij het uitvoeren van mobiele code niet is toegestaan, tenzij: a. de afkomst van de mobiele code op voldoende wijze is geauthentiseerd en geautoriseerd; b. het versturen van mobiele code naar/van de ICS/SCADA systemen is geblokkeerd.",
+   "niveaus": [
+    1,
+    2
+   ]
+  },
+  {
+   "code": "HT2",
+   "paragraaf": "§2.5.2",
+   "thema": "Bescherming tegen kwetsbaarheden — Hardening",
+   "groep": "Techniek",
+   "tekst": "Indien mogelijk dienen ICS/SCADA-systemen zodanig (her)geconfigureerd te worden dat auto-run van USB-tokens, USB harde schijven, mounted network shares of andere removable media niet wordt toegestaan. Ook dient het gebruik van mobiele code beperkt te worden, waarbij het uitvoeren van mobiele code niet is toegestaan, tenzij: a. de afkomst van de mobiele code op voldoende wijze is geauthentiseerd en geautoriseerd; b. het versturen van mobiele code naar/van de ICS/SCADA systemen is geblokkeerd; c. het gebruik van mobiele code wordt gemonitord; d. voor gebruik een integriteitscheck op de mobiele code wordt uitgevoerd.",
+   "niveaus": [
+    3,
+    4
+   ]
+  },
+  {
+   "code": "HT3",
+   "paragraaf": "§2.5.2",
+   "thema": "Bescherming tegen kwetsbaarheden — Hardening",
+   "groep": "Techniek",
+   "tekst": "Bij maatwerkoplossingen dient nagestreefd te worden dat gedeeld geheugen (b.v. RAM) wordt gewist voordat het gedeeld geheugen wordt vrijgegeven voor andere gebruikers of sessies.",
+   "niveaus": [
+    3,
+    4
+   ]
+  },
+  {
+   "code": "HT4",
+   "paragraaf": "§2.5.2",
+   "thema": "Bescherming tegen kwetsbaarheden — Hardening",
+   "groep": "Techniek",
+   "tekst": "Minimale hardening maatregelen zijn: a. niet noodzakelijke datanetwerkservices uit te zetten; b. het verwijderen (patchen) van bekende kwetsbaarheden; c. alle poorten die niet nodig zijn te deactiveren/blokkeren; d. alle default “access points” te verwijderen; e. de default accounts uit te schakelen conform het wachtwoord beleid Indien uitschakelen niet mogelijk is dient het wachtwoord te worden aangepast; f. indien beschikbaar gebruik te maken van de security opties van leveranciers.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "HT5",
+   "paragraaf": "§2.5.2",
+   "thema": "Bescherming tegen kwetsbaarheden — Hardening",
+   "groep": "Techniek",
+   "tekst": "Het aanzetten van uitgeschakelde services en/of protocollen moet mogelijk blijven.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "PM1",
+   "paragraaf": "§2.5.3",
+   "thema": "Bescherming tegen kwetsbaarheden — Patching",
+   "groep": "Mens",
+   "tekst": "Voor bewustwording, gedragsregels en training van bedienaars, beheerders en overig ondersteunend personeel wordt verwezen naar paragraaf 2.7 de maatregelen-set “bewustwording en training” van de Cybersecurity Implementatierichtlijn Objecten.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "PP1",
+   "paragraaf": "§2.5.3",
+   "thema": "Bescherming tegen kwetsbaarheden — Patching",
+   "groep": "Procedures & organisatie",
+   "tekst": "Alle externe ICT-systemen die gekoppeld worden aan de interne ICT en IA systemen dienen voorzien te zijn van alle recente beveiligingsupdates en patches.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "PP2",
+   "paragraaf": "§2.5.3",
+   "thema": "Bescherming tegen kwetsbaarheden — Patching",
+   "groep": "Procedures & organisatie",
+   "tekst": "Patches worden alleen van betrouwbare bron afgenomen en voorafgaand aan installatie gecontroleerd op authenticiteit en herkomst.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "PP3",
+   "paragraaf": "§2.5.3",
+   "thema": "Bescherming tegen kwetsbaarheden — Patching",
+   "groep": "Procedures & organisatie",
+   "tekst": "Indien patches niet kunnen worden uitgevoerd, dient de afweging hiertoe schriftelijk te worden vastgelegd voorzien van een risicoafweging, inclusief een mitigatievoorstel.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "PP4",
+   "paragraaf": "§2.5.3",
+   "thema": "Bescherming tegen kwetsbaarheden — Patching",
+   "groep": "Procedures & organisatie",
+   "tekst": "Er is een geborgde procedure waarmee tijdig gereageerd kan worden op technische kwetsbaarheden van de in gebruik zijnde ICS/SCADA en ondersteunende ICT-systemen en netwerken.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "PP5",
+   "paragraaf": "§2.5.3",
+   "thema": "Bescherming tegen kwetsbaarheden — Patching",
+   "groep": "Procedures & organisatie",
+   "tekst": "Er is een geborgde procedure voor patching waarin taken, bevoegdheden en verantwoordelijkheden van de betrokken functionarissen zijn beschreven inclusief de van toepassing zijnde doorlooptijden en procuratiehouders.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "PP6",
+   "paragraaf": "§2.5.3",
+   "thema": "Bescherming tegen kwetsbaarheden — Patching",
+   "groep": "Procedures & organisatie",
+   "tekst": "Indien zowel de kans op misbruik als de verwachte schade hoog zijn (volgens de NCSC-classificatie voor kwetsbaarheidswaarschuwingen), wordt de betreffende patch ingepland voor implementatie. In de tussentijd worden op basis van een expliciete risicoafweging tijdelijke mitigerende maatregelen getroffen.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "PT1",
+   "paragraaf": "§2.5.3",
+   "thema": "Bescherming tegen kwetsbaarheden — Patching",
+   "groep": "Techniek",
+   "tekst": "Het uitvoeren van securityfuncties (b.v. netwerkscans, antimalware, patching) mag de beschikbare systeemresources niet zodanig beperken dat de normale softwareprocessen op de ICS/SCADA systemen hiervan zichtbaar structureel hinder ondervinden.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "MM1",
+   "paragraaf": "§2.6",
+   "thema": "Logging & monitoring",
+   "groep": "Mens",
+   "tekst": "Voor bewustwording, gedragsregels en training van bedienaars, beheerders en overig ondersteunend personeel wordt verwezen naar paragraaf 2.7 de maatregelen-set “bewustwording en training” van de Cybersecurity Implementatierichtlijn Objecten.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "MP1",
+   "paragraaf": "§2.6",
+   "thema": "Logging & monitoring",
+   "groep": "Procedures & organisatie",
+   "tekst": "Er wordt zorg gedragen voor en op toegezien dat: a. de loggegevens worden weggeschreven en opgeslagen in een apart bestand, dat alleen toegankelijk is voor speciaal hiertoe geautoriseerd personeel; b. de logbestanden van ICS/SCADA, beveiliging en ondersteunende ICT-systemen en –netwerkelementen worden beschermd tegen verlies of wijziging; c. op basis van een expliciete risicoafweging de bewaarperiode van de logbestanden (van alle systemen met logvoorziening) wordt bepaald. Deze bewaartermijn is altijd tenminste drie maanden; d. loggegevens die zijn gebruikt voor incidentonderzoeken, op aparte media buiten de IA veilig te worden gesteld welke langer worden bewaard conform de bewaartermijnen die de (feiten)onderzoekers aangeven; e. er een overzicht is van alle logbestanden die worden gegenereerd; f. een (onafhankelijke) interne audit procedure ten minste elke 6 maanden toetst op het ongewijzigd bestaan van de logbestanden; g. het oneigenlijk wijzigen, verwijderen of pogingen daartoe van loggegevens, zo snel mogelijk wordt gemeld als beveiligingsincident via de procedure voor beveiligingsincidenten.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "MP2",
+   "paragraaf": "§2.6",
+   "thema": "Logging & monitoring",
+   "groep": "Procedures & organisatie",
+   "tekst": "De objecteigenaar dient expliciet toestemming te verlenen voor de levering van logbestanden aan derden.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "MP3",
+   "paragraaf": "§2.6",
+   "thema": "Logging & monitoring",
+   "groep": "Procedures & organisatie",
+   "tekst": "De afhankelijkheid van de geautomatiseerde gegevensoverdrachten tussen het ICS/SCADA en de gekoppelde ICT-componenten is in kaart gebracht. Een geborgde procedure is aanwezig om te bewaken dat alle benodigde gegevens op tijd worden overgedragen en dat hierin geen fouten ontstaan.",
+   "niveaus": [
+    3,
+    4
+   ]
+  },
+  {
+   "code": "MP4",
+   "paragraaf": "§2.6",
+   "thema": "Logging & monitoring",
+   "groep": "Procedures & organisatie",
+   "tekst": "Camerabeelden van verkeersregistratiesystemen dienen gelogd en gemonitord te worden.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "MP5",
+   "paragraaf": "§2.6",
+   "thema": "Logging & monitoring",
+   "groep": "Procedures & organisatie",
+   "tekst": "Medewerking dient te worden verleend voor het kunnen analyseren van het netwerkverkeer van en naar het object en binnen het lokale object netwerk door een Security Operations Centre (SOC).",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "MP6",
+   "paragraaf": "§2.6",
+   "thema": "Logging & monitoring",
+   "groep": "Procedures & organisatie",
+   "tekst": "Een analyse poort binnen de netwerkinfrastructuur van het object dient te worden ingericht en beschikbaar gehouden voor monitoringsensoren die gekoppeld moeten kunnen worden aan deze analyse poort.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "MP7",
+   "paragraaf": "§2.6",
+   "thema": "Logging & monitoring",
+   "groep": "Procedures & organisatie",
+   "tekst": "Het ontwerp voor de inrichting van de analyse poort en de fysieke plaatsing van de monitoringsensor dient voor afstemming en acceptatie voor te worden gelegd aan het SOC.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "MP8",
+   "paragraaf": "§2.6",
+   "thema": "Logging & monitoring",
+   "groep": "Procedures & organisatie",
+   "tekst": "Voor de goede werking van de analyse poort dient (beheer- )documentatie te worden opgesteld en te onderhouden.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "MP9",
+   "paragraaf": "§2.6",
+   "thema": "Logging & monitoring",
+   "groep": "Procedures & organisatie",
+   "tekst": "Indien het object niet permanent op een Security Operations Centre is aangesloten dient medewerking te worden verleend voor het incidenteel kunnen uitlezen van het lokale object netwerkverkeer of een specifiek deelnetwerk van het object middels de analyse poorten.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "MP10",
+   "paragraaf": "§2.6",
+   "thema": "Logging & monitoring",
+   "groep": "Procedures & organisatie",
+   "tekst": "Er dient een operationeel proces te zijn als onderdeel van het incidentmanagementproces voor het melden van incidenten aan, en de response op meldingen van, het SOC.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "MP11",
+   "paragraaf": "§2.6",
+   "thema": "Logging & monitoring",
+   "groep": "Procedures & organisatie",
+   "tekst": "Er dient een operationeel proces te zijn voor de registratie en rapportage van netwerk storingen binnen het lokale objectnetwerk.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "MP12",
+   "paragraaf": "§2.6",
+   "thema": "Logging & monitoring",
+   "groep": "Procedures & organisatie",
+   "tekst": "Voor het ontwerp en inrichting van de analysepoort en de fysieke plaatsing van de monitoringsensor binnen (bestaande) lokale objectnetwerken dient gebruik te worden gemaakt van de voorgeschreven netwerkproducten en -diensten.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "MP13",
+   "paragraaf": "§2.6",
+   "thema": "Logging & monitoring",
+   "groep": "Procedures & organisatie",
+   "tekst": "Ontdekte nieuwe dreigingen worden gedeeld met de objecteigenaar.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "MT1",
+   "paragraaf": "§2.6",
+   "thema": "Logging & monitoring",
+   "groep": "Techniek",
+   "tekst": "De handelingen van medewerkers, beheerders, operators, meldingen vanuit systemen en eventlogs dienen te worden vastgelegd in audit-logbestanden.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "MT2",
+   "paragraaf": "§2.6",
+   "thema": "Logging & monitoring",
+   "groep": "Techniek",
+   "tekst": "Ongeautoriseerde pogingen tot wijzigingen in software en opgeslagen gegevens dienen te worden gedetecteerd, gerapporteerd en voorkomen.",
+   "niveaus": [
+    1,
+    2
+   ]
+  },
+  {
+   "code": "MT3",
+   "paragraaf": "§2.6",
+   "thema": "Logging & monitoring",
+   "groep": "Techniek",
+   "tekst": "Ongeautoriseerde pogingen tot wijzigingen in software en opgeslagen gegevens dienen automatisch te worden gedetecteerd, gerapporteerd en voorkomen.",
+   "niveaus": [
+    3,
+    4
+   ]
+  },
+  {
+   "code": "MT4",
+   "paragraaf": "§2.6",
+   "thema": "Logging & monitoring",
+   "groep": "Techniek",
+   "tekst": "Logregels bevatten minimaal de volgende gegevens: a. de gebeurtenis zelf; b. Benodigde informatie om de actie te kunnen herleiden tot een natuurlijk persoon, b.v. gebruikersnaam of een (systeem)-ID; c. component waarop de handeling werd uitgevoerd; d. het resultaat van de handeling; e. de datum en het tijdstip van de gebeurtenis; f. een doorlopende en unieke nummering per logregel.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "MT5",
+   "paragraaf": "§2.6",
+   "thema": "Logging & monitoring",
+   "groep": "Techniek",
+   "tekst": "Logfiles van ICS/SCADA, beveiliging en ondersteunende ICT- systemen en ICT-netwerkelementen dienen in CSV-formaat of als syslog opgeleverd te worden.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "MT6",
+   "paragraaf": "§2.6",
+   "thema": "Logging & monitoring",
+   "groep": "Techniek",
+   "tekst": "In een logregel worden in geen geval gevoelige gegevens opgenomen. Dit betreft onder meer gegevens waarmee de beveiliging doorbroken kan worden zoals wachtwoorden, inbelnummers, e.d.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "MT7",
+   "paragraaf": "§2.6",
+   "thema": "Logging & monitoring",
+   "groep": "Techniek",
+   "tekst": "Het overschrijven of verwijderen van logregels en logbestanden wordt gelogd in een nieuw aangelegde log.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "MT8",
+   "paragraaf": "§2.6",
+   "thema": "Logging & monitoring",
+   "groep": "Techniek",
+   "tekst": "De loginstellingen en logbestanden worden zodanig beschermd dat deze niet benaderd, gewijzigd of gewist kunnen worden door ongeautoriseerden.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "MT9",
+   "paragraaf": "§2.6",
+   "thema": "Logging & monitoring",
+   "groep": "Techniek",
+   "tekst": "Voor kritieke ICS/SCADA en overige ondersteunende ICT-systemen moeten beveiligingsspecifieke logsystemen worden ingezet, in afstemming met (en op verzoek van) de objecteigenaar.",
+   "niveaus": [
+    3,
+    4
+   ]
+  },
+  {
+   "code": "MT10",
+   "paragraaf": "§2.6",
+   "thema": "Logging & monitoring",
+   "groep": "Techniek",
+   "tekst": "Indien er fouten optreden tijdens het verwerken van de loggegevens, dient er een waarschuwing te worden gegeven.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "MT11",
+   "paragraaf": "§2.6",
+   "thema": "Logging & monitoring",
+   "groep": "Techniek",
+   "tekst": "Werking van de logging van security-gerelateerde events dient aantoonbaar te worden gemaakt door middel van een goedgekeurd gesimuleerd security-gerelateerd event.",
+   "niveaus": [
+    3,
+    4
+   ]
+  },
+  {
+   "code": "MT12",
+   "paragraaf": "§2.6",
+   "thema": "Logging & monitoring",
+   "groep": "Techniek",
+   "tekst": "De robuustheid van de logging (bij grote aantallen gelijktijdig optredende gebeurtenissen) dient te worden aangetoond en beschreven.",
+   "niveaus": [
+    3,
+    4
+   ]
+  },
+  {
+   "code": "MT13",
+   "paragraaf": "§2.6",
+   "thema": "Logging & monitoring",
+   "groep": "Techniek",
+   "tekst": "Er dient voldoende ruimte te zijn voor audit opslag (logging), en maatregelen zijn genomen die de kans beperken dat de beschikbare ruimte overschreden wordt. Er dient tijdig een waarschuwing te worden gegeven indien de opslagcapaciteit op dreigt te raken.",
+   "niveaus": [
+    3,
+    4
+   ]
+  },
+  {
+   "code": "MT14",
+   "paragraaf": "§2.6",
+   "thema": "Logging & monitoring",
+   "groep": "Techniek",
+   "tekst": "Het object datanetwerk dient uitgevoerd te zijn met analysepoorten waarbij datanetwerk ontwerp van het object met eventuele onderkende deeldatanetwerken leidend is voor het aantal in te richten analysepoorten op de datanetwerken. Eén poort op het datanetwerk dient dan geconfigureerd te zijn als analysepoort.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "MT15",
+   "paragraaf": "§2.6",
+   "thema": "Logging & monitoring",
+   "groep": "Techniek",
+   "tekst": "Het object datanetwerk dient uitgevoerd te zijn met een datanetwerk ontwerp en inrichting, zodanig dat een volledige kopie via de analysepoorten van al het bedien en besturingslaag netwerkverkeer (bijvoorbeeld de SCADA en PLC systemen) uitgelezen en opgebouwd kan worden, dat over het objectdatanetwerk met eventuele onderkende deeldatanetwerken gaat en kan worden aangeleverd voor analyse doeleinden.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "MT16",
+   "paragraaf": "§2.6",
+   "thema": "Logging & monitoring",
+   "groep": "Techniek",
+   "tekst": "Het object dient zodanig uitgevoerd te zijn dat de monitoringsensor van het SOC fysiek geplaatst kan worden binnen het lokale datanetwerk en de hiertoe voorziene technische ruimte en/of kast. Voor de specificaties van de monitoringsensor dient afstemming te worden gezocht.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "MT17",
+   "paragraaf": "§2.6",
+   "thema": "Logging & monitoring",
+   "groep": "Techniek",
+   "tekst": "Het object dient zodanig ingericht en beschikbaar te zijn dat de permanente of incidentele analyse van het lokale datanetwerk verkeer of een specifiek deeldatanetwerk van het object via de analyse poorten moet kunnen plaatsvinden.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "MT18",
+   "paragraaf": "§2.6",
+   "thema": "Logging & monitoring",
+   "groep": "Techniek",
+   "tekst": "De inrichting van de analyse poort en de fysieke plaatsing van de monitoringsensor binnen bestaande lokale objectdatanetwerken dient uitgevoerd te worden met de voorgeschreven datanetwerkproducten en -diensten.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "MT19",
+   "paragraaf": "§2.6",
+   "thema": "Logging & monitoring",
+   "groep": "Techniek",
+   "tekst": "Alle relevante informatie-verwerkende systemen en de daarbij behorende logging systemen dienen te worden gesynchroniseerd met één referentietijdbron, waarvan de integriteit is gevalideerd.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "TMe1",
+   "paragraaf": "§2.7.1",
+   "thema": "Bewustwording & training — Medewerkers",
+   "groep": "Medewerkers",
+   "tekst": "Bedienaars, beheerders en overig ondersteunend personeel zijn verplicht om de door het management aangegeven en beschikbaar gestelde periodieke Cybersecurity bewustwording en awareness cursussen, trainingen, E-Learning modulen te volgen en hiernaar te handelen. De bewustwording en awareness trainingen besteden ook aandacht aan Sociaal Engineering.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "TMe2",
+   "paragraaf": "§2.7.1",
+   "thema": "Bewustwording & training — Medewerkers",
+   "groep": "Medewerkers",
+   "tekst": "Iedere bedienaar, beheerder, opdrachtnemer en overig ondersteunend personeel is zich bewust van de voor hem/haar van toepassing zijnde taken, bevoegdheden en verantwoordelijkheden voor beveiliging en weet dat gebruikers- en systeemactiviteiten worden gelogd.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "TMe3",
+   "paragraaf": "§2.7.1",
+   "thema": "Bewustwording & training — Medewerkers",
+   "groep": "Medewerkers",
+   "tekst": "Bedienaars, beheerders, opdrachtnemers en overig ondersteunend personeel nemen de Cybersecurity beveiligingsinstructies strikt in acht en zijn verantwoordelijk voor hun aandeel in de beveiliging van het object.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "TMe4",
+   "paragraaf": "§2.7.1",
+   "thema": "Bewustwording & training — Medewerkers",
+   "groep": "Medewerkers",
+   "tekst": "Bedienaars, beheerders, opdrachtnemers en overig ondersteunend personeel doen aan sociale controle, spreken elkaar aan op ontoelaatbaar en risicovol gedrag en bespreken geconstateerde onregelmatigheden in het periodieke werkoverleg met het eigen management/Objectbeheerder.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "TMe5",
+   "paragraaf": "§2.7.1",
+   "thema": "Bewustwording & training — Medewerkers",
+   "groep": "Medewerkers",
+   "tekst": "Bij het constateren van een security incident dienen bedienaar, beheerder, opdrachtnemer en overig ondersteunend personeel dit direct als een security incident te melden bij de verantwoordelijke objecteigenaar/ -beheerder. Er is sprake van een security incident bij het manifest worden van een (dreigend of reeds opgetreden) security risico als gevolg van een (mogelijke) overtreding van het Cybersecurity beleid of onregelmatigheid. Voorbeelden van security incidenten zijn: a. Uitval van diensten, apparatuur of voorzieningen, systeemstoringen of overbelasting als gevolg van cybersecurity inbreuken; b. menselijke fouten die leiden tot functionele verstoring of uitval van systemen; c. inbreuk op fysieke en logische beveiligingsvoorzieningen van het object; d. Cybersecurity incidenten geïnitieerd vanuit de infrastructuur van opdrachtnemer en/of zijn netwerkproviders tot het netwerkdomein van opdrachtgever; e. inbreuk op de bediening en beheer; f. ongeautoriseerde systeemwijzingen; g. niet-naleving van beleid of gedragsregels; h. detectie van malware; i. detectie van virus activiteit ; j. verlies of diefstal van ICT en IA bedrijfsmiddelen; k. oneigenlijk gebruik van bevoegdheden; l. vandalisme, moedwillige beschadiging.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "TMe6",
+   "paragraaf": "§2.7.1",
+   "thema": "Bewustwording & training — Medewerkers",
+   "groep": "Medewerkers",
+   "tekst": "Afwijkend systeemgedrag kan een aanwijzing zijn voor een aanval op de beveiliging of voor een daadwerkelijk beveiligingslek en behoort daarom altijd direct te worden gerapporteerd als een beveiligingsincident en gemeld aan de Objectverantwoordelijke/- beheerder.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "TMe7",
+   "paragraaf": "§2.7.1",
+   "thema": "Bewustwording & training — Medewerkers",
+   "groep": "Medewerkers",
+   "tekst": "Bedienaars, beheerders, opdrachtnemers en overig ondersteunend personeel moeten bij het constateren van eventuele onregelmatigheden of onveilige situaties als gevolg van cybersecurity inbreuken, die handelingen verrichten of maatregelen treffen die verdere uitbreiding van het incident kunnen voorkomen, dan wel de schade beperken.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "TMe8",
+   "paragraaf": "§2.7.1",
+   "thema": "Bewustwording & training — Medewerkers",
+   "groep": "Medewerkers",
+   "tekst": "Bedienaars, beheerders, opdrachtnemers en overig ondersteunend personeel gaan zorgvuldig om met de verstrekte persoonsgebonden fysieke toegangsmiddelen voor het object en de (systeem, bedien, technische) ruimten hierbinnen en delen deze niet met collega’s.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "TMe9",
+   "paragraaf": "§2.7.1",
+   "thema": "Bewustwording & training — Medewerkers",
+   "groep": "Medewerkers",
+   "tekst": "Bedienaars, beheerders, opdrachtnemers en overig ondersteunend personeel creëren geen eigen netwerkkoppelingen op het object en melden dit als een beveiligingsincident als er een zelf aangelegde netwerkkoppeling wordt geconstateerd.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "TMe10",
+   "paragraaf": "§2.7.1",
+   "thema": "Bewustwording & training — Medewerkers",
+   "groep": "Medewerkers",
+   "tekst": "Bedienaars, beheerders, opdrachtnemers en overig ondersteunend personeel nemen de regels in acht voor de logische toegang tot ICS/SCADA en overige ondersteunende ICT-systemen.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "TMe11",
+   "paragraaf": "§2.7.1",
+   "thema": "Bewustwording & training — Medewerkers",
+   "groep": "Medewerkers",
+   "tekst": "Bedienaars, beheerders, opdrachtnemers en overig ondersteunend personeel koppelen geen mobiele apparatuur of removable media aan de ICS/SCADA omgeving, overige ondersteunende ICT-systemen en object netwerken. Uitgezonderd hiervan zijn de beheerders die dit alleen na autorisatie van de hiertoe gemandateerde functionaris en uitgevoerde actuele malwarecontrole van apparatuur/media mogen doen.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "TMe12",
+   "paragraaf": "§2.7.1",
+   "thema": "Bewustwording & training — Medewerkers",
+   "groep": "Medewerkers",
+   "tekst": "Voor bedienaars, beheerders, opdrachtnemers en overig ondersteunend personeel is toegang tot internet en het gebruik van email vanaf ICS/SCADA en overige daaraan ondersteunende ICT- systemen strikt verboden.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "TMe13",
+   "paragraaf": "§2.7.1",
+   "thema": "Bewustwording & training — Medewerkers",
+   "groep": "Medewerkers",
+   "tekst": "Bedienaars, beheerders, opdrachtnemers en overig ondersteunend personeel mogen de beschikbaar gestelde toegangsmiddelen (tokens, pasjes) tot ICS/SCADA en ondersteunende systemen en netwerken alleen gebruiken voor het doel waarvoor ze ontworpen zijn. Hierbij mogen de getroffen beveiligingsmaatregelen niet omzeild worden.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "TMe14",
+   "paragraaf": "§2.7.1",
+   "thema": "Bewustwording & training — Medewerkers",
+   "groep": "Medewerkers",
+   "tekst": "Bedienaars, beheerders, opdrachtnemers en overig ondersteunend personeel houden hun voor het object(en) relevante accountgegevens strikt geheim; zij gebruiken hun account en toegekende autorisaties alleen zelf en staan niet toe dat anderen onder hun account kunnen inloggen of werken. Handelingen zijn altijd te herleiden naar de voor dat account geautoriseerde persoon.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "TMe15",
+   "paragraaf": "§2.7.1",
+   "thema": "Bewustwording & training — Medewerkers",
+   "groep": "Medewerkers",
+   "tekst": "Bedienaars, beheerders, opdrachtnemers en overig ondersteunend personeel dienen op ICS/SCADA en de overige ondersteunende ICT- systemen en netwerken de standaard/default/fabrieks- accounts en/of wachtwoorden bij ingebruikname te verwijderen, uit te schakelen of ten minste te wijzigen.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "TMe16",
+   "paragraaf": "§2.7.1",
+   "thema": "Bewustwording & training — Medewerkers",
+   "groep": "Medewerkers",
+   "tekst": "Bij het constateren van onregelmatigheden in de logische toegang tot ICS/SCADA en overige ondersteunende ICT-systemen dient iedere medewerker dit onverwijld als een beveiligingsincident te melden bij de Objectverantwoordelijke/-beheerder.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "TMe17",
+   "paragraaf": "§2.7.1",
+   "thema": "Bewustwording & training — Medewerkers",
+   "groep": "Medewerkers",
+   "tekst": "Alleen geautoriseerde medewerkers/beheerders mogen systemen koppelen aan objectdatanetwerken of ICS/SCADA systemen. Deze systemen dienen voorzien te zijn van de laatste security updates, patches en actuele viruscontroleprogrammatuur.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "TMe18",
+   "paragraaf": "§2.7.1",
+   "thema": "Bewustwording & training — Medewerkers",
+   "groep": "Medewerkers",
+   "tekst": "Gegevensdragers worden altijd vooraf op malware gecontroleerd, voordat deze worden gekoppeld aan ICS/SCADA of overige ondersteunende ICT-systemen en netwerken.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "TMe19",
+   "paragraaf": "§2.7.1",
+   "thema": "Bewustwording & training — Medewerkers",
+   "groep": "Medewerkers",
+   "tekst": "Mobiele apparatuur en gegevensdragers mogen niet onbeheerd achtergelaten worden in openbare, vergader-, en conferentieruimten, in auto’s of andere vervoermiddelen.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "TMe20",
+   "paragraaf": "§2.7.1",
+   "thema": "Bewustwording & training — Medewerkers",
+   "groep": "Medewerkers",
+   "tekst": "Verlies of diefstal van mobiele apparatuur en gegevensdragers dienen zo spoedig mogelijk te worden gemeld als een security incident.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "TMe21",
+   "paragraaf": "§2.7.1",
+   "thema": "Bewustwording & training — Medewerkers",
+   "groep": "Medewerkers",
+   "tekst": "Incidenten die zich voordoen binnen het wijzigingsproces en afwijkingen van het wijzigingsproces moeten worden gemeld bij de Objectverantwoordelijke/ -beheerder.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "TMe22",
+   "paragraaf": "§2.7.1",
+   "thema": "Bewustwording & training — Medewerkers",
+   "groep": "Medewerkers",
+   "tekst": "Onregelmatigheden, incidenten en storingen binnen het back-up en recovery proces moeten worden gemeld bij de Objectverantwoordelijke/ -beheerder.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "TMe24",
+   "paragraaf": "§2.7.1",
+   "thema": "Bewustwording & training — Medewerkers",
+   "groep": "Medewerkers",
+   "tekst": "Bedienaars, beheerders , opdrachtnemers en overig personeel zijn zich bewust van de wijze waarop zij met vertrouwelijke informatie om te dienen te gaan, van het aanmaken en gebruiken van informatie tot vernietiging ervan.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "TMe25",
+   "paragraaf": "§2.7.1",
+   "thema": "Bewustwording & training — Medewerkers",
+   "groep": "Medewerkers",
+   "tekst": "Medewerkers van opdrachtnemers die beheer- en onderhoudswerkzaamheden uitvoeren aan ICT en IA systemen van de objecteigenaar hebben een bewustwordingstraining voor cybersecurity gevolgd waarbinnen ook aandacht is besteed aan het vertrouwelijk omgaan met persoonsgegevens. Voor deze medewerkers geldt verder dat zij strikte geheimhouding in acht nemen en over een Verklaring Omtrent het Gedrag (VOG) beschikken zoals contractueel overeengekomen. De bewustwording en awareness trainingen besteden ook aandacht aan Sociaal Engineering.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "TMe26",
+   "paragraaf": "§2.7.1",
+   "thema": "Bewustwording & training — Medewerkers",
+   "groep": "Medewerkers",
+   "tekst": "Medewerkers mogen zonder voorafgaande goedkeuring geen apparatuur, informatie of software van de locatie meenemen.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "TMe27",
+   "paragraaf": "§2.7.1",
+   "thema": "Bewustwording & training — Medewerkers",
+   "groep": "Medewerkers",
+   "tekst": "Het is voor gebruikers niet toegestaan zelf software te installeren.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "TMe23",
+   "paragraaf": "§2.7.1",
+   "thema": "Bewustwording & training — Medewerkers",
+   "groep": "Medewerkers",
+   "tekst": "Beheerders, bedienaars, opdrachtnemers en overig ondersteunend personeel zorgen ervoor dat onbeheerde ICS/SCADA-systemen en overige ICT-apparatuur worden vergrendeld , ondersteund door een automatische vergrendeling na een vooraf in te stellen periode van inactiviteit.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "TMa1",
+   "paragraaf": "§2.7.2",
+   "thema": "Bewustwording & training — Managers",
+   "groep": "Managers",
+   "tekst": "Er dient bewerkstelligd te worden dat een ieder continu (dus ook bij aanstelling en functiewisseling) bewust wordt gemaakt door objectbeheerder en (valideerbaar) geschikte training, regelmatige bijscholing krijgt (en ook begrijpt) en geïnformeerd wordt met betrekking tot het (cybersecurity) beveiligingsbeleid, procedures, en verantwoordelijkheden ten aanzien van cyber security, voor zover relevant voor hun functie. De voor hen geldende regelingen en instructies ten aanzien van informatiebeveiliging zijn toegankelijk. Een ieder die zich bezig houdt met risicomanagement dient hier kennis van te hebben, dan wel hiervoor specifieke aanvullende training te ontvangen.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "TMa2",
+   "paragraaf": "§2.7.2",
+   "thema": "Bewustwording & training — Managers",
+   "groep": "Managers",
+   "tekst": "Objectbeheerder draagt zorg voor en ziet erop toe dat: a. bedienaars, beheerders en overig ondersteunend personeel aantoonbaar kennis hebben van cybersecurity; b. bedienaars, beheerders en overig ondersteunend personeel de periodieke Cybersecurity cursussen, trainingen en E- Learningmodulen volgen en een actuele administratie hiervan aanwezig is. Daarbij dient bijgehouden te worden wanneer aanvullende training wenselijk dan wel noodzakelijk is; c. bedienaars, beheerders en overig ondersteunend personeel de beschikking hebben over actuele (technische) beheerdocumentatie, gebruikers- en/of installatiehandleidingen voor de ICS/SCADA en overige ondersteunende ICT-systemen en bedrijfsmiddelen; d. werkzaamheden door gescreend personeel uitgevoerd worden en dat geheimhouding is overeengekomen voor ingehuurd personeel; Objectverantwoordelijke/-beheerder bepaalt in welke situaties dit aan de orde is en de vorm waarin; e. ingehuurd personeel een geheimhoudingsverklaring heeft ondertekend; f. bedienaars, beheerders en overig intern en extern ondersteunend personeel alle bedrijfsmiddelen, ICS/SCADA en overige ondersteunende ICT-systeemdocumentatie van objecten die ze in hun bezit hebben, retourneren bij beëindiging van hun dienstverband, contract of overeenkomst; g. de toegangsrechten van alle bedienaars, beheerders en overig intern en extern ondersteunend personeel de verstrekte toegangsmiddelen direct worden geblokkeerd bij beëindiging van het dienstverband, het contract of na wijziging van de overeenkomst worden aangepast. Objectbeheerder dient veranderingen van personeel of subcontractors die toegang hebben tot de besturingssystemen van objecten ook direct kenbaar te maken aan objecteigenaar; h. dat calamiteitenplannen worden betrokken in de bewustwordingstrainingen, trainingen en testactiviteiten; i. gebruik van de centraal beschikbaar gestelde technische middelen voor fysieke en logische toegang op medewerkers niveau.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "TMa3",
+   "paragraaf": "§2.7.2",
+   "thema": "Bewustwording & training — Managers",
+   "groep": "Managers",
+   "tekst": "De Opdrachtnemer/objectverantwoordelijke/- beheerder/verantwoordelijk management bespreken en evalueren in de periodieke werkoverleggen de beveiligingsincidenten van de afgelopen periode, hoe op dergelijke incidenten is geacteerd, hoe het beter kan en hoe deze in de toekomst kunnen worden vermeden alsmede de feedback van de bewustwordingsactiviteiten en specifieke trainingen. Feedback van medewerkers dient actief te worden opgevolgd teneinde cybersecurity te verbeteren.",
+   "niveaus": [
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "TMa4",
+   "paragraaf": "§2.7.2",
+   "thema": "Bewustwording & training — Managers",
+   "groep": "Managers",
+   "tekst": "Er wordt op toe gezien (en contractueel vastgelegd) dat werknemers en ingehuurd personeel zich houden aan de gedragsregels voor beveiliging, zoals fysieke en logische toegang, melding van beveiligingsincidenten en gebruik van bedrijfsmiddelen. Voor zover controle op naleving van gedragsregels mogelijk is, wordt hiervoor een controleprogramma met steekproefsgewijze controles vastgesteld en uitgevoerd.",
+   "niveaus": [
+    3,
+    4
+   ]
+  },
+  {
+   "code": "TMa5",
+   "paragraaf": "§2.7.2",
+   "thema": "Bewustwording & training — Managers",
+   "groep": "Managers",
+   "tekst": "Cybersecurity wordt in de functioneringsgesprekken besproken met medewerkers en beheerders en maakt hiertoe opleidingsplannen waarbij wordt toegezien op uitvoering.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "TMa6",
+   "paragraaf": "§2.7.2",
+   "thema": "Bewustwording & training — Managers",
+   "groep": "Managers",
+   "tekst": "Objectbeheerder dient bij het constateren van onregelmatigheden in de logische toegang tot ICS/SCADA en overige ondersteunende ICT-systemen uit voorzorg altijd het betreffende account en wachtwoord te blokkeren en, na controle, eventueel zowel het account als het wachtwoord te laten wijzigen.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "WM1",
+   "paragraaf": "§2.8",
+   "thema": "Gecontroleerd wijzigen",
+   "groep": "Mens",
+   "tekst": "Voor bewustwording, gedragsregels en training van bedienaars, beheerders en overig ondersteunend personeel wordt verwezen naar paragraaf 2.7 de maatregelen-set “bewustwording en training” van de Cybersecurity Implementatierichtlijn Objecten.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "WP1",
+   "paragraaf": "§2.8",
+   "thema": "Gecontroleerd wijzigen",
+   "groep": "Procedures & organisatie",
+   "tekst": "Er is een geborgde procedure voor het (laten) inventariseren en registreren van alle Configuration Items (CI’s) met bijbehorende settings/configuraties in een Configuration Management Database (CMDB). Deze CMDB dient actueel te worden gehouden.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "WP2",
+   "paragraaf": "§2.8",
+   "thema": "Gecontroleerd wijzigen",
+   "groep": "Procedures & organisatie",
+   "tekst": "Er is een geborgde wijzigingsprocedure voor het doorvoeren van wijzigingen aan ICS/SCADA, ondersteunende ICT-systemen, beveiligings- en netwerkomgeving. Alle wijzigingen worden conform de wijzigingsprocedure geregistreerd. Updates en patches dienen via de reguliere wijzigingsprocedure te verlopen.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "WP3",
+   "paragraaf": "§2.8",
+   "thema": "Gecontroleerd wijzigen",
+   "groep": "Procedures & organisatie",
+   "tekst": "Wijzigingen mogen alleen worden aangevraagd en uitgevoerd door geautoriseerden.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "WP4",
+   "paragraaf": "§2.8",
+   "thema": "Gecontroleerd wijzigen",
+   "groep": "Procedures & organisatie",
+   "tekst": "Voor wijzigingen aan ICS/SCADA en overige ondersteunende ICT- systemen dient altijd een risicoafweging te worden gemaakt. De risicoafweging en de hieruit voortvloeiende maatregelen moeten zijn goedgekeurd door de Objectverantwoordelijke voordat uitvoering van werkzaamheden plaatsvindt.",
+   "niveaus": [
+    3,
+    4
+   ]
+  },
+  {
+   "code": "WP5",
+   "paragraaf": "§2.8",
+   "thema": "Gecontroleerd wijzigen",
+   "groep": "Procedures & organisatie",
+   "tekst": "De wijzigingen worden bijgewerkt in de CMDB en jaarlijks worden de settings/configuraties van ICS/SCADA en overige ondersteunende ICT-systemen in de CMDB vergeleken met de daadwerkelijke situatie en afwijkingen in de CMDB worden gecorrigeerd.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "WP6",
+   "paragraaf": "§2.8",
+   "thema": "Gecontroleerd wijzigen",
+   "groep": "Procedures & organisatie",
+   "tekst": "Wijzigingen in ICS/SCADA en overige ondersteunende ICT-systemen moeten vooraf aan de implementatie in productie worden getest in een testomgeving (inclusief verslaglegging) om te bewerkstelligen dat er geen nadelige gevolgen zijn voor de functionaliteit van het systeem of de beveiliging van de organisatie. Afwijken hiervan is uitsluitend mogelijk indien hiervoor toestemming gegeven en schriftelijk vastgelegd is. Testen in de productieomgeving mag uitsluitend na voorafgaande goedkeuring en vastlegging hiervan. Alle testgegevens dienen zorgvuldig te worden gecontroleerd en beschermd.",
+   "niveaus": [
+    3,
+    4
+   ]
+  },
+  {
+   "code": "WP7",
+   "paragraaf": "§2.8",
+   "thema": "Gecontroleerd wijzigen",
+   "groep": "Procedures & organisatie",
+   "tekst": "Gegevensdragers en updates van software en firmware van technische systemen dienen eerst gescand te worden op malware voordat zij aan ICT of IA systemen worden gekoppeld en/of geïnstalleerd.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "WP8",
+   "paragraaf": "§2.8",
+   "thema": "Gecontroleerd wijzigen",
+   "groep": "Procedures & organisatie",
+   "tekst": "De authenticiteit/integriteit van de software voor ICS/SCADA en overige ondersteunende ICT-systemen moet worden gecontroleerd voorafgaand aan de implementatie op operationele systemen.",
+   "niveaus": [
+    3,
+    4
+   ]
+  },
+  {
+   "code": "WP9",
+   "paragraaf": "§2.8",
+   "thema": "Gecontroleerd wijzigen",
+   "groep": "Procedures & organisatie",
+   "tekst": "Bij noodwijzigingen die buiten het reguliere wijzigingsproces om zijn doorgevoerd als gevolg van incidenten met een bijzonder (urgent) karakter worden achteraf alsnog de gebruikelijke procedures gevolgd en de CMDB administratie bijgewerkt.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "WP10",
+   "paragraaf": "§2.8",
+   "thema": "Gecontroleerd wijzigen",
+   "groep": "Procedures & organisatie",
+   "tekst": "Voor elke wijziging is een terugval scenario opgesteld waarin is vastgelegd waaruit de terugval bestaat, onder welke condities tot een terugval wordt overgegaan en wie daartoe kan besluiten. Direct na de implementatie van een wijziging dient een test plaats te vinden om te verifiëren dat de wijziging is gelukt of dat op het terugval scenario moet worden overgegaan.",
+   "niveaus": [
+    3,
+    4
+   ]
+  },
+  {
+   "code": "WP11",
+   "paragraaf": "§2.8",
+   "thema": "Gecontroleerd wijzigen",
+   "groep": "Procedures & organisatie",
+   "tekst": "Naar aanleiding van een wijziging uitgeschakelde beveiligingsmaatregelen worden weer geactiveerd alvorens de wijziging te sluiten.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "WP12",
+   "paragraaf": "§2.8",
+   "thema": "Gecontroleerd wijzigen",
+   "groep": "Procedures & organisatie",
+   "tekst": "Er wordt gebruik gemaakt van testvoorzieningen, om de door te voeren wijzigingen en/of security patches vooraf te testen.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "WT1",
+   "paragraaf": "§2.8",
+   "thema": "Gecontroleerd wijzigen",
+   "groep": "Techniek",
+   "tekst": "Ontwikkel-, test-, acceptatie, productie en Leeromgeving (OTAPL) behoren te worden gescheiden om het risico van onbevoegde toegang tot of veranderingen aan de productieomgeving te verlagen door minimaal de volgende maatregelen: a. Functionele scheiding van de ontwikkel, test, acceptatie, productie en leeromgeving; b. De omgevingen zijn qua systemen en netwerk logisch of fysiek van elkaar gescheiden; c. Gebruikers dienen voor elke omgeving met andere gebruikersprofielen te kunnen werken; d. Voor de gebruikers is het helder in welke omgeving er wordt gewerkt; e. Elke omgeving dient conform de logrichtlijnen handelingen in logfiles vast te leggen die alleen toegankelijk is voor geautoriseerden; f. Er is een geborgd proces voor versiebeheer van de OTAPL.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "WT2",
+   "paragraaf": "§2.8",
+   "thema": "Gecontroleerd wijzigen",
+   "groep": "Techniek",
+   "tekst": "Indien leverbaar dient het ICS/SCADA systeem en bijbehorende ICT- systemen de mogelijkheid te ondersteunen om de geïnstalleerde componenten en hun kenmerken te kunnen rapporteren.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "OM1",
+   "paragraaf": "§2.9",
+   "thema": "Beheer & onderhoud",
+   "groep": "Mens",
+   "tekst": "Voor bewustwording, gedragsregels en training van bedienaars, beheerders en overig ondersteunend personeel wordt verwezen naar paragraaf 2.7 de maatregelen-set “bewustwording en training” van de Cybersecurity Implementatierichtlijn Objecten.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "OP1",
+   "paragraaf": "§2.9",
+   "thema": "Beheer & onderhoud",
+   "groep": "Procedures & organisatie",
+   "tekst": "Objectbeheerder draagt zorg voor het evalueren van risico’s en effectieve werking van de getroffen beheersmaatregelen voor beveiliging in het kader van life-cycle management.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "OP2",
+   "paragraaf": "§2.9",
+   "thema": "Beheer & onderhoud",
+   "groep": "Procedures & organisatie",
+   "tekst": "Objectbeheerder draagt zorg voor en ziet erop toe dat waar nodig in de beheer en onderhoudscontracten met onderaannemers: a. geheimhouding is opgenomen; b. training- en opleidingsvereisten alsmede overige benodigde certificeringen zijn beschreven; c. screening van personeel is geregeld (bijv. VOG); d. beschreven is dat de beveiligingshuisregels van Opdrachtgever strikt in acht moeten worden genomen; e. een concrete procedure is vastgelegd met betrekking tot incidentresponse en voor escalatieprocedures met de leverancier (24*7) en dat deze bij alle betrokkenen bekend is; f. de procedures voor fysieke toegang tot objecten en ruimten, alsook de logische toegang tot systemen zijn vastgelegd; g. de registratie en rapportage van beveiligingsincidenten is geregeld; h. beschreven is dat handelingen van medewerkers en systemen worden gelogd en gemonitord ; i. de procedure “Toegang Derden” van de objecteigenaar voor de logische toegang tot netwerken en systemen moet worden gevolgd. De tijdelijke toegang tot de systemen ten behoeve van ondersteuning dient geautoriseerd te zijn en handelingen dienen te worden gelogd. j. beschreven is dat onderhoud en wijzigingen op ICS/SCADA systemen alleen uitgevoerd mogen worden vanaf systemen die zijn voorzien van de laatste security updates, patches en actuele viruscontroleprogrammatuur; k. beschreven is dat netwerkkoppelingen op objectnetwerken altijd en strikt via de beveiligde centrale voorzieningen van de objecteigenaar verlopen; l. beschreven is dat wijzigingen conform het wijzigingsproces van de objecteigenaar mogen worden uitgevoerd; m. beschreven is dat patchen strikt conform de Patchrichtlijnen en doorlooptijden van de objecteigenaar moeten worden uitgevoerd; n. beschreven is hoe omgegaan moet worden met alarmvoorzieningen van het object en de alarmopvolging; o. beschreven is dat het ongeautoriseerd koppelen van removable media en usb sticks aan het objectnetwerk van de objecteigenaar strikt verboden is.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "OP4",
+   "paragraaf": "§2.9",
+   "thema": "Beheer & onderhoud",
+   "groep": "Procedures & organisatie",
+   "tekst": "Objectbeheerder draagt zorg voor de beschikbaarheid, onderhoud en accuraat houden van (technische) beheerdocumentatie (waaronder fysieke en logische netwerktekeningen, verbindingen en configuratie documenten en een inventaris van alle apparatuur en software, inclusief versie- en serienummers), gebruikers- en/of installatiehandleidingen voor de ICT- en IA-systemen alsmede procedures voor het opnieuw opstarten en herstellen van het systeem in geval van systeemstoringen.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "OP5",
+   "paragraaf": "§2.9",
+   "thema": "Beheer & onderhoud",
+   "groep": "Procedures & organisatie",
+   "tekst": "Objectbeheerder draagt zorg voor een geborgde procedure die de personele toegang van al het vaste onderhoudspersoneel regelt voorafgaand aan de uitvoering van werkzaamheden.",
+   "niveaus": [
+    3,
+    4
+   ]
+  },
+  {
+   "code": "OP6",
+   "paragraaf": "§2.9",
+   "thema": "Beheer & onderhoud",
+   "groep": "Procedures & organisatie",
+   "tekst": "Objectbeheerder houdt toezicht op de operationele uitvoering en naleving van: a. het doorvoeren van wijzigingen conform de wijzigingen procedure; b. de procedure voor fysieke toegang; c. de procedure voor logische toegang; d. patching, back-up procedure en bewaartermijnen; e. incidentmanagement, log- en incidentrapportages en de analyse daarvan.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "OP7",
+   "paragraaf": "§2.9",
+   "thema": "Beheer & onderhoud",
+   "groep": "Procedures & organisatie",
+   "tekst": "Objectbeheerder dient jaarlijks de opzet, het bestaan en de werking van de getroffen maatregelen te (laten) onderzoeken, evalueren en bij te stellen. De resultaten dienen te worden gerapporteerd aan de objecteigenaar en het Cybersecurity Beveiligingsplan bijgewerkt en voorgelegd te worden aan de objecteigenaar.",
+   "niveaus": [
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "OP8",
+   "paragraaf": "§2.9",
+   "thema": "Beheer & onderhoud",
+   "groep": "Procedures & organisatie",
+   "tekst": "Bedrijfsvertrouwelijke informatie is alleen op basis van het ‘need-to- know’ principe toegankelijk.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "OP9",
+   "paragraaf": "§2.9",
+   "thema": "Beheer & onderhoud",
+   "groep": "Procedures & organisatie",
+   "tekst": "Objecteigenaar en objectbeheerder zijn vanaf het moment van ontvangst van informatie verantwoordelijk om binnen de eigen organisatie de ontsluiting en verwerking van de informatie op de afgesproken werkwijze van ‘need-to-know’ te verzorgen.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "OP10",
+   "paragraaf": "§2.9",
+   "thema": "Beheer & onderhoud",
+   "groep": "Procedures & organisatie",
+   "tekst": "Geprinte exemplaren van documenten met classificatie Bedrijfsinformatie dienen in afgesloten kasten bewaard te worden. Bij digitale opslag in de eigen kantooromgeving is versleuteling niet verplicht.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "OP11",
+   "paragraaf": "§2.9",
+   "thema": "Beheer & onderhoud",
+   "groep": "Procedures & organisatie",
+   "tekst": "Objectbeheerder dient erop toe te zien dat zowel actieve als passieve apparaten worden gecontroleerd op malware voordat deze worden verbonden met, of gebruikt in, de IA-omgeving.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "OP12",
+   "paragraaf": "§2.9",
+   "thema": "Beheer & onderhoud",
+   "groep": "Procedures & organisatie",
+   "tekst": "Het koppelen van beheer- en onderhoudsapparatuur aan ICT- en IA- systemen bij een object, dient op veilige wijze te gebeuren.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "OP13",
+   "paragraaf": "§2.9",
+   "thema": "Beheer & onderhoud",
+   "groep": "Procedures & organisatie",
+   "tekst": "Apparatuur dient correct te worden onderhouden om de continue beschikbaarheid en integriteit ervan te waarborgen",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "OT1",
+   "paragraaf": "§2.9",
+   "thema": "Beheer & onderhoud",
+   "groep": "Techniek",
+   "tekst": "Voor de fysieke toegang (ICT-deel) van bedienaars, beheerders en overig ondersteunend personeel tot objecten en de ruimten hierbinnen, wordt gebruikt gemaakt van de PDC (Product en Diensten Catalogus) producten en diensten van de objecteigenaar.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "OT2",
+   "paragraaf": "§2.9",
+   "thema": "Beheer & onderhoud",
+   "groep": "Techniek",
+   "tekst": "Voor (remote) logische toegang van bedienaars en beheerders tot het netwerk en ICS/SCADA systemen wordt gebruikt gemaakt van de PDC producten en diensten van de objecteigenaar.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "OT3",
+   "paragraaf": "§2.9",
+   "thema": "Beheer & onderhoud",
+   "groep": "Techniek",
+   "tekst": "Gedurende FAT, SAT en onderhoud dient de werking van de cybersecurityfuncties in de systemen te kunnen worden aangetoond.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "OT4",
+   "paragraaf": "§2.9",
+   "thema": "Beheer & onderhoud",
+   "groep": "Techniek",
+   "tekst": "Gedurende FAT, SAT en onderhoud dient de werking van de cybersecurityfuncties in de systemen geautomatiseerd te kunnen worden aangetoond, waar mogelijk middels tooling.",
+   "niveaus": [
+    3,
+    4
+   ]
+  },
+  {
+   "code": "OT5",
+   "paragraaf": "§2.9",
+   "thema": "Beheer & onderhoud",
+   "groep": "Techniek",
+   "tekst": "Het koppelen van beheer- en onderhoudsapparatuur aan ICT- en IA- systemen bij een object, dient op veilige wijze te gebeuren.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "BM1",
+   "paragraaf": "§2.10",
+   "thema": "Back-ups",
+   "groep": "Mens",
+   "tekst": "Voor bewustwording, gedragsregels en training van bedienaars, beheerders en overig ondersteunend personeel wordt verwezen naar paragraaf 2.7 de maatregelen-set “bewustwording en training” van de Cybersecurity Implementatierichtlijn Objecten.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "BP1",
+   "paragraaf": "§2.10",
+   "thema": "Back-ups",
+   "groep": "Procedures & organisatie",
+   "tekst": "Systeemimages/back-ups worden gemaakt vooraf en na iedere (functionele) systeemwijziging. Wanneer wijzigingen uitblijven wordt de systeemimage/back-up van de laatste versie op jaarbasis vernieuwd. Met deze back-up moet men in staat zijn middels een volledige roll-back naar de werkende situatie terug te kunnen gaan. Indien back-ups gedurende de operationele fase van een object gemaakt moeten worden, dan mag dit het operationele proces niet verstoren.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "BP2",
+   "paragraaf": "§2.10",
+   "thema": "Back-ups",
+   "groep": "Procedures & organisatie",
+   "tekst": "De integriteit en beschikbaarheid van de laatste drie versies van de ICS/SCADA systemen, programmatuur en besturingssystemen dient gewaarborgd te worden door het maken en testen van systeemimages/back-ups, conform een geborgde procedure: a. Deze back-ups worden opgeslagen op een locatie die zich op zodanige afstand bevindt dat geen schade aan de back-up kan worden aangericht als een calamiteit zich voordoet op de locatie waar het systeem zich bevindt; b. Back-ups en de ruimte waarin ze zijn opgeslagen behoren fysiek goed te worden beschermd volgens dezelfde normen die gelden voor de hoofdlocatie en zijn alleen toegankelijk voor bevoegden; c. Back-ups worden bewaard tot het moment van uitdienstname van het betreffend systeem; d. In geval de back-up terug wordt gezet, dient eventueel ook rekening te worden gehouden met ook het terugzetten van de dynamische gegevens over de systeemstatus.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "BP3",
+   "paragraaf": "§2.10",
+   "thema": "Back-ups",
+   "groep": "Procedures & organisatie",
+   "tekst": "Er zijn gedocumenteerde herstelprocedures en volledige en actuele registers van back-up kopieën.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "BP4",
+   "paragraaf": "§2.10",
+   "thema": "Back-ups",
+   "groep": "Procedures & organisatie",
+   "tekst": "Jaarlijks worden de herstelprocedures gecontroleerd en getest om te waarborgen dat ze doeltreffend zijn, dat ze werken en dat ze kunnen worden uitgevoerd binnen de daarvoor overeengekomen tijd. Jaarlijks wordt een recovery test gedaan om te zien of de media nog leesbaar is.",
+   "niveaus": [
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "BP5",
+   "paragraaf": "§2.10",
+   "thema": "Back-ups",
+   "groep": "Procedures & organisatie",
+   "tekst": "De gemelde incidenten en storingsmeldingen inzake back-up worden maandelijks geëvalueerd en waar nodig worden maatregelen getroffen.",
+   "niveaus": [
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "code": "BT1",
+   "paragraaf": "§2.10",
+   "thema": "Back-ups",
+   "groep": "Techniek",
+   "tekst": "De benodigde voorzieningen voor het back-up en restoreproces worden in overleg ingericht.",
+   "niveaus": [
+    1,
+    2,
+    3,
+    4
+   ]
+  }
+ ],
+ "bijlagen": [
+  {
+   "id": "CSR 1",
+   "titel": "Omgaan met vertrouwelijke informatie en documenten",
+   "type": "Richtlijn",
+   "aangeroepen_door": 1
+  },
+  {
+   "id": "CSR 2",
+   "titel": "Personele toegang",
+   "type": "Richtlijn",
+   "aangeroepen_door": 1
+  },
+  {
+   "id": "CSR 3",
+   "titel": "Architectuur objectnetwerk",
+   "type": "Richtlijn",
+   "aangeroepen_door": 5
+  },
+  {
+   "id": "CSR 4",
+   "titel": "Veilig koppelen beheer-/onderhoudsapparatuur aan ICT- en IA-systemen",
+   "type": "Richtlijn",
+   "aangeroepen_door": 1
+  },
+  {
+   "id": "CSR 5",
+   "titel": "Draadloze netwerken",
+   "type": "Richtlijn",
+   "aangeroepen_door": 1
+  },
+  {
+   "id": "CSR 6",
+   "titel": "Industrial Internet of Things (IIoT)",
+   "type": "Richtlijn",
+   "aangeroepen_door": 1
+  },
+  {
+   "id": "CSR 7",
+   "titel": "Wachtwoorden",
+   "type": "Richtlijn",
+   "aangeroepen_door": 2
+  },
+  {
+   "id": "CSR 8",
+   "titel": "Patchmanagement",
+   "type": "Richtlijn",
+   "aangeroepen_door": 1
+  },
+  {
+   "id": "CSR 9",
+   "titel": "Hardening",
+   "type": "Richtlijn",
+   "aangeroepen_door": 1
+  },
+  {
+   "id": "CSR 10",
+   "titel": "Logging",
+   "type": "Richtlijn",
+   "aangeroepen_door": 2
+  },
+  {
+   "id": "CSR 11",
+   "titel": "Malware scanning en opschoning middels een USB",
+   "type": "Richtlijn",
+   "aangeroepen_door": 1
+  },
+  {
+   "id": "CSR 12",
+   "titel": "Continuïteitsplan voor energievoorziening",
+   "type": "Richtlijn",
+   "aangeroepen_door": 1
+  },
+  {
+   "id": "CSR 13",
+   "titel": "Handelswijze bij SOC-incidentmeldingen / verhoogde dreiging",
+   "type": "Richtlijn",
+   "aangeroepen_door": 1
+  },
+  {
+   "id": "CSR 14",
+   "titel": "Incident Response",
+   "type": "Richtlijn / template",
+   "aangeroepen_door": 2
+  },
+  {
+   "id": "CSR 15",
+   "titel": "Recoverplan",
+   "type": "Richtlijn / template",
+   "aangeroepen_door": 1
+  },
+  {
+   "id": "CSR 16",
+   "titel": "Registratie assets in een configuratiemanagement-database (CMDB)",
+   "type": "Richtlijn / template",
+   "aangeroepen_door": 1
+  },
+  {
+   "id": "CSR 17",
+   "titel": "Beveiligingshuisregels",
+   "type": "Richtlijn",
+   "aangeroepen_door": 2
+  },
+  {
+   "id": "CSR 18",
+   "titel": "Back-up management",
+   "type": "Richtlijn / template",
+   "aangeroepen_door": 2
+  },
+  {
+   "id": "CSR 19",
+   "titel": "Intellectueel eigendom",
+   "type": "Richtlijn",
+   "aangeroepen_door": 1
+  },
+  {
+   "id": "CSR 20",
+   "titel": "Camera's en omgang met camerabeelden",
+   "type": "Richtlijn",
+   "aangeroepen_door": 1
+  },
+  {
+   "id": "CSR 21",
+   "titel": "Uniform aanleveren van incidentrapportages",
+   "type": "Richtlijn",
+   "aangeroepen_door": 1
+  },
+  {
+   "id": "CSR 22",
+   "titel": "Virtualisatie",
+   "type": "Richtlijn",
+   "aangeroepen_door": 1
+  },
+  {
+   "id": "CSR 23",
+   "titel": "Verwijdering en vernietiging van informatie en apparatuur",
+   "type": "Richtlijn",
+   "aangeroepen_door": 1
+  },
+  {
+   "id": "CSR 24",
+   "titel": "Fysieke beveiliging",
+   "type": "Richtlijn",
+   "aangeroepen_door": 2
+  },
+  {
+   "id": "A",
+   "titel": "Begrippenlijst",
+   "type": "Referentie",
+   "aangeroepen_door": null
+  },
+  {
+   "id": "B",
+   "titel": "Cybersecurity Dossier / Cybersecurity Beveiligingsplan",
+   "type": "Template (verplicht)",
+   "aangeroepen_door": 4
+  },
+  {
+   "id": "C",
+   "titel": "Best practice voor risico-inschatting bij CSIR-afwijkingen (explain)",
+   "type": "Best practice",
+   "aangeroepen_door": 2
+  }
+ ]
+}
