@@ -1,10 +1,7 @@
 # csir-control-register
 
-Excel-werkboek om de Cybersecurity Implementatierichtlijn Objecten (CSIR) toe te passen en bij te
-houden voor één object: een tunnel, gemaal, brug, sluis of verkeersinstallatie.
-
-Status: prototype. Het werkboek is inhoudelijk compleet en rekent automatisch door, maar er zijn geen
-tests of CI en geen belofte dat het wordt bijgewerkt zodra de CSIR een nieuwe versie krijgt.
+Excel-werkboek om de Cybersecurity Implementatierichtlijn Objecten (CSIR) praktisch toe te passen en bij te
+houden voor een object, bijvoorbeeld: een tunnel, gemaal, brug, sluis of verkeersinstallatie.
 
 Je stelt op één blad het object en de functiebox in. Daaruit volgt het weerstandsniveau, en daarmee
 beweegt de rest van het werkboek mee: welke van de 268 maatregelen op dat niveau gelden, welke van de
@@ -37,10 +34,6 @@ Zie de [CONTRIBUTING](https://github.com/security-commons-nl/.github/blob/main/C
 de organisatie: daar staat per project een formulier, ook zonder Git-ervaring. Een issue of
 discussion is een volwaardige bijdrage.
 
-Wat vooral helpt: een control of maatregel waarvan de tekst afwijkt van jouw CSIR-exemplaar, een
-formule die in jouw Excel-versie anders uitpakt, of een stap in de werkwijze die in de praktijk
-klemt.
-
 ## Licentie
 
 EUPL-1.2, zie [LICENSE](LICENSE). Die licentie dekt wat in dit project zelf gemaakt is: de opzet van
@@ -49,7 +42,7 @@ het werkboek, de formules, het dashboard en de documentatie.
 **De eisteksten zelf vallen daar niet onder.** De controls en maatregelen zijn woordelijk overgenomen
 uit de Cybersecurity Implementatierichtlijn Objecten, uitgegeven door Rijkswaterstaat en Het
 Waterschapshuis. Het auteursrecht daarop ligt bij hen. Gebruik het werkboek zoals je de CSIR zelf zou
-gebruiken; ga bij vragen over verdere verspreiding te rade bij de uitgevers.
+gebruiken.
 
 ## Wat er in het werkboek zit
 
@@ -80,10 +73,3 @@ gelden 193, 198, 230 en 234 maatregelen; een maatregel kan op meerdere niveaus g
   onderbouwde afwijkingen mee, omdat comply-or-explain in de CSIR een geldige eindtoestand is.
 
 De opmaak (kleuren in koppen en accenten) is vrij aan te passen aan de eigen huisstijl.
-
-## Wat dit werkboek niet doet
-
-Het register is een **compliance-register**: het houdt bij welke eisen gelden en hoe ver je bent. Het
-bevat geen risicoanalyse — geen kans, geen impactscore, geen risicowaarde en geen formele
-risicoacceptatie. Wie voor bestaande objecten een risicogestuurde aanpak volgt, heeft daar een
-aanvullend instrument bij nodig.
