@@ -6,7 +6,10 @@ schrijft de CSIR voor"* naar *"wat gaan wij voor dít object doen, op welk nivea
 ## De vijf stappen
 
 1. **Classificeren.** Het object heeft een functiebox (A–E) uit de objectclassificatie. Die bepaalt
-   het weerstandsniveau: A=4, B=3, C=2, D=1, E=1. Vul beide in op blad Instellingen.
+   het weerstandsniveau: A=4, B=3, C=2, D=1, E=1. Vul beide in op blad Instellingen. Heb je die
+   classificatie nog niet gedaan, begin dan bij het classificatieformulier (zie hieronder); in de
+   [webversie](https://security-commons-nl.github.io/csir-control-register/) is dat het eerste
+   tabblad en stroomt de uitkomst vanzelf door.
 2. **Baseline vaststellen.** Loop de controls op VSP en VSE langs en verklaar ze van toepassing.
    Uitgangspunt is dat de volledige set geldt; wijk je af, dan doe je dat risicogestuurd en leg je
    dat vast.
@@ -19,6 +22,28 @@ schrijft de CSIR voor"* naar *"wat gaan wij voor dít object doen, op welk nivea
 
 Stap 1 tot en met 3 en stap 5 zijn constant. Alleen de vertaalslag naar contracteisen hangt ervan af
 of je het werk uitbesteedt.
+
+## De classificatie ervoor
+
+De functiebox komt niet uit dit register maar uit de objectclassificatie, en die is een stap op zich.
+Je beoordeelt het potentiële gevolg als het object faalt, uitvalt of niet beschikbaar is, langs zes
+criteria: veiligheid van medewerker en publiek, maatschappelijke gevolgen, financiële en
+herstelschade, cascade- en dominoeffecten, ecologische schade, en imago- en politieke schade. Elk
+criterium scoor je van 1 (klein) tot 5 (catastrofaal), met per stap een concrete drempel: minder dan
+duizend of meer dan vijfhonderdduizend getroffen personen, minder dan vijf ton of meer dan vijfhonderd
+miljoen euro schade, interne commotie of langdurig geen college.
+
+Het formulier neemt daarvan het **afgeronde gemiddelde** en vertaalt dat naar de functiebox: 1=E, 2=D,
+3=C, 4=B, 5=A. Dat gemiddelde heeft een prijs die je moet kennen: een enkel zwaar gevolg middelt weg.
+Een 5 op cascade tussen vijf enen komt uit op box D, terwijl datzelfde cascade-effect in de praktijk
+de reden is dat het object ertoe doet. De webversie zet daarom de strengste lezing ernaast, de hoogste
+score, zodat je ziet wat het verschil is voordat je hem vaststelt. Het formulier blijft leidend; wijk
+je ervan af, onderbouw dat dan bij de opmerkingen.
+
+**De onderbouwing is het product, niet het cijfer.** Wat je later moet kunnen uitleggen aan een
+bestuurder, een auditor of een leverancier is waarom een gevolg zwaar of licht is ingeschat, niet
+welk getal eruit rolde. Vul daarom per criterium de onderbouwing in, ook als de score vanzelfsprekend
+lijkt.
 
 ## De ketenregel
 

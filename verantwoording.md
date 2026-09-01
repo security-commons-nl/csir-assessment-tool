@@ -14,6 +14,13 @@ dezelfde paragraafnummers en dezelfde niveaumarkeringen, plus dezelfde bijlagen 
 Alle §2- en CSR-verwijzingen in dit register gelden dus in beide varianten. Alleen de controlnummers
 bestaan uitsluitend in de volledige versie.
 
+Daarnaast hoort bij dit register het **objectclassificatieformulier**
+(`werkboek/objectclassificatie.xlsx`), waaruit de functiebox volgt. De zes gevolgcriteria, hun uitleg,
+de dertig drempelteksten en de tabel ernst → functiebox → weerstandsniveau zijn daaruit woordelijk
+overgenomen. Het formulier komt uit de waterschapswereld; de keuzelijst met hoofdtaken is daarom in de
+webversie aangevuld met gemeentelijke objecttypen (tunnel, gemaal, brug, sluis, verkeersregelinstallatie,
+parkeergarage). Dat is de enige inhoudelijke toevoeging aan dat formulier.
+
 ## Wat letterlijk is overgenomen
 
 | Onderdeel | Aantal |
