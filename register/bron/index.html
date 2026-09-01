@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-__SCRIPT_HASH__'; style-src 'sha256-__STYLE_HASH__'; img-src data:; form-action 'none'; base-uri 'none'">
+<title>CSIR-keten</title>
+<link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMiAzMiIgcm9sZT0iaW1nIiBhcmlhLWxhYmVsPSJTZWN1cml0eSBDb21tb25zIE5MIj4KICA8dGl0bGU+U2VjdXJpdHkgQ29tbW9ucyBOTDwvdGl0bGU+CiAgPHBhdGggZD0iTTE2IDIgNCA2LjV2MTAuMkM0IDI0IDkuMiAyOC42IDE2IDMwLjUgMjIuOCAyOC42IDI4IDI0IDI4IDE2LjdWNi41TDE2IDJ6IiBmaWxsPSIjMTU0MjczIi8+CiAgPHBhdGggZD0iTTE2IDIgNCA2LjV2My4yTDE2IDUuMmwxMiA0LjVWNi41TDE2IDJ6IiBmaWxsPSIjZTE3MDAwIi8+CiAgPGNpcmNsZSBjeD0iMTYiIGN5PSIxNSIgcj0iMy42IiBmaWxsPSIjZmZmIi8+CiAgPHBhdGggZD0iTTE0LjYgMTcuNGgyLjhsMS4xIDYuMmgtNWwxLjEtNi4yeiIgZmlsbD0iI2ZmZiIvPgo8L3N2Zz4K" type="image/svg+xml">
+<meta name="description" content="Classificeer een object, bepaal welke CSIR-controls en maatregelen gelden op dat weerstandsniveau, en werk ze uit tot een dossier. Werkt offline in je eigen browser.">
+<style>__CSS__</style>
+</head>
+<body>
+<header>
+  <div class="binnen">
+    <nav class="kruimel" aria-label="Kruimelpad"><a href="https://security-commons-nl.github.io/">Security Commons NL</a> &rsaquo; <span>CSIR-keten</span></nav>
+    <div class="naam">CSIR-keten</div>
+    <div class="sub">Classificeren &middot; bepalen &middot; uitwerken &nbsp;|&nbsp; werkt offline, je dossier blijft op dit apparaat</div>
+  </div>
+</header>
+
+<div class="balk">
+  <div class="binnen">
+    <div class="knoppen">
+      <button type="button" id="knop-opslaan">Dossier opslaan</button>
+      <button type="button" id="knop-laden">Dossier laden</button>
+      <input type="file" id="bestand-laden" accept=".json,application/json" hidden>
+      <button type="button" id="knop-afdrukken">Afdrukken</button>
+      <button type="button" id="knop-wissen">Wissen</button>
+      <a href="uitleg/">Werkwijze en verantwoording</a>
+      <a href="werkboek/csir-control-register.xlsx">Werkboek (Excel)</a>
+    </div>
+    <p id="dossier-status">Nog geen object ingevuld.</p>
+    <nav class="tabs" role="tablist" aria-label="Onderdelen">
+      <button type="button" role="tab" id="tab-classificatie" data-scherm="scherm-classificatie">1 &middot; Classificeren</button>
+      <button type="button" role="tab" id="tab-instellingen" data-scherm="scherm-instellingen">2 &middot; Niveau</button>
+      <button type="button" role="tab" id="tab-dashboard" data-scherm="scherm-dashboard">Dashboard</button>
+      <button type="button" role="tab" id="tab-vsp" data-scherm="scherm-vsp">VSP Proceseisen</button>
+      <button type="button" role="tab" id="tab-vse" data-scherm="scherm-vse">VSE Systeemeisen</button>
+      <button type="button" role="tab" id="tab-maatregelen" data-scherm="scherm-maatregelen">3 &middot; Maatregelen</button>
+      <button type="button" role="tab" id="tab-bijlagen" data-scherm="scherm-bijlagen">Bijlagen</button>
+      <button type="button" role="tab" id="tab-uitdraai" data-scherm="scherm-uitdraai">Uitdraai</button>
+    </nav>
+  </div>
+</div>
+
+<main class="binnen">
+  <noscript>
+    <section class="kaart">
+      <h1>CSIR-keten</h1>
+      <p>Dit register rekent in je eigen browser, zodat je dossier nergens heen gaat. Daarvoor is
+      JavaScript nodig. De eisteksten, de maatregelen en de drempels staan open in
+      <code>csir.json</code> in de repository, dus je kunt ze ook zonder deze pagina lezen; het
+      Excel-werkboek staat er als download naast.</p>
+    </section>
+  </noscript>
+
+  <section class="scherm" id="scherm-classificatie">
+    <h1>Classificeren</h1>
+    <p class="leid">Hoe erg is het als dit object faalt, uitvalt of niet beschikbaar is? Scoor de zes
+    gevolgcriteria; daaruit volgt de functiebox en daarmee het weerstandsniveau. Onderbouw je keuze
+    per criterium: de onderbouwing is wat je later moet kunnen uitleggen, niet het cijfer.</p>
+
+    <div class="kaart">
+      <h2>Object</h2>
+      <div class="raster">
+        <label>Organisatie<input type="text" id="obj-organisatie"></label>
+        <label>Proces<input type="text" id="obj-proces"></label>
+        <label>Object of objectgroep<input type="text" id="obj-naam"></label>
+        <label>Locatie<input type="text" id="obj-locatie"></label>
+        <label>Hoofdtaak<select id="obj-hoofdtaak"></select></label>
+        <label>Ingevuld door<input type="text" id="obj-ingevuld-door"></label>
+        <label>Team of afdeling<input type="text" id="obj-team"></label>
+        <label>Datum<input type="date" id="obj-datum"></label>
+      </div>
+      <label class="breed">Situatiebeschrijving<textarea id="obj-situatie" rows="3"></textarea></label>
+    </div>
+
+    <div class="kaart">
+      <h2>Beoordeling potentieel gevolg</h2>
+      <div id="criteria"></div>
+      <label class="breed">Opmerkingen<textarea id="klas-opmerkingen" rows="3"></textarea></label>
+    </div>
+
+    <div class="kaart" id="klas-uitkomst">
+      <h2>Uitkomst</h2>
+      <table class="uitkomst">
+        <tbody>
+          <tr><th scope="row">Som van de zes scores</th><td id="klas-som">nog niet compleet</td></tr>
+          <tr><th scope="row">Afgerond gemiddelde (het formulier)</th><td id="klas-gemiddelde">nog niet compleet</td></tr>
+          <tr><th scope="row">Functiebox</th><td id="klas-functiebox">nog niet compleet</td></tr>
+          <tr><th scope="row">Weerstandsniveau</th><td id="klas-niveau">nog niet compleet</td></tr>
+          <tr class="tweede"><th scope="row">Hoogste score (strengste lezing)</th><td id="klas-hoogste">nog niet compleet</td></tr>
+          <tr class="tweede"><th scope="row">Functiebox bij de strengste lezing</th><td id="klas-hoogste-functiebox">nog niet compleet</td></tr>
+          <tr class="tweede"><th scope="row">Weerstandsniveau bij de strengste lezing</th><td id="klas-hoogste-niveau">nog niet compleet</td></tr>
+        </tbody>
+      </table>
+      <p class="klein" id="klas-toelichting"></p>
+      <button type="button" id="knop-classificatie-overnemen" disabled>Functiebox overnemen en verder</button>
+    </div>
+  </section>
+
+  <section class="scherm" id="scherm-instellingen" hidden>
+    <h1>Niveau</h1>
+    <p class="leid">De functiebox bepaalt het weerstandsniveau. Bedient of beheert dit object andere
+    objecten, dan gaat dit object omhoog naar het niveau van het zwaarste object dat het aanstuurt.</p>
+
+    <p class="waarschuwing" id="waarschuwing-functiebox">Vul eerst de functiebox in; niveau 1 is een
+    voorlopige waarde, geen vastgesteld niveau.</p>
+
+    <div class="kaart">
+      <h2>Dit object</h2>
+      <div class="raster">
+        <label>Object of objectgroep<input type="text" id="obj-naam-2"></label>
+        <label>Functiebox<select id="obj-functiebox"></select></label>
+      </div>
+      <p class="klein" id="functiebox-herkomst"></p>
+    </div>
+
+    <div class="kaart">
+      <h2>Keten-analyse (ketenregel, CSIR &sect;0.3)</h2>
+      <blockquote>Elke keten is zo sterk als de zwakste schakel. Indien de bediening of het beheer van
+      object A wordt gedaan vanuit een initieel lager geclassificeerd object B, wordt de classificatie
+      van dat object B verhoogd tot het cybersecurity weerstandsniveau van object A.</blockquote>
+      <div class="raster">
+        <label>Bedient of beheert dit object andere objecten?<select id="keten-actief"><option value="nee">Nee</option><option value="ja">Ja</option></select></label>
+      </div>
+      <table class="keten">
+        <thead><tr><th scope="col">Bediend of beheerd object</th><th scope="col">Functiebox</th><th scope="col">Niveau</th></tr></thead>
+        <tbody id="keten-rijen"></tbody>
+      </table>
+      <div class="raster">
+        <label>Bevestigd door (eigenaar of beheerder)<input type="text" id="keten-bevestigd"></label>
+        <label>Datum bevestiging<input type="date" id="keten-datum"></label>
+      </div>
+    </div>
+
+    <div class="kaart">
+      <h2>Weerstandsniveau</h2>
+      <table class="uitkomst">
+        <tbody>
+          <tr><th scope="row">Uit de eigen functiebox</th><td id="niveau-eigen">1</td></tr>
+          <tr><th scope="row">Uit de keten</th><td id="niveau-keten">0</td></tr>
+          <tr><th scope="row">Effectief niveau</th><td id="niveau-effectief">1</td></tr>
+        </tbody>
+      </table>
+      <table class="uitkomst" id="tabel-functiebox">
+        <thead><tr><th scope="col">Functiebox</th><th scope="col">Niveau</th></tr></thead>
+        <tbody id="tabel-functiebox-rijen"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="scherm" id="scherm-dashboard" hidden>
+    <h1>Dashboard</h1>
+    <p class="waarschuwing" id="waarschuwing-dashboard">Vul eerst object en functiebox in; de tellers
+    hieronder rekenen zolang met het voorlopige niveau 1.</p>
+    <div id="dashboard-inhoud"></div>
+  </section>
+
+  <section class="scherm" id="scherm-vsp" hidden>
+    <h1>VSP Proceseisen</h1>
+    <p class="leid">Verklaar per control of hij van toepassing is. Uitgangspunt is dat de volledige set
+    geldt; wijk je af, dan doe je dat risicogestuurd en leg je dat vast bij de opmerking.</p>
+    <div class="filters">
+      <label>Zoeken<input type="search" id="zoek-vsp" placeholder="tekst, BIO-bron of nummer"></label>
+      <span class="teller" id="teller-vsp"></span>
+    </div>
+    <div class="rol" tabindex="0"><table class="regels" id="tabel-vsp"></table></div>
+  </section>
+
+  <section class="scherm" id="scherm-vse" hidden>
+    <h1>VSE Systeemeisen</h1>
+    <p class="leid">Dezelfde stap voor de systeemeisen aan de industriele automatisering zelf.</p>
+    <div class="filters">
+      <label>Zoeken<input type="search" id="zoek-vse" placeholder="tekst, BIO-bron of nummer"></label>
+      <span class="teller" id="teller-vse"></span>
+    </div>
+    <div class="rol" tabindex="0"><table class="regels" id="tabel-vse"></table></div>
+  </section>
+
+  <section class="scherm" id="scherm-maatregelen" hidden>
+    <h1>Maatregelen</h1>
+    <p class="leid">Wat op dit niveau geldt, staat hieronder. De scope volgt uit je
+    van-toepassing-keuzes: roept minstens een van toepassing verklaarde control de paragraaf aan, dan
+    staat de maatregel in scope. Per paragraaf staan de handleidingen uit de kennisbank erbij.</p>
+    <div class="filters">
+      <label class="vink"><input type="checkbox" id="filter-geldt" checked> Alleen wat op dit niveau geldt</label>
+      <label>Scope<select id="filter-scope">
+        <option value="">alle</option>
+        <option>In scope</option>
+        <option>Buiten scope</option>
+        <option>Nog te bepalen</option>
+        <option>Niet op dit niveau</option>
+      </select></label>
+      <label>Paragraaf<select id="filter-paragraaf"></select></label>
+      <label>Status<select id="filter-status">
+        <option value="">alle</option>
+        <option>Nog te doen</option>
+        <option>In uitvoering</option>
+        <option>Ge&iuml;mplementeerd</option>
+        <option>Explain (afwijking)</option>
+        <option>N.v.t.</option>
+        <option value="(leeg)">nog geen status</option>
+      </select></label>
+      <label>Zoeken<input type="search" id="zoek-maatregelen" placeholder="tekst, code of thema"></label>
+      <span class="teller" id="teller-maatregelen"></span>
+    </div>
+    <div class="rol" tabindex="0"><table class="regels" id="tabel-maatregelen"></table></div>
+  </section>
+
+  <section class="scherm" id="scherm-bijlagen" hidden>
+    <h1>Bijlagen</h1>
+    <p class="leid">De richtlijnen en templates die de controls aanroepen. Bijlage B, het Cybersecurity
+    Dossier of Beveiligingsplan, is de plek waar de invulling van dit register terechtkomt.</p>
+    <div class="rol" tabindex="0"><table class="regels" id="tabel-bijlagen"></table></div>
+  </section>
+
+  <section class="scherm" id="scherm-uitdraai" hidden>
+    <h1>Uitdraai</h1>
+    <p class="leid nietprint">Dit is de dossier-uitdraai: alles wat je hebt ingevuld, in de volgorde
+    waarin het in het Cybersecurity Dossier hoort. Druk af met de knop hierboven of met Ctrl+P.</p>
+    <div id="uitdraai-inhoud"></div>
+  </section>
+</main>
+
+<footer>
+  <div class="binnen">
+    <p>CSIR-keten &middot; <span id="versie"></span> &middot;
+    <a href="https://github.com/security-commons-nl/csir-control-register" rel="noopener">bron, werkboek en methode op GitHub</a> &middot;
+    licentie <a href="https://github.com/security-commons-nl/csir-control-register/blob/main/LICENSE" rel="noopener">EUPL-1.2</a> &middot;
+    <a href="https://github.com/security-commons-nl/csir-control-register/issues/new/choose" rel="noopener">verbetering voorstellen</a>.
+    Geen account, geen server, geen telemetrie. Deze uitkomst komt uit je eigen antwoorden en is geen
+    technische verificatie. Offline gebruiken? Sla deze pagina op met Ctrl+S; alles zit erin.</p>
+    <p class="rechten" id="auteursrecht"></p>
+  </div>
+</footer>
+
+<script>__SCRIPT__</script>
+</body>
+</html>

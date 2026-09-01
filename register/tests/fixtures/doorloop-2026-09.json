@@ -1,0 +1,1158 @@
+{
+ "dossier": {
+  "formaat": "csir-dossier",
+  "versie": 1,
+  "bron_versie": "2026-09",
+  "object": {
+   "naam": "Gemaal Voorbeeld",
+   "organisatie": "Waterschap Voorbeeld",
+   "proces": "Beheer hoeveelheid water",
+   "locatie": "Voorbeeldpolder",
+   "hoofdtaak": "Gemaal",
+   "situatie": "Gemaal met eigen PLC-installatie, op afstand bediend vanuit de centrale post.",
+   "ingevuld_door": "A. Voorbeeld",
+   "team": "Automatisering",
+   "datum": "2026-09-01"
+  },
+  "classificatie": {
+   "scores": {
+    "veiligheid": 3,
+    "maatschappij": 4,
+    "financieel": 2,
+    "cascade": 5,
+    "ecologie": 1,
+    "imago": 3
+   },
+   "onderbouwing": {
+    "veiligheid": "Onderbouwing veiligheid.",
+    "maatschappij": "Onderbouwing maatschappij.",
+    "financieel": "Onderbouwing financieel.",
+    "cascade": "Onderbouwing cascade.",
+    "ecologie": "Onderbouwing ecologie.",
+    "imago": "Onderbouwing imago."
+   },
+   "opmerkingen": "Voorbeelddossier voor de test; geen echt object."
+  },
+  "instellingen": {
+   "functiebox": "C",
+   "functiebox_bron": "classificatie",
+   "keten": {
+    "actief": true,
+    "objecten": [
+     {
+      "naam": "Centrale post",
+      "functiebox": "B"
+     },
+     {
+      "naam": "",
+      "functiebox": ""
+     },
+     {
+      "naam": "",
+      "functiebox": ""
+     }
+    ],
+    "bevestigd_door": "B. Beheerder",
+    "datum": "2026-09-01"
+   }
+  },
+  "controls": {
+   "VSP-1": {
+    "vt": "Ja",
+    "status": "Geïmplementeerd",
+    "bewijs": "Bewijsstuk VSP-1",
+    "verantwoordelijke": "Objectbeheer",
+    "opmerking": ""
+   },
+   "VSP-2": {
+    "vt": "Ja",
+    "status": "Geïmplementeerd",
+    "bewijs": "Bewijsstuk VSP-2",
+    "verantwoordelijke": "Objectbeheer",
+    "opmerking": ""
+   },
+   "VSP-3": {
+    "vt": "Ja",
+    "status": "Geïmplementeerd",
+    "bewijs": "Bewijsstuk VSP-3",
+    "verantwoordelijke": "Objectbeheer",
+    "opmerking": ""
+   },
+   "VSP-4": {
+    "vt": "Ja",
+    "status": "Geïmplementeerd",
+    "bewijs": "Bewijsstuk VSP-4",
+    "verantwoordelijke": "Objectbeheer",
+    "opmerking": ""
+   },
+   "VSP-5": {
+    "vt": "Ja",
+    "status": "Geïmplementeerd",
+    "bewijs": "Bewijsstuk VSP-5",
+    "verantwoordelijke": "Objectbeheer",
+    "opmerking": ""
+   },
+   "VSP-6": {
+    "vt": "Ja",
+    "status": "Geïmplementeerd",
+    "bewijs": "Bewijsstuk VSP-6",
+    "verantwoordelijke": "Objectbeheer",
+    "opmerking": ""
+   },
+   "VSP-7": {
+    "vt": "Ja",
+    "status": "Geïmplementeerd",
+    "bewijs": "Bewijsstuk VSP-7",
+    "verantwoordelijke": "Objectbeheer",
+    "opmerking": ""
+   },
+   "VSP-8": {
+    "vt": "Ja",
+    "status": "Geïmplementeerd",
+    "bewijs": "Bewijsstuk VSP-8",
+    "verantwoordelijke": "Objectbeheer",
+    "opmerking": ""
+   },
+   "VSP-9": {
+    "vt": "Ja",
+    "status": "Geïmplementeerd",
+    "bewijs": "Bewijsstuk VSP-9",
+    "verantwoordelijke": "Objectbeheer",
+    "opmerking": ""
+   },
+   "VSP-10": {
+    "vt": "Ja",
+    "status": "Geïmplementeerd",
+    "bewijs": "Bewijsstuk VSP-10",
+    "verantwoordelijke": "Objectbeheer",
+    "opmerking": ""
+   },
+   "VSP-11": {
+    "vt": "Ja",
+    "status": "Geïmplementeerd",
+    "bewijs": "Bewijsstuk VSP-11",
+    "verantwoordelijke": "Objectbeheer",
+    "opmerking": ""
+   },
+   "VSP-12": {
+    "vt": "Ja",
+    "status": "Geïmplementeerd",
+    "bewijs": "Bewijsstuk VSP-12",
+    "verantwoordelijke": "Objectbeheer",
+    "opmerking": ""
+   },
+   "VSP-13": {
+    "vt": "Ja",
+    "status": "Geïmplementeerd",
+    "bewijs": "Bewijsstuk VSP-13",
+    "verantwoordelijke": "Objectbeheer",
+    "opmerking": ""
+   },
+   "VSP-14": {
+    "vt": "Ja",
+    "status": "Geïmplementeerd",
+    "bewijs": "Bewijsstuk VSP-14",
+    "verantwoordelijke": "Objectbeheer",
+    "opmerking": ""
+   },
+   "VSP-15": {
+    "vt": "Ja",
+    "status": "Geïmplementeerd",
+    "bewijs": "Bewijsstuk VSP-15",
+    "verantwoordelijke": "Objectbeheer",
+    "opmerking": ""
+   },
+   "VSP-16": {
+    "vt": "Ja",
+    "status": "Geïmplementeerd",
+    "bewijs": "Bewijsstuk VSP-16",
+    "verantwoordelijke": "Objectbeheer",
+    "opmerking": ""
+   },
+   "VSP-17": {
+    "vt": "Ja",
+    "status": "Geïmplementeerd",
+    "bewijs": "Bewijsstuk VSP-17",
+    "verantwoordelijke": "Objectbeheer",
+    "opmerking": ""
+   },
+   "VSP-18": {
+    "vt": "Ja",
+    "status": "Geïmplementeerd",
+    "bewijs": "Bewijsstuk VSP-18",
+    "verantwoordelijke": "Objectbeheer",
+    "opmerking": ""
+   },
+   "VSP-19": {
+    "vt": "Ja",
+    "status": "Geïmplementeerd",
+    "bewijs": "Bewijsstuk VSP-19",
+    "verantwoordelijke": "Objectbeheer",
+    "opmerking": ""
+   },
+   "VSP-20": {
+    "vt": "Ja",
+    "status": "Geïmplementeerd",
+    "bewijs": "Bewijsstuk VSP-20",
+    "verantwoordelijke": "Objectbeheer",
+    "opmerking": ""
+   },
+   "VSP-21": {
+    "vt": "Ja",
+    "status": "In uitvoering",
+    "bewijs": "Bewijsstuk VSP-21",
+    "verantwoordelijke": "Objectbeheer",
+    "opmerking": ""
+   },
+   "VSP-22": {
+    "vt": "Ja",
+    "status": "In uitvoering",
+    "bewijs": "Bewijsstuk VSP-22",
+    "verantwoordelijke": "Objectbeheer",
+    "opmerking": ""
+   },
+   "VSP-23": {
+    "vt": "Ja",
+    "status": "In uitvoering",
+    "bewijs": "Bewijsstuk VSP-23",
+    "verantwoordelijke": "Objectbeheer",
+    "opmerking": ""
+   },
+   "VSP-24": {
+    "vt": "Nee",
+    "status": "",
+    "bewijs": "",
+    "verantwoordelijke": "",
+    "opmerking": "Valt buiten de scope van deze opdracht."
+   },
+   "VSP-25": {
+    "vt": "Ja",
+    "status": "In uitvoering",
+    "bewijs": "Bewijsstuk VSP-25",
+    "verantwoordelijke": "Objectbeheer",
+    "opmerking": ""
+   },
+   "VSP-26": {
+    "vt": "Ja",
+    "status": "In uitvoering",
+    "bewijs": "Bewijsstuk VSP-26",
+    "verantwoordelijke": "Objectbeheer",
+    "opmerking": ""
+   },
+   "VSP-27": {
+    "vt": "Ja",
+    "status": "Explain (afwijking)",
+    "bewijs": "Bewijsstuk VSP-27",
+    "verantwoordelijke": "Objectbeheer",
+    "opmerking": "Afwijking onderbouwd in het beveiligingsplan."
+   },
+   "VSP-28": {
+    "vt": "Ja",
+    "status": "Explain (afwijking)",
+    "bewijs": "Bewijsstuk VSP-28",
+    "verantwoordelijke": "Objectbeheer",
+    "opmerking": "Afwijking onderbouwd in het beveiligingsplan."
+   },
+   "VSP-29": {
+    "vt": "Ja",
+    "status": "Explain (afwijking)",
+    "bewijs": "Bewijsstuk VSP-29",
+    "verantwoordelijke": "Objectbeheer",
+    "opmerking": "Afwijking onderbouwd in het beveiligingsplan."
+   },
+   "VSP-30": {
+    "vt": "Ja",
+    "status": "Explain (afwijking)",
+    "bewijs": "Bewijsstuk VSP-30",
+    "verantwoordelijke": "Objectbeheer",
+    "opmerking": "Afwijking onderbouwd in het beveiligingsplan."
+   },
+   "VSP-31": {
+    "vt": "Ja",
+    "status": "N.v.t.",
+    "bewijs": "Bewijsstuk VSP-31",
+    "verantwoordelijke": "Objectbeheer",
+    "opmerking": ""
+   },
+   "VSP-32": {
+    "vt": "Nee",
+    "status": "",
+    "bewijs": "",
+    "verantwoordelijke": "",
+    "opmerking": "Valt buiten de scope van deze opdracht."
+   },
+   "VSP-33": {
+    "vt": "Ja",
+    "status": "N.v.t.",
+    "bewijs": "Bewijsstuk VSP-33",
+    "verantwoordelijke": "Objectbeheer",
+    "opmerking": ""
+   },
+   "VSP-34": {
+    "vt": "Ja",
+    "status": "N.v.t.",
+    "bewijs": "Bewijsstuk VSP-34",
+    "verantwoordelijke": "Objectbeheer",
+    "opmerking": ""
+   },
+   "VSP-35": {
+    "vt": "Ja",
+    "status": "Nog te doen",
+    "bewijs": "Bewijsstuk VSP-35",
+    "verantwoordelijke": "Objectbeheer",
+    "opmerking": ""
+   },
+   "VSP-36": {
+    "vt": "Ja",
+    "status": "Nog te doen",
+    "bewijs": "Bewijsstuk VSP-36",
+    "verantwoordelijke": "Objectbeheer",
+    "opmerking": ""
+   },
+   "VSP-37": {
+    "vt": "Ja",
+    "status": "Nog te doen",
+    "bewijs": "Bewijsstuk VSP-37",
+    "verantwoordelijke": "Objectbeheer",
+    "opmerking": ""
+   },
+   "VSP-38": {
+    "vt": "Ja",
+    "status": "Nog te doen",
+    "bewijs": "Bewijsstuk VSP-38",
+    "verantwoordelijke": "Objectbeheer",
+    "opmerking": ""
+   },
+   "VSP-39": {
+    "vt": "Ja",
+    "status": "Nog te doen",
+    "bewijs": "Bewijsstuk VSP-39",
+    "verantwoordelijke": "Objectbeheer",
+    "opmerking": ""
+   },
+   "VSP-40": {
+    "vt": "Ja",
+    "status": "Nog te doen",
+    "bewijs": "Bewijsstuk VSP-40",
+    "verantwoordelijke": "Objectbeheer",
+    "opmerking": ""
+   },
+   "VSP-41": {
+    "vt": "Ja",
+    "status": "",
+    "bewijs": "",
+    "verantwoordelijke": "",
+    "opmerking": ""
+   },
+   "VSP-42": {
+    "vt": "Ja",
+    "status": "",
+    "bewijs": "",
+    "verantwoordelijke": "",
+    "opmerking": ""
+   },
+   "VSP-43": {
+    "vt": "Ja",
+    "status": "",
+    "bewijs": "",
+    "verantwoordelijke": "",
+    "opmerking": ""
+   },
+   "VSP-44": {
+    "vt": "Ja",
+    "status": "",
+    "bewijs": "",
+    "verantwoordelijke": "",
+    "opmerking": ""
+   },
+   "VSP-45": {
+    "vt": "Ja",
+    "status": "",
+    "bewijs": "",
+    "verantwoordelijke": "",
+    "opmerking": ""
+   },
+   "VSP-46": {
+    "vt": "Ja",
+    "status": "",
+    "bewijs": "",
+    "verantwoordelijke": "",
+    "opmerking": ""
+   },
+   "VSP-47": {
+    "vt": "Ja",
+    "status": "",
+    "bewijs": "",
+    "verantwoordelijke": "",
+    "opmerking": ""
+   },
+   "VSP-48": {
+    "vt": "Ja",
+    "status": "",
+    "bewijs": "",
+    "verantwoordelijke": "",
+    "opmerking": ""
+   },
+   "VSP-49": {
+    "vt": "Ja",
+    "status": "",
+    "bewijs": "",
+    "verantwoordelijke": "",
+    "opmerking": ""
+   },
+   "VSP-50": {
+    "vt": "Ja",
+    "status": "",
+    "bewijs": "",
+    "verantwoordelijke": "",
+    "opmerking": ""
+   },
+   "VSP-51": {
+    "vt": "Ja",
+    "status": "",
+    "bewijs": "",
+    "verantwoordelijke": "",
+    "opmerking": ""
+   },
+   "VSP-52": {
+    "vt": "Ja",
+    "status": "",
+    "bewijs": "",
+    "verantwoordelijke": "",
+    "opmerking": ""
+   },
+   "VSP-53": {
+    "vt": "Ja",
+    "status": "",
+    "bewijs": "",
+    "verantwoordelijke": "",
+    "opmerking": ""
+   },
+   "VSP-54": {
+    "vt": "Ja",
+    "status": "",
+    "bewijs": "",
+    "verantwoordelijke": "",
+    "opmerking": ""
+   },
+   "VSP-55": {
+    "vt": "Ja",
+    "status": "",
+    "bewijs": "",
+    "verantwoordelijke": "",
+    "opmerking": ""
+   },
+   "VSP-56": {
+    "vt": "Ja",
+    "status": "",
+    "bewijs": "",
+    "verantwoordelijke": "",
+    "opmerking": ""
+   },
+   "VSP-57": {
+    "vt": "Ja",
+    "status": "",
+    "bewijs": "",
+    "verantwoordelijke": "",
+    "opmerking": ""
+   },
+   "VSP-58": {
+    "vt": "Ja",
+    "status": "",
+    "bewijs": "",
+    "verantwoordelijke": "",
+    "opmerking": ""
+   },
+   "VSP-59": {
+    "vt": "Ja",
+    "status": "",
+    "bewijs": "",
+    "verantwoordelijke": "",
+    "opmerking": ""
+   },
+   "VSP-60": {
+    "vt": "Ja",
+    "status": "",
+    "bewijs": "",
+    "verantwoordelijke": "",
+    "opmerking": ""
+   },
+   "VSP-61": {
+    "vt": "Ja",
+    "status": "",
+    "bewijs": "",
+    "verantwoordelijke": "",
+    "opmerking": ""
+   },
+   "VSP-62": {
+    "vt": "Ja",
+    "status": "",
+    "bewijs": "",
+    "verantwoordelijke": "",
+    "opmerking": ""
+   },
+   "VSP-63": {
+    "vt": "Ja",
+    "status": "",
+    "bewijs": "",
+    "verantwoordelijke": "",
+    "opmerking": ""
+   },
+   "VSP-64": {
+    "vt": "Ja",
+    "status": "",
+    "bewijs": "",
+    "verantwoordelijke": "",
+    "opmerking": ""
+   },
+   "VSP-65": {
+    "vt": "Ja",
+    "status": "",
+    "bewijs": "",
+    "verantwoordelijke": "",
+    "opmerking": ""
+   },
+   "VSP-66": {
+    "vt": "Ja",
+    "status": "",
+    "bewijs": "",
+    "verantwoordelijke": "",
+    "opmerking": ""
+   },
+   "VSP-67": {
+    "vt": "Ja",
+    "status": "",
+    "bewijs": "",
+    "verantwoordelijke": "",
+    "opmerking": ""
+   },
+   "VSP-68": {
+    "vt": "Ja",
+    "status": "",
+    "bewijs": "",
+    "verantwoordelijke": "",
+    "opmerking": ""
+   },
+   "VSP-69": {
+    "vt": "Ja",
+    "status": "",
+    "bewijs": "",
+    "verantwoordelijke": "",
+    "opmerking": ""
+   },
+   "VSP-70": {
+    "vt": "Ja",
+    "status": "",
+    "bewijs": "",
+    "verantwoordelijke": "",
+    "opmerking": ""
+   },
+   "VSP-71": {
+    "vt": "Ja",
+    "status": "",
+    "bewijs": "",
+    "verantwoordelijke": "",
+    "opmerking": ""
+   },
+   "VSP-72": {
+    "vt": "Ja",
+    "status": "",
+    "bewijs": "",
+    "verantwoordelijke": "",
+    "opmerking": ""
+   },
+   "VSP-73": {
+    "vt": "Ja",
+    "status": "",
+    "bewijs": "",
+    "verantwoordelijke": "",
+    "opmerking": ""
+   },
+   "VSP-74": {
+    "vt": "Ja",
+    "status": "",
+    "bewijs": "",
+    "verantwoordelijke": "",
+    "opmerking": ""
+   },
+   "VSP-75": {
+    "vt": "Ja",
+    "status": "",
+    "bewijs": "",
+    "verantwoordelijke": "",
+    "opmerking": ""
+   },
+   "VSP-76": {
+    "vt": "Ja",
+    "status": "",
+    "bewijs": "",
+    "verantwoordelijke": "",
+    "opmerking": ""
+   },
+   "VSP-77": {
+    "vt": "Ja",
+    "status": "",
+    "bewijs": "",
+    "verantwoordelijke": "",
+    "opmerking": ""
+   },
+   "VSP-78": {
+    "vt": "Ja",
+    "status": "",
+    "bewijs": "",
+    "verantwoordelijke": "",
+    "opmerking": ""
+   },
+   "VSP-79": {
+    "vt": "Ja",
+    "status": "",
+    "bewijs": "",
+    "verantwoordelijke": "",
+    "opmerking": ""
+   },
+   "VSP-80": {
+    "vt": "Ja",
+    "status": "",
+    "bewijs": "",
+    "verantwoordelijke": "",
+    "opmerking": ""
+   },
+   "VSP-81": {
+    "vt": "N.v.t. (buiten scope)",
+    "status": "",
+    "bewijs": "",
+    "verantwoordelijke": "",
+    "opmerking": ""
+   },
+   "VSP-82": {
+    "vt": "N.v.t. (buiten scope)",
+    "status": "",
+    "bewijs": "",
+    "verantwoordelijke": "",
+    "opmerking": ""
+   },
+   "VSP-83": {
+    "vt": "Ja",
+    "status": "",
+    "bewijs": "",
+    "verantwoordelijke": "",
+    "opmerking": ""
+   },
+   "VSP-84": {
+    "vt": "Ja",
+    "status": "",
+    "bewijs": "",
+    "verantwoordelijke": "",
+    "opmerking": ""
+   },
+   "VSP-85": {
+    "vt": "Ja",
+    "status": "",
+    "bewijs": "",
+    "verantwoordelijke": "",
+    "opmerking": ""
+   },
+   "VSP-86": {
+    "vt": "Ja",
+    "status": "",
+    "bewijs": "",
+    "verantwoordelijke": "",
+    "opmerking": ""
+   },
+   "VSP-87": {
+    "vt": "Ja",
+    "status": "",
+    "bewijs": "",
+    "verantwoordelijke": "",
+    "opmerking": ""
+   },
+   "VSP-88": {
+    "vt": "Ja",
+    "status": "",
+    "bewijs": "",
+    "verantwoordelijke": "",
+    "opmerking": ""
+   },
+   "VSP-89": {
+    "vt": "Ja",
+    "status": "",
+    "bewijs": "",
+    "verantwoordelijke": "",
+    "opmerking": ""
+   },
+   "VSE-1": {
+    "vt": "Ja",
+    "status": "",
+    "bewijs": "",
+    "verantwoordelijke": "",
+    "opmerking": ""
+   },
+   "VSE-2": {
+    "vt": "Ja",
+    "status": "",
+    "bewijs": "",
+    "verantwoordelijke": "",
+    "opmerking": ""
+   },
+   "VSE-3": {
+    "vt": "Ja",
+    "status": "",
+    "bewijs": "",
+    "verantwoordelijke": "",
+    "opmerking": ""
+   },
+   "VSE-4": {
+    "vt": "Ja",
+    "status": "",
+    "bewijs": "",
+    "verantwoordelijke": "",
+    "opmerking": ""
+   },
+   "VSE-5": {
+    "vt": "Nee",
+    "status": "",
+    "bewijs": "",
+    "verantwoordelijke": "",
+    "opmerking": "Valt buiten de scope van deze opdracht."
+   },
+   "VSE-6": {
+    "vt": "Ja",
+    "status": "",
+    "bewijs": "",
+    "verantwoordelijke": "",
+    "opmerking": ""
+   },
+   "VSE-7": {
+    "vt": "Ja",
+    "status": "",
+    "bewijs": "",
+    "verantwoordelijke": "",
+    "opmerking": ""
+   },
+   "VSE-8": {
+    "vt": "Ja",
+    "status": "",
+    "bewijs": "",
+    "verantwoordelijke": "",
+    "opmerking": ""
+   },
+   "VSE-9": {
+    "vt": "Ja",
+    "status": "",
+    "bewijs": "",
+    "verantwoordelijke": "",
+    "opmerking": ""
+   },
+   "VSE-10": {
+    "vt": "Ja",
+    "status": "",
+    "bewijs": "",
+    "verantwoordelijke": "",
+    "opmerking": ""
+   },
+   "VSE-11": {
+    "vt": "Ja",
+    "status": "",
+    "bewijs": "",
+    "verantwoordelijke": "",
+    "opmerking": ""
+   },
+   "VSE-12": {
+    "vt": "",
+    "status": "",
+    "bewijs": "",
+    "verantwoordelijke": "",
+    "opmerking": ""
+   },
+   "VSE-13": {
+    "vt": "Ja",
+    "status": "",
+    "bewijs": "",
+    "verantwoordelijke": "",
+    "opmerking": ""
+   },
+   "VSE-14": {
+    "vt": "Ja",
+    "status": "",
+    "bewijs": "",
+    "verantwoordelijke": "",
+    "opmerking": ""
+   },
+   "VSE-15": {
+    "vt": "Ja",
+    "status": "",
+    "bewijs": "",
+    "verantwoordelijke": "",
+    "opmerking": ""
+   },
+   "VSE-16": {
+    "vt": "Ja",
+    "status": "",
+    "bewijs": "",
+    "verantwoordelijke": "",
+    "opmerking": ""
+   },
+   "VSE-17": {
+    "vt": "Ja",
+    "status": "",
+    "bewijs": "",
+    "verantwoordelijke": "",
+    "opmerking": ""
+   },
+   "VSE-18": {
+    "vt": "Ja",
+    "status": "",
+    "bewijs": "",
+    "verantwoordelijke": "",
+    "opmerking": ""
+   },
+   "VSE-19": {
+    "vt": "Ja",
+    "status": "",
+    "bewijs": "",
+    "verantwoordelijke": "",
+    "opmerking": ""
+   },
+   "VSE-20": {
+    "vt": "Ja",
+    "status": "",
+    "bewijs": "",
+    "verantwoordelijke": "",
+    "opmerking": ""
+   },
+   "VSE-21": {
+    "vt": "Ja",
+    "status": "",
+    "bewijs": "",
+    "verantwoordelijke": "",
+    "opmerking": ""
+   },
+   "VSE-22": {
+    "vt": "Ja",
+    "status": "",
+    "bewijs": "",
+    "verantwoordelijke": "",
+    "opmerking": ""
+   },
+   "VSE-23": {
+    "vt": "Ja",
+    "status": "",
+    "bewijs": "",
+    "verantwoordelijke": "",
+    "opmerking": ""
+   },
+   "VSE-24": {
+    "vt": "Ja",
+    "status": "",
+    "bewijs": "",
+    "verantwoordelijke": "",
+    "opmerking": ""
+   },
+   "VSE-25": {
+    "vt": "Ja",
+    "status": "",
+    "bewijs": "",
+    "verantwoordelijke": "",
+    "opmerking": ""
+   },
+   "VSE-26": {
+    "vt": "Ja",
+    "status": "",
+    "bewijs": "",
+    "verantwoordelijke": "",
+    "opmerking": ""
+   },
+   "VSE-27": {
+    "vt": "Ja",
+    "status": "",
+    "bewijs": "",
+    "verantwoordelijke": "",
+    "opmerking": ""
+   },
+   "VSE-28": {
+    "vt": "Ja",
+    "status": "",
+    "bewijs": "",
+    "verantwoordelijke": "",
+    "opmerking": ""
+   },
+   "VSE-29": {
+    "vt": "Ja",
+    "status": "",
+    "bewijs": "",
+    "verantwoordelijke": "",
+    "opmerking": ""
+   },
+   "VSE-30": {
+    "vt": "Ja",
+    "status": "",
+    "bewijs": "",
+    "verantwoordelijke": "",
+    "opmerking": ""
+   },
+   "VSE-31": {
+    "vt": "Ja",
+    "status": "",
+    "bewijs": "",
+    "verantwoordelijke": "",
+    "opmerking": ""
+   },
+   "VSE-32": {
+    "vt": "Ja",
+    "status": "",
+    "bewijs": "",
+    "verantwoordelijke": "",
+    "opmerking": ""
+   },
+   "VSE-33": {
+    "vt": "Ja",
+    "status": "",
+    "bewijs": "",
+    "verantwoordelijke": "",
+    "opmerking": ""
+   },
+   "VSE-34": {
+    "vt": "Ja",
+    "status": "",
+    "bewijs": "",
+    "verantwoordelijke": "",
+    "opmerking": ""
+   },
+   "VSE-35": {
+    "vt": "Ja",
+    "status": "",
+    "bewijs": "",
+    "verantwoordelijke": "",
+    "opmerking": ""
+   },
+   "VSE-36": {
+    "vt": "Ja",
+    "status": "",
+    "bewijs": "",
+    "verantwoordelijke": "",
+    "opmerking": ""
+   },
+   "VSE-37": {
+    "vt": "Ja",
+    "status": "",
+    "bewijs": "",
+    "verantwoordelijke": "",
+    "opmerking": ""
+   },
+   "VSE-38": {
+    "vt": "Ja",
+    "status": "",
+    "bewijs": "",
+    "verantwoordelijke": "",
+    "opmerking": ""
+   }
+  },
+  "maatregelen": {
+   "FR3": {
+    "status": "Geïmplementeerd",
+    "bewijs": "Zie dossier FR3",
+    "verantwoordelijke": "Objectbeheer",
+    "opmerking": ""
+   },
+   "FTG1": {
+    "status": "Geïmplementeerd",
+    "bewijs": "Zie dossier FTG1",
+    "verantwoordelijke": "Objectbeheer",
+    "opmerking": ""
+   },
+   "LM11": {
+    "status": "Geïmplementeerd",
+    "bewijs": "Zie dossier LM11",
+    "verantwoordelijke": "Objectbeheer",
+    "opmerking": ""
+   },
+   "IM1": {
+    "status": "Geïmplementeerd",
+    "bewijs": "Zie dossier IM1",
+    "verantwoordelijke": "Objectbeheer",
+    "opmerking": ""
+   },
+   "NM1": {
+    "status": "Geïmplementeerd",
+    "bewijs": "Zie dossier NM1",
+    "verantwoordelijke": "Objectbeheer",
+    "opmerking": ""
+   },
+   "CM1": {
+    "status": "Geïmplementeerd",
+    "bewijs": "Zie dossier CM1",
+    "verantwoordelijke": "Objectbeheer",
+    "opmerking": ""
+   },
+   "AM1": {
+    "status": "Geïmplementeerd",
+    "bewijs": "Zie dossier AM1",
+    "verantwoordelijke": "Objectbeheer",
+    "opmerking": ""
+   },
+   "HM1": {
+    "status": "Geïmplementeerd",
+    "bewijs": "Zie dossier HM1",
+    "verantwoordelijke": "Objectbeheer",
+    "opmerking": ""
+   },
+   "PM1": {
+    "status": "Geïmplementeerd",
+    "bewijs": "Zie dossier PM1",
+    "verantwoordelijke": "Objectbeheer",
+    "opmerking": ""
+   },
+   "MM1": {
+    "status": "Geïmplementeerd",
+    "bewijs": "Zie dossier MM1",
+    "verantwoordelijke": "Objectbeheer",
+    "opmerking": ""
+   },
+   "TMe1": {
+    "status": "Explain (afwijking)",
+    "bewijs": "Zie dossier TMe1",
+    "verantwoordelijke": "Objectbeheer",
+    "opmerking": "Afwijking onderbouwd."
+   },
+   "TMa1": {
+    "status": "Explain (afwijking)",
+    "bewijs": "Zie dossier TMa1",
+    "verantwoordelijke": "Objectbeheer",
+    "opmerking": "Afwijking onderbouwd."
+   },
+   "WM1": {
+    "status": "Explain (afwijking)",
+    "bewijs": "Zie dossier WM1",
+    "verantwoordelijke": "Objectbeheer",
+    "opmerking": "Afwijking onderbouwd."
+   },
+   "OM1": {
+    "status": "N.v.t.",
+    "bewijs": "Zie dossier OM1",
+    "verantwoordelijke": "Objectbeheer",
+    "opmerking": ""
+   },
+   "BM1": {
+    "status": "N.v.t.",
+    "bewijs": "Zie dossier BM1",
+    "verantwoordelijke": "Objectbeheer",
+    "opmerking": ""
+   },
+   "FR1": {
+    "status": "Geïmplementeerd",
+    "bewijs": "Telt niet mee op dit niveau",
+    "verantwoordelijke": "",
+    "opmerking": ""
+   },
+   "FR2": {
+    "status": "Geïmplementeerd",
+    "bewijs": "Telt niet mee op dit niveau",
+    "verantwoordelijke": "",
+    "opmerking": ""
+   }
+  },
+  "bijlagen": {
+   "CSR 15": {
+    "vt": "Ja",
+    "status": "Geïmplementeerd",
+    "opmerking": ""
+   },
+   "B": {
+    "vt": "Ja",
+    "status": "Geïmplementeerd",
+    "opmerking": ""
+   }
+  },
+  "bron_sha256": "67b71a9366df4c81e12385251c0ff047db987fd2c694086fc1593c54c7fa201e",
+  "bijgewerkt": "2026-09-01T21:00:00"
+ },
+ "verwacht": {
+  "niveau": 3,
+  "vsp.vt": 85,
+  "vsp.todo": 6,
+  "vsp.bezig": 5,
+  "vsp.klaar": 20,
+  "vsp.explain": 4,
+  "vsp.nvt": 3,
+  "vsp.pct_impl": 0.24390243902439024,
+  "vsp.pct_afgeh": 0.2926829268292683,
+  "vse.vt": 36,
+  "vse.todo": 0,
+  "vse.bezig": 0,
+  "vse.klaar": 0,
+  "vse.explain": 0,
+  "vse.nvt": 0,
+  "vse.pct_impl": 0.0,
+  "vse.pct_afgeh": 0.0,
+  "maatregelen.vt": 230,
+  "maatregelen.todo": 0,
+  "maatregelen.bezig": 0,
+  "maatregelen.klaar": 10,
+  "maatregelen.explain": 3,
+  "maatregelen.nvt": 2,
+  "maatregelen.pct_impl": 0.043859649122807015,
+  "maatregelen.pct_afgeh": 0.05701754385964912,
+  "totaal.vt": 351,
+  "totaal.todo": 6,
+  "totaal.bezig": 5,
+  "totaal.klaar": 30,
+  "totaal.explain": 7,
+  "totaal.nvt": 5,
+  "totaal.pct_impl": 0.08670520231213873,
+  "totaal.pct_afgeh": 0.1069364161849711,
+  "controls.ja": 121,
+  "controls.nee": 3,
+  "controls.nvt": 2,
+  "controls.leeg": 1,
+  "scope.in": 167,
+  "scope.buiten": 63,
+  "scope.nog": 0,
+  "paragraaf.§2.1.1.op_niveau": 11,
+  "paragraaf.§2.1.1.geimpl": 1,
+  "paragraaf.§2.1.1.pct": 0.09090909090909091,
+  "paragraaf.§2.1.2.op_niveau": 19,
+  "paragraaf.§2.1.2.geimpl": 1,
+  "paragraaf.§2.1.2.pct": 0.05263157894736842,
+  "paragraaf.§2.2.op_niveau": 30,
+  "paragraaf.§2.2.geimpl": 1,
+  "paragraaf.§2.2.pct": 0.03333333333333333,
+  "paragraaf.§2.3.op_niveau": 15,
+  "paragraaf.§2.3.geimpl": 1,
+  "paragraaf.§2.3.pct": 0.06666666666666667,
+  "paragraaf.§2.4.1.op_niveau": 16,
+  "paragraaf.§2.4.1.geimpl": 1,
+  "paragraaf.§2.4.1.pct": 0.0625,
+  "paragraaf.§2.4.2.op_niveau": 7,
+  "paragraaf.§2.4.2.geimpl": 1,
+  "paragraaf.§2.4.2.pct": 0.14285714285714285,
+  "paragraaf.§2.5.1.op_niveau": 10,
+  "paragraaf.§2.5.1.geimpl": 1,
+  "paragraaf.§2.5.1.pct": 0.1,
+  "paragraaf.§2.5.2.op_niveau": 9,
+  "paragraaf.§2.5.2.geimpl": 1,
+  "paragraaf.§2.5.2.pct": 0.1111111111111111,
+  "paragraaf.§2.5.3.op_niveau": 8,
+  "paragraaf.§2.5.3.geimpl": 1,
+  "paragraaf.§2.5.3.pct": 0.125,
+  "paragraaf.§2.6.op_niveau": 32,
+  "paragraaf.§2.6.geimpl": 1,
+  "paragraaf.§2.6.pct": 0.03125,
+  "paragraaf.§2.7.1.op_niveau": 27,
+  "paragraaf.§2.7.1.geimpl": 0,
+  "paragraaf.§2.7.1.pct": 0.0,
+  "paragraaf.§2.7.2.op_niveau": 6,
+  "paragraaf.§2.7.2.geimpl": 0,
+  "paragraaf.§2.7.2.pct": 0.0,
+  "paragraaf.§2.8.op_niveau": 15,
+  "paragraaf.§2.8.geimpl": 0,
+  "paragraaf.§2.8.pct": 0.0,
+  "paragraaf.§2.9.op_niveau": 18,
+  "paragraaf.§2.9.geimpl": 0,
+  "paragraaf.§2.9.pct": 0.0,
+  "paragraaf.§2.10.op_niveau": 7,
+  "paragraaf.§2.10.geimpl": 0,
+  "paragraaf.§2.10.pct": 0.0
+ },
+ "bevestigd_in_excel": false,
+ "toelichting": "Een ingevulde doorloop die elke rekentak raakt: classificatie compleet, ketenregel actief, controls op Ja, Nee, N.v.t. en leeg, alle vijf statussen, maatregelen binnen en buiten het niveau. De waarden in verwacht komen nu uit register/reken.py. Zodra dezelfde invoer in het Excel-werkboek is gedaan en het Dashboard-blad is afgelezen, gaan de afgelezen waarden hierin en wordt bevestigd_in_excel waar; dan vergelijkt de browsertest tegen Excel in plaats van tegen de eigen referentie."
+}

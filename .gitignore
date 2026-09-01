@@ -1,2 +1,5 @@
 node_modules/
 dist/
+register/dist/
+__pycache__/
+.pytest_cache/

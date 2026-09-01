@@ -1,0 +1,81 @@
+{
+ "versie": "2026-09",
+ "toelichting": "Per maatregelparagraaf van de CSIR de barrieres uit de aanvalspaden waarvan de handleidingen in de kennisbank helpen bij het uitwerken. De relatie is hoort-bij: een handleiding zegt hoe je iets inricht, nooit dat je aan de eis voldoet. Een lege lijst is geen omissie maar een schrijfopdracht, en de reden zegt waarom. De koppeling op controlniveau zou een crosswalk van ISO 27001:2013 (de nummering die de CSIR gebruikt) naar ISO 27002:2022 (de nummering van BIO 2.0) vereisen; die bestaat nog niet en is ronde 2.",
+ "regels": [
+  {
+   "paragraaf": "§2.1.1",
+   "barrieres": [],
+   "reden": "Fysieke toegangsbeveiliging van IA-gerelateerde ruimten. De achttien aanvalspaden gaan over de digitale route naar binnen; de fysieke kant zit er niet in. Handleiding gevraagd."
+  },
+  {
+   "paragraaf": "§2.1.2",
+   "barrieres": [],
+   "reden": "Fysieke toegangsbeveiliging van terreinen en gebouwen. Zelfde reden als §2.1.1. Handleiding gevraagd."
+  },
+  {
+   "paragraaf": "§2.2",
+   "barrieres": ["pr", "fallback", "legacy", "model", "jit", "key", "localadmin", "session", "remote", "unmanaged"],
+   "reden": "Logische toegang: phishingbestendige authenticatie zonder zwakkere terugvalroute, beheerrechten gescheiden van dagelijks gebruik en alleen tijdelijk te activeren, sessiebescherming, afgeschermde beheerinterfaces en geen toegang vanaf onbeheerde apparatuur."
+  },
+  {
+   "paragraaf": "§2.3",
+   "barrieres": ["crisis", "idresponse", "mailresponse", "exploitresponse", "ddosresponse", "owner"],
+   "reden": "Beveiligingsincidenten en incident response: een geoefende crisis- en herstelaanpak, werkende responsroutes voor accounts, mail en externe systemen, en een risicohouder die de risico's kent."
+  },
+  {
+   "paragraaf": "§2.4.1",
+   "barrieres": ["segment", "remote", "assets", "origin", "upstream"],
+   "reden": "Netwerkkoppelingen: segmentering zodat een aanvaller niet doorloopt, beheer niet aan het publieke internet, en zicht op wat er vanaf internet bereikbaar is."
+  },
+  {
+   "paragraaf": "§2.4.2",
+   "barrieres": [],
+   "reden": "Cryptografie. Geen van de barrieres gaat over sleutelbeheer, certificaten of versleuteling in transport en rust. Handleiding gevraagd."
+  },
+  {
+   "paragraaf": "§2.5.1",
+   "barrieres": ["edr", "execution", "browser"],
+   "reden": "Anti-malware: bewaakte endpoints die snel te isoleren zijn, beperkte uitvoering van onbekende software en scripts, en beperkingen op browser en gegevensdragers."
+  },
+  {
+   "paragraaf": "§2.5.2",
+   "barrieres": ["adminhard", "localadmin", "execution", "legacy"],
+   "reden": "Hardening: de beheerwerkplek op orde, gewone gebruikers zonder lokale beheerrechten, uitvoering beperkt en verouderde inlogmethoden technisch dicht."
+  },
+  {
+   "paragraaf": "§2.5.3",
+   "barrieres": ["patch", "vuln"],
+   "reden": "Patching: besturingssysteem en overige software tijdig bijwerken, en kwetsbaarheden continu opsporen en oplossen."
+  },
+  {
+   "paragraaf": "§2.6",
+   "barrieres": ["adminmonitor", "edr", "session"],
+   "reden": "Logging en monitoring: activering en gebruik van beheerrechten actief bewaken, endpoints bewaken, en misbruik van sessies zichtbaar maken."
+  },
+  {
+   "paragraaf": "§2.7.1",
+   "barrieres": [],
+   "reden": "Bewustwording en training voor medewerkers. De kennisbank heeft hier wel een handleiding over, maar die hangt aan geen enkele barriere en komt daarom niet mee. Ronde 2: koppelen via een eigen sleutel in plaats van via de barrieres."
+  },
+  {
+   "paragraaf": "§2.7.2",
+   "barrieres": ["owner", "treatment"],
+   "reden": "Bewustwording en training voor managers: de risicohouder kent de risico's van zijn object en heeft restrisico's expliciet geaccepteerd of belegd."
+  },
+  {
+   "paragraaf": "§2.8",
+   "barrieres": [],
+   "reden": "Gecontroleerd wijzigen. Geen van de barrieres gaat over wijzigingsbeheer, acceptatie of terugrolscenario's. Handleiding gevraagd."
+  },
+  {
+   "paragraaf": "§2.9",
+   "barrieres": ["review", "residual", "technicalvendor", "dependencies", "critical"],
+   "reden": "Beheer en onderhoud, bij objecten vrijwel altijd uitbesteed: periodieke beoordeling van kritieke leveranciers, bekende restrisico's, verder kijken dan certificaten, en weten welke systemen en leveranciers onder welk kritiek proces hangen."
+  },
+  {
+   "paragraaf": "§2.10",
+   "barrieres": ["backup", "restore"],
+   "reden": "Back-ups: kritieke back-ups beschermd tegen een aanvaller die al in productie zit, en herstel dat getest en aantoonbaar op tijd haalbaar is."
+  }
+ ]
+}
