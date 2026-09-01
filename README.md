@@ -1,4 +1,4 @@
-# csir-control-register
+# CSIR-Control-Register
 
 Excel-werkboek om de Cybersecurity Implementatierichtlijn Objecten (CSIR) praktisch toe te passen en bij te
 houden voor een object, bijvoorbeeld: een tunnel, gemaal, brug, sluis of verkeersinstallatie.
