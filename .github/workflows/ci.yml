@@ -1,0 +1,83 @@
+name: CI
+
+# Twee jobs. De eerste bewaakt dat csir.json nog is wat er in de werkboeken staat en dat de
+# rekenregels kloppen; de tweede bouwt de pagina en loopt hem in een echte browser door. De
+# browsertests vergelijken wat op het scherm staat met register/reken.py, dus hier valt het door de
+# mand als de app en de referentie uit elkaar lopen.
+#
+# De kennisbank wordt erbij uitgecheckt, want die is de bron van de handreiking per paragraaf. Zonder
+# die checkout zou de pagina stil zonder handleidingen bouwen. Hij gaat naar _kennisbank en niet naar
+# ../kennisbank, want een checkout buiten de workspace wordt geweigerd.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  bron:
+    name: Bron en rekenregels
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+
+      - uses: actions/checkout@v6
+        with:
+          repository: security-commons-nl/kennisbank
+          path: _kennisbank
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      - name: Installeren
+        run: |
+          python -m pip install --upgrade pip
+          pip install pytest openpyxl
+
+      - name: csir.json loopt gelijk met de werkboeken
+        run: python register/haal_bron.py --check
+
+      - name: De handreiking loopt gelijk met de kennisbank
+        run: python register/haal_handelingsperspectief.py --check
+
+      - name: Tests
+        run: python -m pytest register/tests/test_bron.py register/tests/test_reken.py -v
+
+  app:
+    name: De pagina in een browser
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+
+      - uses: actions/checkout@v6
+        with:
+          repository: security-commons-nl/kennisbank
+          path: _kennisbank
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      - name: Installeren
+        run: |
+          python -m pip install --upgrade pip
+          pip install pytest openpyxl playwright
+          python -m playwright install --with-deps chromium
+
+      - name: Bouwen
+        run: python register/bouw.py
+
+      - name: Tests
+        run: python -m pytest register/tests/test_bouw.py register/tests/test_app.py -v
+
+      - name: De gebouwde keten bewaren
+        uses: actions/upload-artifact@v4
+        with:
+          name: csir-keten
+          path: register/dist/index.html
+          if-no-files-found: error

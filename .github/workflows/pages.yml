@@ -1,15 +1,17 @@
 name: Build and deploy Pages
 
+# Deze repo publiceert twee dingen: de keten (de tool) op de hoofdpagina, en de uitleg (README,
+# werkwijze, verantwoording) op /uitleg/. Daarom niet meer de herbruikbare pages-docs.yml, die alleen
+# de documentatiebuild kent.
+#
+# De volgorde is bewust: eerst de documentatiebuild, die schrijft dist/index.html en kopieert de
+# werkboeken naar dist/werkboek/. Die pagina verhuist daarna naar dist/uitleg/, mét een kopie van de
+# werkboeken ernaast, want hij linkt er relatief naar. Pas daarna schrijft het registerscript de
+# keten over dist/index.html heen.
+
 on:
   push:
     branches: [main]
-    paths:
-      - "*.md"
-      - "werkboek/**"
-      - "site/**"
-      - "package.json"
-      - "package-lock.json"
-      - ".github/workflows/pages.yml"
   workflow_dispatch:
 
 permissions:
@@ -19,10 +21,58 @@ permissions:
 
 concurrency:
   group: pages
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
-  # Bouw en deploy via de herbruikbare workflow in security-commons-nl/.github.
-  # Wat er gebouwd wordt staat in site/config.json; de stappen zelf staan daar.
-  pages:
-    uses: security-commons-nl/.github/.github/workflows/pages-docs.yml@main
+  bouwen:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+
+      - uses: actions/checkout@v6
+        with:
+          repository: security-commons-nl/kennisbank
+          path: _kennisbank
+
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 24
+          cache: npm
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      - name: De handreiking loopt gelijk met de kennisbank
+        run: python register/haal_handelingsperspectief.py --check
+
+      - name: De uitleg bouwen
+        run: |
+          npm ci
+          node site/build.mjs
+          mkdir -p dist/uitleg
+          mv dist/index.html dist/uitleg/index.html
+          cp -r dist/werkboek dist/uitleg/werkboek
+          test -s dist/uitleg/index.html
+
+      - name: De keten bouwen
+        run: |
+          python register/bouw.py dist
+          test -s dist/index.html
+          # Dezelfde pagina ook als download onder een sprekende naam, en de bron ernaast.
+          cp dist/index.html dist/csir-keten.html
+          cp csir.json dist/csir.json
+
+      - uses: actions/upload-pages-artifact@v5
+        with:
+          path: dist
+
+  publiceren:
+    needs: bouwen
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - id: deploy
+        uses: actions/deploy-pages@v5
