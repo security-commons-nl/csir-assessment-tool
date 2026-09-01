@@ -1,0 +1,12 @@
+{
+  "repoUrl": "https://github.com/security-commons-nl/csir-control-register",
+  "title": "CSIR Control-register · Security Commons NL",
+  "description": "Excel-werkboek om de Cybersecurity Implementatierichtlijn Objecten (CSIR) toe te passen op één object: functiebox naar weerstandsniveau, 127 controls, 268 maatregelen en live voortgang.",
+  "siteTitle": "CSIR Control-register",
+  "tabs": [
+    { "file": "README.md", "id": "start", "label": "Start" },
+    { "file": "werkwijze.md", "id": "werkwijze", "label": "Werkwijze", "title": "Zo gebruik je het register" },
+    { "file": "verantwoording.md", "id": "verantwoording", "label": "Verantwoording", "title": "Waar de inhoud vandaan komt" }
+  ],
+  "assets": ["werkboek/csir-control-register.xlsx"]
+}

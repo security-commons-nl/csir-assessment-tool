@@ -1,0 +1,28 @@
+name: Build and deploy Pages
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "*.md"
+      - "werkboek/**"
+      - "site/**"
+      - "package.json"
+      - "package-lock.json"
+      - ".github/workflows/pages.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  # Bouw en deploy via de herbruikbare workflow in security-commons-nl/.github.
+  # Wat er gebouwd wordt staat in site/config.json; de stappen zelf staan daar.
+  pages:
+    uses: security-commons-nl/.github/.github/workflows/pages-docs.yml@main
