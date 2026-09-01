@@ -76,7 +76,7 @@ jobs:
         run: python -m pytest register/tests/test_bouw.py register/tests/test_app.py -v
 
       - name: De gebouwde keten bewaren
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: csir-keten
           path: register/dist/index.html
