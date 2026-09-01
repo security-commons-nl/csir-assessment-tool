@@ -3,6 +3,9 @@
 Excel-werkboek om de Cybersecurity Implementatierichtlijn Objecten (CSIR) praktisch toe te passen en bij te
 houden voor een object, bijvoorbeeld: een tunnel, gemaal, brug, sluis of verkeersinstallatie.
 
+Status: prototype. Het werkboek is compleet en rekent door; geen tests of CI, en geen belofte over
+onderhoud bij een nieuwe CSIR-versie.
+
 Je stelt op één blad het object en de functiebox in. Daaruit volgt het weerstandsniveau, en daarmee
 beweegt de rest van het werkboek mee: welke van de 268 maatregelen op dat niveau gelden, welke van de
 127 controls je van toepassing verklaart, en hoe ver je bent. De eisteksten zijn woordelijk uit de
