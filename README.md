@@ -8,6 +8,8 @@ beweegt de rest van het werkboek mee: welke van de 268 maatregelen op dat niveau
 127 controls je van toepassing verklaart, en hoe ver je bent. De eisteksten zijn woordelijk uit de
 CSIR overgenomen, zodat je ze rechtstreeks in een vraagspecificatie of contract kunt gebruiken.
 
+Status: prototype. Werkt en is te gebruiken; geen belofte over onderhoud.
+
 ## Voor wie
 
 CISO's, ISO's, objectbeheerders en projectleiders bij publieke organisaties die objecten met
