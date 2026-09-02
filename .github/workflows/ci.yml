@@ -23,9 +23,9 @@ jobs:
     name: Bron en rekenregels
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
 
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
         with:
           repository: security-commons-nl/kennisbank
           path: _kennisbank
@@ -52,9 +52,9 @@ jobs:
     name: De pagina in een browser
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
 
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
         with:
           repository: security-commons-nl/kennisbank
           path: _kennisbank
