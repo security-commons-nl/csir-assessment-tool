@@ -53,7 +53,7 @@ classificatie van dat object B verhoogd tot het cybersecurity weerstandsniveau v
 
 Het **bedienende** object gaat dus omhoog. Vul op Instellingen daarom de objecten in die vánuit dit
 object worden bediend of beheerd; het zwaarste daarvan bepaalt de ophoging. Wordt dit object juist
-zelf vanuit een ander object bediend, dan moet dát andere object omhoog — niet dit object. Een
+zelf vanuit een ander object bediend, dan moet dát andere object omhoog, niet dit object. Een
 centrale bediening zit dus minimaal op het niveau van het zwaarste object dat zij aanstuurt.
 
 ## Het proces waar dit object onder hangt
