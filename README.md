@@ -1,4 +1,4 @@
-# CSIR-Control-Register
+# CSIR Assessment Tool
 
 De Cybersecurity Implementatierichtlijn Objecten (CSIR) toegepast op één object met industriële
 automatisering: een tunnel, gemaal, brug, sluis, verkeersinstallatie of vergelijkbaar areaal.
@@ -22,7 +22,7 @@ een contract met een leverancier.
 
 ## Snel starten
 
-1. Open de [CSIR-keten](https://security-commons-nl.github.io/csir-control-register/) in je browser.
+1. Open de [CSIR Assessment Tool](https://security-commons-nl.github.io/csir-assessment-tool/) in je browser.
 2. **Classificeren.** Scoor de zes gevolgcriteria van 1 tot 5 en onderbouw elke score. De functiebox
    (A–E) en het weerstandsniveau (1–4) rollen eruit. Bedient dit object andere objecten, dan gaat het
    niveau mee omhoog met het zwaarste object dat het aanstuurt.
@@ -40,7 +40,7 @@ een contract met een leverancier.
 [classificatieformulier](werkboek/objectclassificatie.xlsx). Beide rekenen hetzelfde. Het werkboek is
 een sjabloon: er staat geen object in, dus kopieer het per object.
 
-De uitleg bij het werkboek staat op de [uitlegpagina](https://security-commons-nl.github.io/csir-control-register/uitleg/):
+De uitleg bij het werkboek staat op de [uitlegpagina](https://security-commons-nl.github.io/csir-assessment-tool/uitleg/):
 de werkwijze stap voor stap en de verantwoording van elke kolom.
 
 ## Bijdragen

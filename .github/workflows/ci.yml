@@ -75,9 +75,9 @@ jobs:
       - name: Tests
         run: python -m pytest register/tests/test_bouw.py register/tests/test_app.py -v
 
-      - name: De gebouwde keten bewaren
+      - name: De gebouwde tool bewaren
         uses: actions/upload-artifact@v5
         with:
-          name: csir-keten
+          name: csir-assessment-tool
           path: register/dist/index.html
           if-no-files-found: error

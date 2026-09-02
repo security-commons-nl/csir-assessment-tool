@@ -1,8 +1,8 @@
 {
-  "repoUrl": "https://github.com/security-commons-nl/csir-control-register",
-  "title": "CSIR-keten uitleg · Security Commons NL",
+  "repoUrl": "https://github.com/security-commons-nl/csir-assessment-tool",
+  "title": "CSIR Assessment Tool uitleg · Security Commons NL",
   "description": "Classificeer een object volgens de CSIR, bepaal welke van de 127 controls en 268 maatregelen op dat weerstandsniveau gelden, en werk ze uit tot een dossier.",
-  "siteTitle": "CSIR-keten · uitleg",
+  "siteTitle": "CSIR Assessment Tool · uitleg",
   "tabs": [
     {
       "file": "README.md",

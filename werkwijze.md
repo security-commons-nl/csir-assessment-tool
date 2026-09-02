@@ -8,7 +8,7 @@ schrijft de CSIR voor"* naar *"wat gaan wij voor dít object doen, op welk nivea
 1. **Classificeren.** Het object heeft een functiebox (A–E) uit de objectclassificatie. Die bepaalt
    het weerstandsniveau: A=4, B=3, C=2, D=1, E=1. Vul beide in op blad Instellingen. Heb je die
    classificatie nog niet gedaan, begin dan bij het classificatieformulier (zie hieronder); in de
-   [webversie](https://security-commons-nl.github.io/csir-control-register/) is dat het eerste
+   [webversie](https://security-commons-nl.github.io/csir-assessment-tool/) is dat het eerste
    tabblad en stroomt de uitkomst vanzelf door.
 2. **Baseline vaststellen.** Loop de controls op VSP en VSE langs en verklaar ze van toepassing.
    Uitgangspunt is dat de volledige set geldt; wijk je af, dan doe je dat risicogestuurd en leg je

@@ -1,12 +1,12 @@
-# register/ — de CSIR-keten in de browser
+# register/ — de CSIR Assessment Tool in de browser
 
 Eén zelfstandig HTML-bestand: alle eisteksten, maatregelen, drempels en rekenregels zitten erin. Geen
 server, geen account, geen telemetrie, geen enkele externe verwijzing. Wie hem offline wil draaien,
 slaat de pagina op met Ctrl+S.
 
-**Live:** https://security-commons-nl.github.io/csir-control-register/
+**Live:** https://security-commons-nl.github.io/csir-assessment-tool/
 
-De keten heeft drie stappen achter elkaar, met één dossier eronder:
+De tool heeft drie stappen achter elkaar, met één dossier eronder:
 
 | Stap | Vraag | Waar het vandaan komt |
 |---|---|---|

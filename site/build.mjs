@@ -1,5 +1,5 @@
 // Gedeeld build-script: gedeeld tussen Handelingsperspectief, ai-gebruik-in-beeld en
-// csir-control-register; wijzig ze samen.
+// csir-assessment-tool; wijzig ze samen.
 // Dit bestand bevat geen repo-specifieke gegevens. Alles wat per repo verschilt (titel,
 // beschrijving, repo-URL, hoofdstukken, query's) staat in site/config.json.
 //

@@ -111,7 +111,7 @@ def test_kruimelpad_wijst_terug_naar_de_hoofdpagina(html):
 
 def test_voetregel_bron_licentie_verbetering(bron, html):
     voet = re.search(r"<footer>(.*?)</footer>", html, re.S).group(1)
-    assert "github.com/security-commons-nl/csir-control-register" in voet
+    assert "github.com/security-commons-nl/csir-assessment-tool" in voet
     assert "EUPL-1.2" in voet
     assert "verbetering voorstellen" in voet
     assert in_pagina(bron["bron"]["auteursrecht"], html)

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Bouwt de CSIR-keten: een zelfstandig HTML-bestand uit csir.json en de bestanden in bron/.
+"""Bouwt de CSIR Assessment Tool: een zelfstandig HTML-bestand uit csir.json en de bestanden in bron/.
 
 Geen bundler, geen dependencies, geen externe verwijzingen. De bron wordt als JSON in dezelfde
 scripttag gezet als de app, zodat er precies een script en een stylesheet is en het
