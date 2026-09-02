@@ -1107,7 +1107,9 @@
       ['Object of objectgroep', dossier.object.naam], ['Locatie', dossier.object.locatie],
       ['Hoofdtaak', dossier.object.hoofdtaak], ['Ingevuld door', dossier.object.ingevuld_door],
       ['Team of afdeling', dossier.object.team], ['Datum', dossier.object.datum],
-      ['Situatiebeschrijving', dossier.object.situatie]
+      ['Situatiebeschrijving', dossier.object.situatie],
+      ['Procescheck-dossier', dossier.object.procescheck_dossier],
+      ['Proces in dat dossier', dossier.object.procescheck_proces]
     ]));
     houder.appendChild(tabelVan(['Criterium', 'Score', 'Ernst', 'Onderbouwing'],
       BRON.classificatie.criteria.map(function (criterium) {
@@ -1279,7 +1281,9 @@
   function koppelObjectvelden() {
     [['obj-organisatie', 'organisatie'], ['obj-proces', 'proces'], ['obj-locatie', 'locatie'],
       ['obj-hoofdtaak', 'hoofdtaak'], ['obj-ingevuld-door', 'ingevuld_door'],
-      ['obj-team', 'team'], ['obj-datum', 'datum'], ['obj-situatie', 'situatie']]
+      ['obj-team', 'team'], ['obj-datum', 'datum'], ['obj-situatie', 'situatie'],
+      ['obj-procescheck-dossier', 'procescheck_dossier'],
+      ['obj-procescheck-proces', 'procescheck_proces']]
       .forEach(function (paar) {
         koppelVeld(paar[0], null, function (waarde) { dossier.object[paar[1]] = waarde; });
       });
@@ -1355,6 +1359,8 @@
     el('obj-team').value = dossier.object.team || '';
     el('obj-datum').value = dossier.object.datum || '';
     el('obj-situatie').value = dossier.object.situatie || '';
+    el('obj-procescheck-dossier').value = dossier.object.procescheck_dossier || '';
+    el('obj-procescheck-proces').value = dossier.object.procescheck_proces || '';
     tekenClassificatie();
     tekenInstellingen();
     tekenAlleTabellen();

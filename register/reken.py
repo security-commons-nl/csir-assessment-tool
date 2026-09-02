@@ -282,7 +282,10 @@ def nieuw_dossier(bron: dict) -> dict:
         "bron_versie": bron["versie"],
         "object": {sleutel: "" for sleutel in
                    ("naam", "organisatie", "proces", "locatie", "hoofdtaak", "situatie",
-                    "ingevuld_door", "team", "datum")},
+                    "ingevuld_door", "team", "datum",
+                    # De terugverwijzing naar procescheck: welk dossier en welk proces dit object
+                    # draagt. Los gekoppeld, want de ene tool hoort niet stuk te gaan van de andere.
+                    "procescheck_dossier", "procescheck_proces")},
         "classificatie": {
             "scores": {c["id"]: None for c in bron["classificatie"]["criteria"]},
             "onderbouwing": {c["id"]: "" for c in bron["classificatie"]["criteria"]},

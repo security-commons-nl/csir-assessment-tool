@@ -404,3 +404,22 @@ def test_sjabloon_eis_vult_object_en_niveau_in(pagina, data):
     assert "Sluis Sjabloon" in tekst
     assert "{object}" not in tekst and "{niveau}" not in tekst
     assert tekst.rstrip().endswith("3")
+
+
+def test_object_verwijst_naar_een_procescheck_dossier(pagina):
+    """aanvalspaden#4: een object hoort te zeggen welk proces het draagt.
+
+    Los gekoppeld: twee tekstvelden die in het dossier en in de uitdraai belanden. Geen import, geen
+    afhankelijkheid; procescheck verwijst met csir_dossier de andere kant op.
+    """
+    naar(pagina, "classificatie")
+    pagina.fill("#obj-procescheck-dossier", "procescheck-dossier-gemeente-voorbeeld-2026-09-03.json")
+    pagina.fill("#obj-procescheck-proces", "P01")
+    dossier = json.loads(pagina.evaluate("() => window.localStorage.getItem('csir-dossier')"))
+    assert dossier["object"]["procescheck_dossier"].startswith("procescheck-dossier-")
+    assert dossier["object"]["procescheck_proces"] == "P01"
+
+    naar(pagina, "uitdraai")
+    tekst = pagina.text_content("#uitdraai-inhoud")
+    assert "Procescheck-dossier" in tekst
+    assert "procescheck-dossier-gemeente-voorbeeld-2026-09-03.json" in tekst

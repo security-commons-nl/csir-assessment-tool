@@ -56,6 +56,23 @@ object worden bediend of beheerd; het zwaarste daarvan bepaalt de ophoging. Word
 zelf vanuit een ander object bediend, dan moet dát andere object omhoog — niet dit object. Een
 centrale bediening zit dus minimaal op het niveau van het zwaarste object dat zij aanstuurt.
 
+## Het proces waar dit object onder hangt
+
+Een object staat er niet voor zichzelf. Het draagt een bedrijfsproces, en hoe erg het is als dat proces
+uitvalt, bepaalt de organisatie in een BIA, niet deze tool. Op het classificatiescherm staan daarom
+twee velden: **Procescheck-dossier** en **Proces in dat dossier**. Vul je ze in, dan zegt je
+CSIR-dossier bij welk proces het hoort, en kan de lezer de twee naast elkaar leggen.
+
+Werk je met [procescheck](https://security-commons-nl.github.io/procescheck/), dan is de
+terugverwijzing er ook: daar leg je per applicatie of object vast dat het een object met industriele
+automatisering is, met de bestandsnaam en de vingerafdruk van dit dossier ernaast. De koppeling is
+bewust los: twee tekstvelden, geen import, geen afhankelijkheid. Beide tools blijven zonder de ander
+werken, en jij houdt de regie over wat waar staat.
+
+Waarom het uitmaakt: de classificatie hier vraagt hoe erg het gevolg is als dit object faalt. Het
+antwoord daarop zit vaak al in de BIA van het proces erboven. Wie de twee koppelt, hoeft niet twee keer
+te bedenken hoe kritiek iets is, en ziet het meteen als de twee elkaar tegenspreken.
+
 ## Selectie op het maatregelenblad
 
 Het blad toont alle 268 maatregelen. Wat op het gekozen niveau geldt staat in *Geldt (dit object)* op
