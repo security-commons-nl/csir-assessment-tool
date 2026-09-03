@@ -34,10 +34,18 @@ jobs:
           repository: security-commons-nl/kennisbank
           path: _kennisbank
 
+      # De leesversie wordt gebouwd met de gedeelde build van de organisatie; deze repo levert
+      # alleen site/config.json. Zie .github/site/build.mjs daar.
+      - uses: actions/checkout@v7
+        with:
+          repository: security-commons-nl/.github
+          path: .sitebuild
+
       - uses: actions/setup-node@v7
         with:
           node-version: 24
           cache: npm
+          cache-dependency-path: .sitebuild/package-lock.json
 
       - uses: actions/setup-python@v6
         with:
@@ -47,9 +55,11 @@ jobs:
         run: python register/haal_handelingsperspectief.py --check
 
       - name: De uitleg bouwen
+        env:
+          SITE_ROOT: ${{ github.workspace }}
         run: |
-          npm ci
-          node site/build.mjs
+          npm ci --prefix .sitebuild
+          node .sitebuild/site/build.mjs
           mkdir -p dist/uitleg
           mv dist/index.html dist/uitleg/index.html
           cp -r dist/werkboek dist/uitleg/werkboek
