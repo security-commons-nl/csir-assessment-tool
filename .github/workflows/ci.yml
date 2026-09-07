@@ -30,7 +30,7 @@ jobs:
           repository: security-commons-nl/kennisbank
           path: _kennisbank
 
-      - uses: actions/setup-python@v6
+      - uses: actions/setup-python@v7
         with:
           python-version: "3.12"
 
@@ -59,7 +59,7 @@ jobs:
           repository: security-commons-nl/kennisbank
           path: _kennisbank
 
-      - uses: actions/setup-python@v6
+      - uses: actions/setup-python@v7
         with:
           python-version: "3.12"
 
