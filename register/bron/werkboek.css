@@ -1,20 +1,15 @@
-/* De downloadpagina van het werkboek. Dezelfde tinten en dezelfde koptekst als de tool, maar los
-   gehouden: deze pagina heeft geen script en dus ook geen van de opmaak die de tabellen daar nodig
-   hebben. Geen externe fonts en geen opgehaalde afbeeldingen, want het Content-Security-Policy laat
-   niets van buiten toe. */
+/* De downloadpagina van het werkboek: een knop, verder niets. Dezelfde tinten en dezelfde koptekst
+   als de tool. Geen externe fonts en geen opgehaalde afbeeldingen, want het Content-Security-Policy
+   laat niets van buiten toe. */
 
 :root {
   --blauw: #154273;
-  --blauw-licht: #e6edf5;
   --oranje: #e17000;
   --grijs: #4b5563;
-  --lijn: #d3d8de;
-  --vlak: #f6f7f9;
 }
 
 * { box-sizing: border-box; }
 
-/* Deze pagina is kort; zonder deze regels blijft alles in de linkerbovenhoek hangen. */
 body {
   margin: 0;
   min-height: 100vh;
@@ -31,46 +26,30 @@ header { background: var(--blauw); color: #fff; padding: .8rem 0 1rem; }
 header .kruimel { font-size: .82rem; opacity: .85; }
 header .kruimel a { color: #fff; }
 header .naam { font-size: 1.5rem; font-weight: 700; margin-top: .2rem; }
-header .sub { font-size: .88rem; opacity: .9; max-width: 48em; }
 
-main { flex: 1; padding: 1.7rem 0 2.6rem; }
-main > :last-child { margin-bottom: 0; }
-h2 { font-size: 1.1rem; margin: 0 0 .5rem; color: var(--blauw); }
-p { margin: 0 0 .8rem; }
-.leid { color: var(--grijs); }
-.klein { font-size: .84rem; color: var(--grijs); margin: 0; }
-a { color: var(--blauw); }
+/* De knop staat midden op het scherm, horizontaal en verticaal; er staat niets omheen dat om
+   voorrang vraagt. */
+main {
+  flex: 1;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  gap: .6rem; padding: 2rem 1rem 3rem; text-align: center;
+}
 
-.kaart { border: 1px solid var(--lijn); border-radius: 5px; padding: 1rem; margin-bottom: 1.1rem; }
-
-/* De stappen staan in de volgorde waarin je ze in het werkboek doet; de nummers horen erbij. */
-ol, ul { margin: 0 0 .8rem; padding-left: 1.3rem; }
-li { margin-bottom: .4rem; }
-
-/* De downloadknop is een gewone link: hij moet werken zonder script en zichtbaar het zwaartepunt
-   van de kaart zijn. */
-.download { margin: 1rem 0 .5rem; }
+.download { margin: 0; }
 .download a {
   display: inline-block; background: var(--blauw); color: #fff; text-decoration: none;
-  font-weight: 600; padding: .55rem 1rem; border-radius: 4px;
+  font-weight: 600; font-size: 1.05rem; padding: .8rem 1.5rem; border-radius: 4px;
 }
 .download a:hover { background: #0f3157; }
 .download a:focus { outline: 2px solid var(--oranje); outline-offset: 2px; }
 
-footer { margin-top: auto; border-top: 1px solid var(--lijn); background: var(--vlak); font-size: .82rem; color: var(--grijs); padding: 1rem 0 1.4rem; }
-footer .rechten { margin: .5rem 0 0; }
+.klein { margin: 0; font-size: .84rem; color: var(--grijs); }
 
-/* Statuut B3: een pagina moet op A4 uit de printer komen. Geen kleurvlakken, geen kaders om de
-   kaarten; wat op papier telt is de tekst en waar het bestand staat. */
 @media print {
-  body { font-size: 10pt; color: #000; }
+  body { color: #000; }
   header { background: none; color: #000; border-bottom: 1px solid #000; }
   header .kruimel a { color: #000; }
-  .kaart { border: none; padding: 0; margin-bottom: .8rem; }
   .download a { background: none; color: #000; border: 1px solid #000; }
-  footer { background: none; }
-  a { color: #000; }
-  h2 { page-break-after: avoid; }
-  li, p { page-break-inside: avoid; }
   @page { size: A4 portrait; margin: 18mm; }
 }
