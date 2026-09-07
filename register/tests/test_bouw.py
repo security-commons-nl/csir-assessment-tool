@@ -166,12 +166,12 @@ def test_werkboekpagina_biedt_alleen_het_control_register_aan(werkboekpagina: pa
     assert "objectclassificatie" not in html
 
 
-def test_werkboekpagina_toont_de_vingerafdruk_van_het_bestand_ernaast(werkboekpagina: pathlib.Path):
-    """De sha256 op de pagina komt uit csir.json; hier wordt hij op het bestand zelf nagerekend."""
+def test_werkboekpagina_noemt_de_versie_en_de_omvang_van_het_bestand(bron, werkboekpagina: pathlib.Path):
+    """Wat de pagina over het bestand zegt, komt uit de bron en van het bestand zelf."""
     html = werkboekpagina.read_text(encoding="utf-8")
-    gemeten = hashlib.sha256(
-        (werkboekpagina.parent / "csir-control-register.xlsx").read_bytes()).hexdigest()
-    assert gemeten in html
+    assert f"versie {bron['bron']['werkboek_versie']}" in html
+    kb = (werkboekpagina.parent / "csir-control-register.xlsx").stat().st_size / 1024
+    assert f"{kb:.0f} kB" in html
 
 
 def test_werkboekpagina_heeft_geen_script_en_sluit_alles_af(werkboekpagina: pathlib.Path):

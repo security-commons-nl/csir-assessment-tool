@@ -133,9 +133,9 @@ def leesbare_grootte(bytes_: int) -> str:
 def bouw_werkboekpagina(doel: pathlib.Path) -> pathlib.Path:
     """Schrijft doel/werkboek/index.html met de twee werkboeken ernaast.
 
-    De versie, de vingerafdrukken en de aantallen komen uit csir.json en niet uit de hand: dat bestand
-    wordt door haal_bron.py uit de werkboeken zelf gehaald en --check blokkeert als het afdrijft. Zo
-    kan de pagina niet stilletjes een oude sha256 blijven tonen.
+    De versie, de grootte en de aantallen komen uit csir.json en het bestand zelf, niet uit de hand:
+    csir.json wordt door haal_bron.py uit de werkboeken gehaald en --check blokkeert als het afdrijft.
+    Zo kan de pagina niet stilletjes een oude versie blijven noemen.
 
     De pagina gaat alleen over het control-register. Het classificatieformulier wordt wel meegekopieerd:
     de README en de uitlegpagina linken ernaar, dus dat adres moet blijven werken.
@@ -159,7 +159,6 @@ def bouw_werkboekpagina(doel: pathlib.Path) -> pathlib.Path:
         "__STYLE_HASH__": sha256_csp(css).removeprefix("sha256-"),
         "__WERKBOEK_GROOTTE__": leesbare_grootte((map_werkboek / "csir-control-register.xlsx").stat().st_size),
         "__WERKBOEK_VERSIE__": bron["werkboek_versie"],
-        "__WERKBOEK_SHA256__": bron["werkboek_sha256"],
         "__AANTAL_CONTROLS__": str(len(data["controls"])),
         "__AANTAL_MAATREGELEN__": str(len(data["maatregelen"])),
         "__AANTAL_BIJLAGEN__": str(len(data["bijlagen"])),
@@ -181,4 +180,4 @@ if __name__ == "__main__":
     bestand = bouw(doelmap)
     kb = bestand.stat().st_size / 1024
     print(f"{bestand}: {kb:.0f} kB, zelfstandig en offline")
-    print(f"{bouw_werkboekpagina(doelmap)}: de werkboeken met hun vingerafdruk ernaast")
+    print(f"{bouw_werkboekpagina(doelmap)}: de downloadpagina met de werkboeken ernaast")
