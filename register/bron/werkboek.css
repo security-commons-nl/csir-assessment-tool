@@ -14,8 +14,13 @@
 
 * { box-sizing: border-box; }
 
+/* Deze pagina is kort. Zonder deze drie regels eindigt de voetregel halverwege het scherm met een
+   veld wit eronder; nu zakt hij naar de onderkant en blijft de bovenkant staan waar hij stond. */
 body {
   margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
   font: 16px/1.55 "Segoe UI", system-ui, -apple-system, Arial, sans-serif;
   color: #14171a;
   background: #fff;
@@ -29,7 +34,11 @@ header .kruimel a { color: #fff; }
 header .naam { font-size: 1.5rem; font-weight: 700; margin-top: .2rem; }
 header .sub { font-size: .88rem; opacity: .9; max-width: 48em; }
 
-main { padding: 1.7rem 0 2.6rem; }
+/* Eén kaart op een groot scherm hangt raar in de linkerbovenhoek; hij staat daarom midden in de
+   ruimte die overblijft. Op een klein scherm is die ruimte er niet en valt alles gewoon terug naar
+   boven aan. */
+main { flex: 1; display: flex; flex-direction: column; justify-content: center; padding: 1.7rem 0 2.6rem; }
+main > :last-child { margin-bottom: 0; }
 h2 { font-size: 1.1rem; margin: 0 0 .5rem; color: var(--blauw); }
 p { margin: 0 0 .8rem; }
 .leid { color: var(--grijs); }
@@ -48,13 +57,5 @@ a { color: var(--blauw); }
 .download a:hover { background: #0f3157; }
 .download a:focus { outline: 2px solid var(--oranje); outline-offset: 2px; }
 
-details { font-size: .85rem; margin-bottom: 1.1rem; }
-details summary { cursor: pointer; color: var(--blauw); }
-
-.feiten { border-collapse: collapse; width: 100%; font-size: .82rem; margin-top: .4rem; }
-.feiten th, .feiten td { border-top: 1px solid var(--lijn); padding: .35rem .45rem; text-align: left; vertical-align: top; }
-.feiten th { font-weight: 600; color: var(--grijs); white-space: nowrap; }
-.feiten code { word-break: break-all; }
-
-footer { border-top: 1px solid var(--lijn); background: var(--vlak); font-size: .82rem; color: var(--grijs); padding: 1rem 0 2rem; }
+footer { margin-top: auto; border-top: 1px solid var(--lijn); background: var(--vlak); font-size: .82rem; color: var(--grijs); padding: 1rem 0 1.4rem; }
 footer .rechten { margin: .5rem 0 0; }
