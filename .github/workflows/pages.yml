@@ -7,7 +7,7 @@ name: Build and deploy Pages
 # De volgorde is bewust: eerst de documentatiebuild, die schrijft dist/index.html en kopieert de
 # werkboeken naar dist/werkboek/. Die pagina verhuist daarna naar dist/uitleg/, mét een kopie van de
 # werkboeken ernaast, want hij linkt er relatief naar. Pas daarna schrijft het registerscript de
-# tool over dist/index.html heen.
+# tool over dist/index.html heen, plus de downloadpagina op dist/werkboek/index.html.
 
 on:
   push:
@@ -69,6 +69,9 @@ jobs:
         run: |
           python register/bouw.py dist
           test -s dist/index.html
+          # De downloadpagina van het werkboek, met de werkboeken ernaast.
+          test -s dist/werkboek/index.html
+          test -s dist/werkboek/csir-control-register.xlsx
           # Dezelfde pagina ook als download onder een sprekende naam, en de bron ernaast.
           cp dist/index.html dist/csir-assessment-tool.html
           cp csir.json dist/csir.json

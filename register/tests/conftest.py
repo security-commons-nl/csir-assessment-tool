@@ -30,6 +30,12 @@ def html(gebouwd: pathlib.Path) -> str:
 
 
 @pytest.fixture(scope="session")
+def werkboekpagina(tmp_path_factory) -> pathlib.Path:
+    """De downloadpagina van het werkboek, met de werkboeken ernaast in dezelfde map."""
+    return bouwer.bouw_werkboekpagina(tmp_path_factory.mktemp("werkboek"))
+
+
+@pytest.fixture(scope="session")
 def app_js() -> str:
     return (ROOT / "register" / "bron" / "app.js").read_text(encoding="utf-8")
 
