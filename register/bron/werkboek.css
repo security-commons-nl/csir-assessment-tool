@@ -45,6 +45,10 @@ a { color: var(--blauw); }
 
 .kaart { border: 1px solid var(--lijn); border-radius: 5px; padding: 1rem; margin-bottom: 1.1rem; }
 
+/* De drie stappen staan in de volgorde waarin je ze in het werkboek doet; de nummers horen erbij. */
+ol { margin: 0 0 .2rem; padding-left: 1.3rem; }
+ol li { margin-bottom: .4rem; }
+
 /* De downloadknop is een gewone link: hij moet werken zonder script en zichtbaar het zwaartepunt
    van de kaart zijn. */
 .download { margin: 1rem 0 .5rem; }
