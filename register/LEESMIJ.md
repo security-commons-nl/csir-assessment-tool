@@ -24,7 +24,8 @@ python register/bouw.py site                      # of naar een andere map
 ```
 
 Het bouwscript schrijft twee pagina's: de tool op `index.html` en de downloadpagina van het werkboek
-op `werkboek/index.html`, met de twee werkboeken ernaast. Die tweede pagina gaat alleen over het
+op `CSIR-Control-Register/index.html`, met het werkboek ernaast (en de twee werkboeken op hun oude
+adres in `werkboek/`, met een doorverwijzing naar het nieuwe). Die tweede pagina gaat alleen over het
 control-register en heeft geen script; ze houdt alleen wat je nodig hebt om het goede bestand te
 pakken: wat erin zit, hoe groot het is, welke versie het is en de vingerafdruk. Die gegevens komen uit
 `csir.json`, zodat ze niet los van het werkboek kunnen gaan lopen. Het classificatieformulier wordt wel

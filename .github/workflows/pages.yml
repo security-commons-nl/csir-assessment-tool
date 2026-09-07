@@ -69,7 +69,10 @@ jobs:
         run: |
           python register/bouw.py dist
           test -s dist/index.html
-          # De downloadpagina van het werkboek, met de werkboeken ernaast.
+          # De downloadpagina van het werkboek, met het werkboek ernaast, plus de doorverwijzingen
+          # vanaf de oude adressen.
+          test -s dist/CSIR-Control-Register/index.html
+          test -s dist/CSIR-Control-Register/csir-control-register.xlsx
           test -s dist/werkboek/index.html
           test -s dist/werkboek/csir-control-register.xlsx
           # Dezelfde pagina ook als download onder een sprekende naam, en de bron ernaast.

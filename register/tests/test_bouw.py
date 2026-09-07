@@ -152,11 +152,26 @@ def test_pagina_is_niet_onnodig_groot(gebouwd: pathlib.Path):
 
 
 def test_werkboekpagina_zet_de_werkboeken_ernaast(werkboekpagina: pathlib.Path):
-    """Beide werkboeken staan er ongewijzigd; de uitlegpagina en de README linken ook naar de tweede."""
+    """Het register ligt naast de pagina; beide werkboeken blijven op hun oude adres staan."""
+    dist = werkboekpagina.parent.parent
+    assert werkboekpagina.parent.name == bouwer.MAP_PAGINA
+    register = werkboekpagina.parent / "csir-control-register.xlsx"
+    assert register.read_bytes() == (ROOT / "werkboek" / "csir-control-register.xlsx").read_bytes()
     for naam in bouwer.WERKBOEKEN:
-        bestand = werkboekpagina.parent / naam
+        bestand = dist / "werkboek" / naam
         assert bestand.is_file(), naam
         assert bestand.read_bytes() == (ROOT / "werkboek" / naam).read_bytes(), naam
+
+
+def test_oude_adressen_wijzen_naar_de_pagina(werkboekpagina: pathlib.Path):
+    """Gedeelde links horen niet stuk te gaan; ook niet die met hoofdletters erin."""
+    dist = werkboekpagina.parent.parent
+    for oud_adres in bouwer.DOORVERWIJZINGEN:
+        pagina = dist / oud_adres / "index.html"
+        assert pagina.is_file(), oud_adres
+        html = pagina.read_text(encoding="utf-8")
+        assert f'content="0; url=../{bouwer.MAP_PAGINA}/"' in html, oud_adres
+        assert "<script" not in html
 
 
 def test_werkboekpagina_biedt_alleen_het_control_register_aan(werkboekpagina: pathlib.Path):
@@ -201,4 +216,4 @@ def test_werkboekpagina_wijst_terug_via_het_kruimelpad(werkboekpagina: pathlib.P
 
 def test_de_tool_wijst_naar_de_downloadpagina(html):
     """Anders schiet de knop in de balk het bestand binnen zonder uitleg erbij."""
-    assert 'href="werkboek/"' in html
+    assert f'href="{bouwer.MAP_PAGINA}/"' in html

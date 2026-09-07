@@ -37,7 +37,7 @@ een contract met een leverancier.
    gewone JSON die je later weer inleest.
 
 **Liever Excel?** Het werkboek heeft een eigen
-[downloadpagina](https://security-commons-nl.github.io/csir-assessment-tool/werkboek/); het
+[downloadpagina](https://security-commons-nl.github.io/csir-assessment-tool/CSIR-Control-Register/); het
 [classificatieformulier](werkboek/objectclassificatie.xlsx) staat ernaast in de repo. Beide rekenen
 hetzelfde. Het werkboek is een sjabloon: er staat geen object in, dus kopieer het per object.
 
