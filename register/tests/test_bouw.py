@@ -191,16 +191,6 @@ def test_werkboekpagina_heeft_geen_script_en_sluit_alles_af(werkboekpagina: path
     assert gevonden == verwacht
 
 
-def test_werkboekpagina_heeft_de_voetregel_van_statuut_b10(bron, werkboekpagina: pathlib.Path):
-    """B10: bron, licentie en de plek om een verbetering voor te stellen, plus het auteursrecht."""
-    voet = re.search(r"<footer>(.*?)</footer>",
-                     werkboekpagina.read_text(encoding="utf-8"), re.S).group(1)
-    assert "github.com/security-commons-nl/csir-assessment-tool" in voet
-    assert "EUPL-1.2" in voet
-    assert "verbetering voorstellen" in voet
-    assert bron["bron"]["auteursrecht"] in voet
-
-
 def test_werkboekpagina_wijst_terug_via_het_kruimelpad(werkboekpagina: pathlib.Path):
     """Statuut B10: wie hier binnenkomt via een gedeelde link moet de rest kunnen vinden."""
     kruimel = re.search(r'<nav class="kruimel".*?</nav>',

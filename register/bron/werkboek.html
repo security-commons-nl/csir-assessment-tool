@@ -18,76 +18,8 @@
 </header>
 
 <main class="binnen">
-  <p class="leid">De CSIR zegt wat er aan cybersecurity moet gelden voor een object met industriële
-  automatisering: een tunnel, gemaal, brug, sluis of verkeersinstallatie. Wat er precies geldt,
-  verschilt per object en hangt af van het weerstandsniveau. Dit register rekent dat uit, houdt bij hoe
-  je elke eis invult, en levert zo het dossier dat je kunt laten zien.</p>
-
-  <section class="kaart">
-    <h2>Waar de eisen vandaan komen</h2>
-    <p>De richtlijn is de <b>Cybersecurity Implementatierichtlijn Objecten (CSIR) 3.0</b>, uitgegeven
-    door Rijkswaterstaat en Het Waterschapshuis. Het register neemt daar drie dingen woordelijk uit
-    over.</p>
-    <p><b>__AANTAL_CONTROLS__ controls (hoofdstuk 1)</b> zeggen <i>wat</i> er moet gelden. Ze komen uit
-    de BIO, aangevuld met eisen voor vitale infrastructuur, in de indeling van NEN-ISO 27001 bijlage A.
-    Ze staan op twee bladen:</p>
-    <ul>
-      <li><b>VSP, Proceseisen (__AANTAL_VSP__)</b>: het werk eromheen. Jaarlijks auditen,
-      comply-or-explain, afspraken met leveranciers, cybersecurity in het projectplan, het dossier
-      onderhouden, laten pentesten.</li>
-      <li><b>VSE, Systeemeisen (__AANTAL_VSE__)</b>: de installatie zelf. Gelaagde beveiliging,
-      hardening, identificatie en authenticatie, wachtwoorden, cryptografie.</li>
-    </ul>
-    <p><b>__AANTAL_MAATREGELEN__ maatregelen (hoofdstuk 2)</b> zeggen <i>hoe</i> je eraan voldoet:
-    uitwerkingen uit de IEC 62443-reeks, per thema. Fysieke en logische toegang, incidenten,
-    netwerkkoppelingen, cryptografie, anti-malware, hardening, patching, logging en monitoring,
-    bewustwording en training, gecontroleerd wijzigen, beheer en onderhoud, back-ups.</p>
-    <p><b>__AANTAL_BIJLAGEN__ bijlagen</b> bevatten richtlijnen en sjablonen, waaronder het
-    Cybersecurity Dossier waarin de uitwerking uiteindelijk terechtkomt.</p>
-  </section>
-
-  <section class="kaart">
-    <h2>Hoe het samenhangt</h2>
-    <p><b>Object &rarr; niveau.</b> De zes gevolgcriteria leveren de functiebox (A&ndash;E) en daarmee
-    het weerstandsniveau (1&ndash;4). Bedient het object andere objecten, dan gaat het niveau mee omhoog
-    met het zwaarste dat het aanstuurt.</p>
-    <p><b>Niveau &rarr; maatregelen.</b> Elke maatregel draagt de niveaus waarop hij geldt. Op niveau 1
-    gelden er __AANTAL_N1__ van de __AANTAL_MAATREGELEN__, op niveau 4 __AANTAL_N4__.</p>
-    <p><b>Control &rarr; paragraaf.</b> Elke control roept paragrafen uit hoofdstuk 2 aan. Verklaar je
-    een control van toepassing, dan komen de maatregelen in die paragrafen in scope, voor zover ze op
-    jouw niveau gelden. Zet je hem op Nee of N.v.t., dan valt die paragraaf eruit, met je
-    onderbouwing erbij, want de CSIR werkt met comply-or-explain.</p>
-    <p>Kortom: het niveau bepaalt hoe streng, de controls bepalen wat van toepassing is, en de
-    maatregelen zijn wat je uitvoert en aantoont.</p>
-  </section>
-
-  <section class="kaart">
-    <h2>Zo gebruik je het</h2>
-    <ol>
-      <li>Vul op <b>Instellingen</b> het object en de functiebox in. Het weerstandsniveau volgt
-      daaruit en stuurt de rest van het werkboek aan.</li>
-      <li>Verklaar op <b>VSP</b> en <b>VSE</b> per control of die van toepassing is. Daarmee bepaal je
-      welke maatregelen in scope komen.</li>
-      <li>Houd per maatregel de status en het bewijs bij; het <b>Dashboard</b> telt mee.</li>
-    </ol>
-    <p>Lees de CSIR zelf voordat je begint. De eisteksten staan woordelijk in het register, maar de
-    toelichting eromheen niet, en het register gaat ervan uit dat je weet wat een functiebox en een
-    weerstandsniveau zijn.</p>
-    <p class="download"><a href="csir-control-register.xlsx" download>Download het control-register</a></p>
-    <p class="klein">Excel, __WERKBOEK_GROOTTE__ &middot; versie __WERKBOEK_VERSIE__ &middot; leeg
-    sjabloon, kopieer het per object</p>
-  </section>
+  <p class="download"><a href="csir-control-register.xlsx" download>Download het control-register</a></p>
+  <p class="klein">Excel, __WERKBOEK_GROOTTE__ &middot; versie __WERKBOEK_VERSIE__</p>
 </main>
-
-<footer>
-  <div class="binnen">
-    <p><a href="../">CSIR Assessment Tool</a> &middot;
-    <a href="../uitleg/">werkwijze en verantwoording</a> &middot;
-    <a href="https://github.com/security-commons-nl/csir-assessment-tool/tree/main/werkboek" rel="noopener">bron van dit werkboek</a> &middot;
-    licentie <a href="https://github.com/security-commons-nl/csir-assessment-tool/blob/main/LICENSE" rel="noopener">EUPL-1.2</a> &middot;
-    <a href="https://github.com/security-commons-nl/csir-assessment-tool/issues/new/choose" rel="noopener">verbetering voorstellen</a>.</p>
-    <p class="rechten">__AUTEURSRECHT__</p>
-  </div>
-</footer>
 </body>
 </html>
