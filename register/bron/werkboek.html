@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'sha256-__STYLE_HASH__'; img-src data:; form-action 'none'; base-uri 'none'">
+<title>Werkboek downloaden &middot; CSIR Assessment Tool</title>
+<link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMiAzMiIgcm9sZT0iaW1nIiBhcmlhLWxhYmVsPSJTZWN1cml0eSBDb21tb25zIE5MIj4KICA8dGl0bGU+U2VjdXJpdHkgQ29tbW9ucyBOTDwvdGl0bGU+CiAgPHBhdGggZD0iTTE2IDIgNCA2LjV2MTAuMkM0IDI0IDkuMiAyOC42IDE2IDMwLjUgMjIuOCAyOC42IDI4IDI0IDI4IDE2LjdWNi41TDE2IDJ6IiBmaWxsPSIjMTU0MjczIi8+CiAgPHBhdGggZD0iTTE2IDIgNCA2LjV2My4yTDE2IDUuMmwxMiA0LjVWNi41TDE2IDJ6IiBmaWxsPSIjZTE3MDAwIi8+CiAgPGNpcmNsZSBjeD0iMTYiIGN5PSIxNSIgcj0iMy42IiBmaWxsPSIjZmZmIi8+CiAgPHBhdGggZD0iTTE0LjYgMTcuNGgyLjhsMS4xIDYuMmgtNWwxLjEtNi4yeiIgZmlsbD0iI2ZmZiIvPgo8L3N2Zz4K" type="image/svg+xml">
+<meta name="description" content="Download het CSIR Control-register en het classificatieformulier als Excel-werkboek. Zelfde rekenregels als de online tool, met versie en sha256 erbij.">
+<style>__CSS__</style>
+</head>
+<body>
+<header>
+  <div class="binnen">
+    <nav class="kruimel" aria-label="Kruimelpad"><a href="https://security-commons-nl.github.io/">Security Commons NL</a> &rsaquo; <a href="../">CSIR Assessment Tool</a> &rsaquo; <span>Werkboek</span></nav>
+    <div class="naam">Het werkboek in Excel</div>
+    <div class="sub">Dezelfde __AANTAL_CONTROLS__ controls en __AANTAL_MAATREGELEN__ maatregelen als de online tool, als sjabloon dat je per object kopieert</div>
+  </div>
+</header>
+
+<main class="binnen">
+  <p class="leid">Twee bestanden, allebei leeg: er staat geen object in. Ze rekenen hetzelfde als de
+  <a href="../">online tool</a> &mdash; welk weerstandsniveau eruit rolt, en welke maatregelen op dat
+  niveau gelden. Kies Excel als je het dossier wilt delen, aanvullen of in een projectmap wilt bewaren;
+  kies de tool als je alleen snel wilt zien wat er geldt.</p>
+
+  <section class="kaart">
+    <h2>CSIR Control-register</h2>
+    <p>Het hele register in zeven tabbladen: Instellingen, Toelichting, Dashboard, VSP Proceseisen,
+    VSE Systeemeisen, Maatregelen en Bijlagen. Je vult op Instellingen het object en de functiebox in;
+    het weerstandsniveau rolt eruit en stuurt de rest van het werkboek aan. Daarna verklaar je de
+    controls van toepassing en houd je per maatregel de status en het bewijs bij.</p>
+    <p class="download"><a href="csir-control-register.xlsx" download>Download het control-register (.xlsx, __WERKBOEK_GROOTTE__)</a></p>
+    <table class="feiten">
+      <tr><th scope="row">Inhoud</th><td>__AANTAL_CONTROLS__ controls (__AANTAL_VSP__ VSP + __AANTAL_VSE__ VSE), __AANTAL_MAATREGELEN__ maatregelen, __AANTAL_BIJLAGEN__ bijlagen</td></tr>
+      <tr><th scope="row">Versie</th><td>werkboek __WERKBOEK_VERSIE__, bron __BRONVERSIE__</td></tr>
+      <tr><th scope="row">sha256</th><td><code>__WERKBOEK_SHA256__</code></td></tr>
+    </table>
+  </section>
+
+  <section class="kaart">
+    <h2>Objectclassificatie</h2>
+    <p>Het formulier voor de stap ervoor: zes gevolgcriteria van 1 tot 5, met een onderbouwing per
+    criterium. Daaruit volgen de functiebox (A&ndash;E) en het weerstandsniveau (1&ndash;4) die je in
+    het control-register invult.</p>
+    <p class="download"><a href="objectclassificatie.xlsx" download>Download het classificatieformulier (.xlsx, __CLASSIFICATIE_GROOTTE__)</a></p>
+    <table class="feiten">
+      <tr><th scope="row">sha256</th><td><code>__CLASSIFICATIE_SHA256__</code></td></tr>
+    </table>
+  </section>
+
+  <div class="waarschuwing">
+    <p>Het control-register is een <strong>sjabloon</strong>. Kopieer het per object en zet de naam van
+    het object in de bestandsnaam; anders raken twee dossiers door elkaar. Excel opent het bestand uit
+    een download vaak in de beveiligde weergave &mdash; klik op <em>Bewerken inschakelen</em>, anders
+    rekenen de formules niet mee.</p>
+  </div>
+
+  <section class="kaart">
+    <h2>Klopt het bestand dat je hebt?</h2>
+    <p>De sha256 hierboven staat ook in <code>csir.json</code> in de repository, en een test blokkeert
+    als de twee uit elkaar lopen. Zo controleer je je eigen download:</p>
+    <pre><code>shasum -a 256 "csir-control-register.xlsx"                    # macOS, Linux
+Get-FileHash "csir-control-register.xlsx" -Algorithm SHA256   # Windows, PowerShell</code></pre>
+    <p class="klein">Komt er iets anders uit, dan is het bestand onderweg gewijzigd of heeft Excel het
+    opnieuw opgeslagen. Dat laatste gebeurt zodra je het invult; de vingerafdruk hoort dus alleen bij
+    het lege sjabloon.</p>
+  </section>
+
+  <p class="leid">De werkwijze stap voor stap en de verantwoording van elke kolom staan op de
+  <a href="../uitleg/">uitlegpagina</a>.</p>
+</main>
+
+<footer>
+  <div class="binnen">
+    <p><a href="../">CSIR Assessment Tool</a> &middot;
+    <a href="https://github.com/security-commons-nl/csir-assessment-tool" rel="noopener">bron en wijzigingsgeschiedenis op GitHub</a> &middot;
+    licentie <a href="https://github.com/security-commons-nl/csir-assessment-tool/blob/main/LICENSE" rel="noopener">EUPL-1.2</a> &middot;
+    <a href="https://github.com/security-commons-nl/csir-assessment-tool/issues/new/choose" rel="noopener">verbetering voorstellen</a>.</p>
+    <p class="rechten">__AUTEURSRECHT__</p>
+  </div>
+</footer>
+</body>
+</html>

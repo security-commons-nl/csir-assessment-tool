@@ -149,3 +149,51 @@ def test_vingerafdruk_in_de_pagina(bron, html):
 def test_pagina_is_niet_onnodig_groot(gebouwd: pathlib.Path):
     """Boven een megabyte is er iets dubbel opgenomen; de belofte 'sla hem op' moet waar blijven."""
     assert gebouwd.stat().st_size < 800 * 1024
+
+
+def test_werkboekpagina_zet_de_werkboeken_ernaast(werkboekpagina: pathlib.Path):
+    """De downloadlinks zijn relatief; het bestand moet dus echt in dezelfde map liggen."""
+    html = werkboekpagina.read_text(encoding="utf-8")
+    for naam in bouwer.WERKBOEKEN:
+        bestand = werkboekpagina.parent / naam
+        assert bestand.is_file(), naam
+        assert bestand.read_bytes() == (ROOT / "werkboek" / naam).read_bytes(), naam
+        assert f'href="{naam}"' in html, naam
+
+
+def test_werkboekpagina_toont_de_vingerafdruk_van_het_bestand_ernaast(werkboekpagina: pathlib.Path):
+    """De sha256 op de pagina komt uit csir.json; hier wordt hij op het bestand zelf nagerekend."""
+    html = werkboekpagina.read_text(encoding="utf-8")
+    for naam in bouwer.WERKBOEKEN:
+        gemeten = hashlib.sha256((werkboekpagina.parent / naam).read_bytes()).hexdigest()
+        assert gemeten in html, naam
+
+
+def test_werkboekpagina_heeft_geen_script_en_sluit_alles_af(werkboekpagina: pathlib.Path):
+    """Een downloadpagina hoeft niets op te halen en niets uit te voeren; dat staat ook zo vast."""
+    html = werkboekpagina.read_text(encoding="utf-8")
+    assert "<script" not in html
+    for patroon in ("src=", "@import", "url(", "<iframe", '<link rel="stylesheet"'):
+        assert patroon not in html, f"pagina bevat {patroon}"
+    for adres in re.findall(r"https?://[^\"'<>\s)]+", html):
+        assert adres.startswith(TOEGESTANE_LINKS), adres
+
+    stijl = re.search(r"<style>(.*?)</style>", html, re.S).group(1)
+    hash_stijl = base64.b64encode(hashlib.sha256(stijl.encode("utf-8")).digest()).decode()
+    verwacht = (f"default-src 'none'; style-src 'sha256-{hash_stijl}'; img-src data:; "
+                "form-action 'none'; base-uri 'none'")
+    gevonden = re.search(r'http-equiv="Content-Security-Policy" content="([^"]+)"', html).group(1)
+    assert gevonden == verwacht
+
+
+def test_werkboekpagina_wijst_terug_naar_de_tool_en_de_uitleg(werkboekpagina: pathlib.Path):
+    """Wie hier binnenkomt via een gedeelde link moet de rest van het instrument kunnen vinden."""
+    html = werkboekpagina.read_text(encoding="utf-8")
+    assert 'href="../"' in html
+    assert 'href="../uitleg/"' in html
+    assert 'href="https://security-commons-nl.github.io/"' in html
+
+
+def test_de_tool_wijst_naar_de_downloadpagina(html):
+    """Anders schiet de knop in de balk het bestand binnen zonder uitleg erbij."""
+    assert 'href="werkboek/"' in html

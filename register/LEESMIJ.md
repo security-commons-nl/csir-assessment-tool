@@ -23,6 +23,11 @@ python register/bouw.py                           # -> register/dist/index.html
 python register/bouw.py site                      # of naar een andere map
 ```
 
+Het bouwscript schrijft twee pagina's: de tool op `index.html` en de downloadpagina van het werkboek
+op `werkboek/index.html`, met de twee werkboeken ernaast. Die tweede pagina heeft geen script; versie,
+vingerafdrukken en aantallen komen uit `csir.json`, zodat ze niet los van de werkboeken kunnen gaan
+lopen.
+
 Het bouwscript zet `csir.json` en `bron/app.js` in één scripttag en `bron/app.css` in één style-tag,
 en berekent daarna de sha256 van allebei voor het Content-Security-Policy in `bron/index.html`. Het
 resultaat is:
@@ -106,9 +111,11 @@ python -m pytest register/tests/ -v
   sha256 van beide werkboeken en de auteursrechtregel.
 - `test_reken.py` (22): de rekenregels, inclusief de afrondval, de ketenregel, de vier
   scope-uitkomsten en de vergelijking met de ingevulde doorloop.
-- `test_bouw.py` (13): de gebouwde pagina. Alles staat erin, er is precies één script en één
+- `test_bouw.py` (18): de gebouwde pagina's. Alles staat erin, er is precies één script en één
   stylesheet, de CSP-hashes kloppen met de inhoud, er is geen externe verwijzing, de bouw is
-  herhaalbaar, en er staat een kruimelpad en een voetregel (statuut B10).
+  herhaalbaar, en er staat een kruimelpad en een voetregel (statuut B10). Voor de downloadpagina:
+  de werkboeken liggen er ongewijzigd naast, de getoonde sha256 wordt op het bestand zelf nagerekend,
+  en de pagina voert niets uit.
 - `test_app.py` (21): de app in Chromium. Classificeren, overnemen, de ketenregel, filteren, een
   control op Nee die een paragraaf uit scope haalt, opslaan, laden, wissen, herladen, de uitdraai en
   de afdrukweergave. De browsertests slaan zichzelf over als Playwright of Chromium ontbreekt;

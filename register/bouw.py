@@ -1,6 +1,10 @@
 #!/usr/bin/env python3
 """Bouwt de CSIR Assessment Tool: een zelfstandig HTML-bestand uit csir.json en de bestanden in bron/.
 
+Daarnaast bouwt het de downloadpagina van het werkboek (dist/werkboek/index.html): een kleine pagina
+zonder script, met de twee werkboeken ernaast. Die staat er los van de tool, zodat je iemand een
+adres kunt geven waar alleen het Excel-bestand staat.
+
 Geen bundler, geen dependencies, geen externe verwijzingen. De bron wordt als JSON in dezelfde
 scripttag gezet als de app, zodat er precies een script en een stylesheet is en het
 Content-Security-Policy hun sha256-hash kan vastleggen: default-src 'none' voor de rest. Zo is de
@@ -18,6 +22,7 @@ import base64
 import hashlib
 import json
 import pathlib
+import shutil
 import sys
 
 HIER = pathlib.Path(__file__).resolve().parent
@@ -113,8 +118,68 @@ def bouw(doel: pathlib.Path) -> pathlib.Path:
     return uit
 
 
+WERKBOEKEN = {
+    "csir-control-register.xlsx": "werkboek_sha256",
+    "objectclassificatie.xlsx": "classificatie_sha256",
+}
+
+
+def leesbare_grootte(bytes_: int) -> str:
+    """Zoals een browser het toont: kB met een komma, want de pagina is Nederlands."""
+    return f"{bytes_ / 1024:.0f} kB".replace(".", ",")
+
+
+def bouw_werkboekpagina(doel: pathlib.Path) -> pathlib.Path:
+    """Schrijft doel/werkboek/index.html met de twee werkboeken ernaast.
+
+    De versie, de vingerafdrukken en de aantallen komen uit csir.json en niet uit de hand: dat bestand
+    wordt door haal_bron.py uit de werkboeken zelf gehaald en --check blokkeert als het afdrijft. Zo
+    kan de pagina niet stilletjes een oude sha256 blijven tonen.
+
+    De werkboeken worden hier ook naartoe gekopieerd. In de Pages-build heeft de documentatiebuild dat
+    al gedaan; deze kopie maakt het bouwscript los daarvan bruikbaar en houdt de downloadlink waar.
+    """
+    data = json.loads((REPO / "csir.json").read_text(encoding="utf-8"))
+    bron = data["bron"]
+
+    map_werkboek = doel / "werkboek"
+    map_werkboek.mkdir(parents=True, exist_ok=True)
+    for naam in WERKBOEKEN:
+        shutil.copyfile(REPO / "werkboek" / naam, map_werkboek / naam)
+
+    css = (BRON / "werkboek.css").read_text(encoding="utf-8").strip()
+    html = (BRON / "werkboek.html").read_text(encoding="utf-8")
+
+    vervangingen = {
+        "__CSS__": css,
+        "__STYLE_HASH__": sha256_csp(css).removeprefix("sha256-"),
+        "__WERKBOEK_GROOTTE__": leesbare_grootte((map_werkboek / "csir-control-register.xlsx").stat().st_size),
+        "__CLASSIFICATIE_GROOTTE__": leesbare_grootte((map_werkboek / "objectclassificatie.xlsx").stat().st_size),
+        "__WERKBOEK_VERSIE__": bron["werkboek_versie"],
+        "__WERKBOEK_SHA256__": bron["werkboek_sha256"],
+        "__CLASSIFICATIE_SHA256__": bron["classificatie_sha256"],
+        "__BRONVERSIE__": data["versie"],
+        "__AANTAL_CONTROLS__": str(len(data["controls"])),
+        "__AANTAL_VSP__": str(sum(1 for c in data["controls"] if c["blad"] == "VSP")),
+        "__AANTAL_VSE__": str(sum(1 for c in data["controls"] if c["blad"] == "VSE")),
+        "__AANTAL_MAATREGELEN__": str(len(data["maatregelen"])),
+        "__AANTAL_BIJLAGEN__": str(len(data["bijlagen"])),
+        "__AUTEURSRECHT__": bron["auteursrecht"],
+    }
+    for plaatshouder, waarde in vervangingen.items():
+        html = html.replace(plaatshouder, waarde)
+
+    for rest in vervangingen:
+        assert rest not in html, f"placeholder {rest} niet ingevuld"
+
+    uit = map_werkboek / "index.html"
+    uit.write_bytes(html.encode("utf-8"))
+    return uit
+
+
 if __name__ == "__main__":
     doelmap = pathlib.Path(sys.argv[1]) if len(sys.argv) > 1 else HIER / "dist"
     bestand = bouw(doelmap)
     kb = bestand.stat().st_size / 1024
     print(f"{bestand}: {kb:.0f} kB, zelfstandig en offline")
+    print(f"{bouw_werkboekpagina(doelmap)}: de werkboeken met hun vingerafdruk ernaast")
