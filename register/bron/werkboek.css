@@ -57,3 +57,20 @@ li { margin-bottom: .4rem; }
 .download a:hover { background: #0f3157; }
 .download a:focus { outline: 2px solid var(--oranje); outline-offset: 2px; }
 
+footer { margin-top: auto; border-top: 1px solid var(--lijn); background: var(--vlak); font-size: .82rem; color: var(--grijs); padding: 1rem 0 1.4rem; }
+footer .rechten { margin: .5rem 0 0; }
+
+/* Statuut B3: een pagina moet op A4 uit de printer komen. Geen kleurvlakken, geen kaders om de
+   kaarten; wat op papier telt is de tekst en waar het bestand staat. */
+@media print {
+  body { font-size: 10pt; color: #000; }
+  header { background: none; color: #000; border-bottom: 1px solid #000; }
+  header .kruimel a { color: #000; }
+  .kaart { border: none; padding: 0; margin-bottom: .8rem; }
+  .download a { background: none; color: #000; border: 1px solid #000; }
+  footer { background: none; }
+  a { color: #000; }
+  h2 { page-break-after: avoid; }
+  li, p { page-break-inside: avoid; }
+  @page { size: A4 portrait; margin: 18mm; }
+}
