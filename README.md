@@ -39,7 +39,7 @@ een contract met een leverancier.
 **Liever Excel?** Alles staat op de
 [downloadpagina](https://security-commons-nl.github.io/csir-assessment-tool/werkboek/): het
 [werkboek](werkboek/csir-control-register.xlsx) en het
-[classificatieformulier](werkboek/objectclassificatie.xlsx), met hun versie en sha256 erbij. Beide
+[classificatieformulier](werkboek/objectclassificatie.xlsx). Beide
 rekenen hetzelfde. Het werkboek is een sjabloon: er staat geen object in, dus kopieer het per
 object.
 

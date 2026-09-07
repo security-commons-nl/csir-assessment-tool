@@ -24,9 +24,10 @@ python register/bouw.py site                      # of naar een andere map
 ```
 
 Het bouwscript schrijft twee pagina's: de tool op `index.html` en de downloadpagina van het werkboek
-op `werkboek/index.html`, met de twee werkboeken ernaast. Die tweede pagina heeft geen script; versie,
-vingerafdrukken en aantallen komen uit `csir.json`, zodat ze niet los van de werkboeken kunnen gaan
-lopen.
+op `werkboek/index.html`, met de twee werkboeken ernaast. Die tweede pagina heeft geen script en
+houdt alleen wat je nodig hebt om het goede bestand te pakken: wat erin zit, hoe groot het is, welke
+versie het is en de vingerafdrukken. Die gegevens komen uit `csir.json`, zodat ze niet los van de
+werkboeken kunnen gaan lopen.
 
 Het bouwscript zet `csir.json` en `bron/app.js` in één scripttag en `bron/app.css` in één style-tag,
 en berekent daarna de sha256 van allebei voor het Content-Security-Policy in `bron/index.html`. Het

@@ -29,18 +29,18 @@ header .kruimel a { color: #fff; }
 header .naam { font-size: 1.5rem; font-weight: 700; margin-top: .2rem; }
 header .sub { font-size: .88rem; opacity: .9; max-width: 48em; }
 
-main { padding: 1.4rem 0 3rem; }
+main { padding: 1.7rem 0 2.6rem; }
 h2 { font-size: 1.1rem; margin: 0 0 .5rem; color: var(--blauw); }
 p { margin: 0 0 .8rem; }
 .leid { color: var(--grijs); }
-.klein { font-size: .84rem; color: var(--grijs); }
+.klein { font-size: .84rem; color: var(--grijs); margin: 0; }
 a { color: var(--blauw); }
 
 .kaart { border: 1px solid var(--lijn); border-radius: 5px; padding: 1rem; margin-bottom: 1.1rem; }
 
 /* De downloadknop is een gewone link: hij moet werken zonder script en zichtbaar het zwaartepunt
    van de kaart zijn. */
-.download { margin: 1rem 0 .8rem; }
+.download { margin: 1rem 0 .5rem; }
 .download a {
   display: inline-block; background: var(--blauw); color: #fff; text-decoration: none;
   font-weight: 600; padding: .55rem 1rem; border-radius: 4px;
@@ -48,21 +48,13 @@ a { color: var(--blauw); }
 .download a:hover { background: #0f3157; }
 .download a:focus { outline: 2px solid var(--oranje); outline-offset: 2px; }
 
-.feiten { border-collapse: collapse; width: 100%; font-size: .85rem; }
+details { font-size: .85rem; margin-bottom: 1.1rem; }
+details summary { cursor: pointer; color: var(--blauw); }
+
+.feiten { border-collapse: collapse; width: 100%; font-size: .82rem; margin-top: .4rem; }
 .feiten th, .feiten td { border-top: 1px solid var(--lijn); padding: .35rem .45rem; text-align: left; vertical-align: top; }
-.feiten th { width: 8rem; font-weight: 600; color: var(--grijs); }
-.feiten code { font-size: .82rem; word-break: break-all; }
-
-.waarschuwing {
-  border-left: 4px solid var(--oranje); background: #fff6ec;
-  padding: .55rem .8rem; margin: 0 0 1.1rem; font-size: .9rem;
-}
-.waarschuwing p { margin: 0; }
-
-pre {
-  background: var(--vlak); border: 1px solid var(--lijn); border-radius: 4px;
-  padding: .6rem .7rem; overflow-x: auto; font-size: .82rem; margin: 0 0 .8rem;
-}
+.feiten th { font-weight: 600; color: var(--grijs); white-space: nowrap; }
+.feiten code { word-break: break-all; }
 
 footer { border-top: 1px solid var(--lijn); background: var(--vlak); font-size: .82rem; color: var(--grijs); padding: 1rem 0 2rem; }
 footer .rechten { margin: .5rem 0 0; }

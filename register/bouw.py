@@ -22,6 +22,7 @@ import base64
 import hashlib
 import json
 import pathlib
+import re
 import shutil
 import sys
 
@@ -158,10 +159,7 @@ def bouw_werkboekpagina(doel: pathlib.Path) -> pathlib.Path:
         "__WERKBOEK_VERSIE__": bron["werkboek_versie"],
         "__WERKBOEK_SHA256__": bron["werkboek_sha256"],
         "__CLASSIFICATIE_SHA256__": bron["classificatie_sha256"],
-        "__BRONVERSIE__": data["versie"],
         "__AANTAL_CONTROLS__": str(len(data["controls"])),
-        "__AANTAL_VSP__": str(sum(1 for c in data["controls"] if c["blad"] == "VSP")),
-        "__AANTAL_VSE__": str(sum(1 for c in data["controls"] if c["blad"] == "VSE")),
         "__AANTAL_MAATREGELEN__": str(len(data["maatregelen"])),
         "__AANTAL_BIJLAGEN__": str(len(data["bijlagen"])),
         "__AUTEURSRECHT__": bron["auteursrecht"],
@@ -169,8 +167,8 @@ def bouw_werkboekpagina(doel: pathlib.Path) -> pathlib.Path:
     for plaatshouder, waarde in vervangingen.items():
         html = html.replace(plaatshouder, waarde)
 
-    for rest in vervangingen:
-        assert rest not in html, f"placeholder {rest} niet ingevuld"
+    achtergebleven = re.findall(r"__[A-Z_]+__", html)
+    assert not achtergebleven, f"placeholder niet ingevuld: {', '.join(sorted(set(achtergebleven)))}"
 
     uit = map_werkboek / "index.html"
     uit.write_bytes(html.encode("utf-8"))
