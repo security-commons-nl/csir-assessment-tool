@@ -191,12 +191,12 @@ def test_werkboekpagina_heeft_geen_script_en_sluit_alles_af(werkboekpagina: path
     assert gevonden == verwacht
 
 
-def test_werkboekpagina_wijst_terug_naar_de_tool_en_de_uitleg(werkboekpagina: pathlib.Path):
-    """Wie hier binnenkomt via een gedeelde link moet de rest van het instrument kunnen vinden."""
-    html = werkboekpagina.read_text(encoding="utf-8")
-    assert 'href="../"' in html
-    assert 'href="../uitleg/"' in html
-    assert 'href="https://security-commons-nl.github.io/"' in html
+def test_werkboekpagina_wijst_terug_via_het_kruimelpad(werkboekpagina: pathlib.Path):
+    """Statuut B10: wie hier binnenkomt via een gedeelde link moet de rest kunnen vinden."""
+    kruimel = re.search(r'<nav class="kruimel".*?</nav>',
+                        werkboekpagina.read_text(encoding="utf-8"), re.S).group(0)
+    assert 'href="https://security-commons-nl.github.io/"' in kruimel
+    assert 'href="../"' in kruimel
 
 
 def test_de_tool_wijst_naar_de_downloadpagina(html):
