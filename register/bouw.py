@@ -124,21 +124,38 @@ WERKBOEKEN = {
     "objectclassificatie.xlsx": "classificatie_sha256",
 }
 
+# De downloadpagina staat op zijn eigen adres, genoemd naar het document dat je er ophaalt, zodat de
+# link ook los van deze site te lezen is. Pages is hoofdlettergevoelig: dit is de enige schrijfwijze
+# die werkt, dus deel de link en typ hem niet over. Het oude adres blijft doorverwijzen, want gedeelde
+# links horen niet stuk te gaan.
+MAP_PAGINA = "CSIR-Control-Register"
+DOORVERWIJZINGEN = ("werkboek",)
+
 
 def leesbare_grootte(bytes_: int) -> str:
     """Zoals een browser het toont: kB met een komma, want de pagina is Nederlands."""
     return f"{bytes_ / 1024:.0f} kB".replace(".", ",")
 
 
+def doorverwijzing(naar: str) -> str:
+    """Een pagina die meteen doorloopt naar het nieuwe adres, zonder script, met een link als vangnet."""
+    return ("<!doctype html>\n<html lang=\"nl\">\n<head>\n<meta charset=\"utf-8\">\n"
+            f"<meta http-equiv=\"refresh\" content=\"0; url={naar}\">\n"
+            "<title>Verhuisd</title>\n</head>\n<body>\n"
+            f"<p>Deze pagina staat nu op <a href=\"{naar}\">{naar}</a>.</p>\n"
+            "</body>\n</html>\n")
+
+
 def bouw_werkboekpagina(doel: pathlib.Path) -> pathlib.Path:
-    """Schrijft doel/werkboek/index.html met de twee werkboeken ernaast.
+    """Schrijft doel/csir-control-register/index.html met het werkboek ernaast.
 
     De versie, de grootte en de aantallen komen uit csir.json en het bestand zelf, niet uit de hand:
     csir.json wordt door haal_bron.py uit de werkboeken gehaald en --check blokkeert als het afdrijft.
     Zo kan de pagina niet stilletjes een oude versie blijven noemen.
 
-    De pagina gaat alleen over het control-register. Het classificatieformulier wordt wel meegekopieerd:
-    de README en de uitlegpagina linken ernaar, dus dat adres moet blijven werken.
+    De pagina gaat alleen over het control-register. Beide werkboeken blijven daarnaast op hun oude
+    adres in werkboek/ staan: de README en de uitlegpagina linken ernaar, en een gedeelde link naar een
+    bestand hoort niet stuk te gaan.
 
     In de Pages-build heeft de documentatiebuild die kopie al gemaakt; deze maakt het bouwscript los
     daarvan bruikbaar en houdt de downloadlink waar.
@@ -151,13 +168,18 @@ def bouw_werkboekpagina(doel: pathlib.Path) -> pathlib.Path:
     for naam in WERKBOEKEN:
         shutil.copyfile(REPO / "werkboek" / naam, map_werkboek / naam)
 
+    map_pagina = doel / MAP_PAGINA
+    map_pagina.mkdir(parents=True, exist_ok=True)
+    shutil.copyfile(REPO / "werkboek" / "csir-control-register.xlsx",
+                    map_pagina / "csir-control-register.xlsx")
+
     css = (BRON / "werkboek.css").read_text(encoding="utf-8").strip()
     html = (BRON / "werkboek.html").read_text(encoding="utf-8")
 
     vervangingen = {
         "__CSS__": css,
         "__STYLE_HASH__": sha256_csp(css).removeprefix("sha256-"),
-        "__WERKBOEK_GROOTTE__": leesbare_grootte((map_werkboek / "csir-control-register.xlsx").stat().st_size),
+        "__WERKBOEK_GROOTTE__": leesbare_grootte((map_pagina / "csir-control-register.xlsx").stat().st_size),
         "__WERKBOEK_VERSIE__": bron["werkboek_versie"],
     }
     for plaatshouder, waarde in vervangingen.items():
@@ -166,8 +188,14 @@ def bouw_werkboekpagina(doel: pathlib.Path) -> pathlib.Path:
     achtergebleven = re.findall(r"__[A-Z_]+__", html)
     assert not achtergebleven, f"placeholder niet ingevuld: {', '.join(sorted(set(achtergebleven)))}"
 
-    uit = map_werkboek / "index.html"
+    uit = map_pagina / "index.html"
     uit.write_bytes(html.encode("utf-8"))
+
+    for oud_adres in DOORVERWIJZINGEN:
+        map_oud = doel / oud_adres
+        map_oud.mkdir(parents=True, exist_ok=True)
+        (map_oud / "index.html").write_text(doorverwijzing(f"../{MAP_PAGINA}/"), encoding="utf-8")
+
     return uit
 
 
