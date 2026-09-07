@@ -152,21 +152,26 @@ def test_pagina_is_niet_onnodig_groot(gebouwd: pathlib.Path):
 
 
 def test_werkboekpagina_zet_de_werkboeken_ernaast(werkboekpagina: pathlib.Path):
-    """De downloadlinks zijn relatief; het bestand moet dus echt in dezelfde map liggen."""
-    html = werkboekpagina.read_text(encoding="utf-8")
+    """Beide werkboeken staan er ongewijzigd; de uitlegpagina en de README linken ook naar de tweede."""
     for naam in bouwer.WERKBOEKEN:
         bestand = werkboekpagina.parent / naam
         assert bestand.is_file(), naam
         assert bestand.read_bytes() == (ROOT / "werkboek" / naam).read_bytes(), naam
-        assert f'href="{naam}"' in html, naam
+
+
+def test_werkboekpagina_biedt_alleen_het_control_register_aan(werkboekpagina: pathlib.Path):
+    """Deze pagina gaat over één bestand; het classificatieformulier hoort op de uitlegpagina."""
+    html = werkboekpagina.read_text(encoding="utf-8")
+    assert 'href="csir-control-register.xlsx"' in html
+    assert "objectclassificatie" not in html
 
 
 def test_werkboekpagina_toont_de_vingerafdruk_van_het_bestand_ernaast(werkboekpagina: pathlib.Path):
     """De sha256 op de pagina komt uit csir.json; hier wordt hij op het bestand zelf nagerekend."""
     html = werkboekpagina.read_text(encoding="utf-8")
-    for naam in bouwer.WERKBOEKEN:
-        gemeten = hashlib.sha256((werkboekpagina.parent / naam).read_bytes()).hexdigest()
-        assert gemeten in html, naam
+    gemeten = hashlib.sha256(
+        (werkboekpagina.parent / "csir-control-register.xlsx").read_bytes()).hexdigest()
+    assert gemeten in html
 
 
 def test_werkboekpagina_heeft_geen_script_en_sluit_alles_af(werkboekpagina: pathlib.Path):

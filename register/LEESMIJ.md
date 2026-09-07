@@ -24,10 +24,11 @@ python register/bouw.py site                      # of naar een andere map
 ```
 
 Het bouwscript schrijft twee pagina's: de tool op `index.html` en de downloadpagina van het werkboek
-op `werkboek/index.html`, met de twee werkboeken ernaast. Die tweede pagina heeft geen script en
-houdt alleen wat je nodig hebt om het goede bestand te pakken: wat erin zit, hoe groot het is, welke
-versie het is en de vingerafdrukken. Die gegevens komen uit `csir.json`, zodat ze niet los van de
-werkboeken kunnen gaan lopen.
+op `werkboek/index.html`, met de twee werkboeken ernaast. Die tweede pagina gaat alleen over het
+control-register en heeft geen script; ze houdt alleen wat je nodig hebt om het goede bestand te
+pakken: wat erin zit, hoe groot het is, welke versie het is en de vingerafdruk. Die gegevens komen uit
+`csir.json`, zodat ze niet los van het werkboek kunnen gaan lopen. Het classificatieformulier wordt wel
+meegekopieerd, want de README en de uitlegpagina linken ernaar.
 
 Het bouwscript zet `csir.json` en `bron/app.js` in één scripttag en `bron/app.css` in één style-tag,
 en berekent daarna de sha256 van allebei voor het Content-Security-Policy in `bron/index.html`. Het
