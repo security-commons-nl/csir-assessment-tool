@@ -137,8 +137,11 @@ def bouw_werkboekpagina(doel: pathlib.Path) -> pathlib.Path:
     wordt door haal_bron.py uit de werkboeken zelf gehaald en --check blokkeert als het afdrijft. Zo
     kan de pagina niet stilletjes een oude sha256 blijven tonen.
 
-    De werkboeken worden hier ook naartoe gekopieerd. In de Pages-build heeft de documentatiebuild dat
-    al gedaan; deze kopie maakt het bouwscript los daarvan bruikbaar en houdt de downloadlink waar.
+    De pagina gaat alleen over het control-register. Het classificatieformulier wordt wel meegekopieerd:
+    de README en de uitlegpagina linken ernaar, dus dat adres moet blijven werken.
+
+    In de Pages-build heeft de documentatiebuild die kopie al gemaakt; deze maakt het bouwscript los
+    daarvan bruikbaar en houdt de downloadlink waar.
     """
     data = json.loads((REPO / "csir.json").read_text(encoding="utf-8"))
     bron = data["bron"]
@@ -155,10 +158,8 @@ def bouw_werkboekpagina(doel: pathlib.Path) -> pathlib.Path:
         "__CSS__": css,
         "__STYLE_HASH__": sha256_csp(css).removeprefix("sha256-"),
         "__WERKBOEK_GROOTTE__": leesbare_grootte((map_werkboek / "csir-control-register.xlsx").stat().st_size),
-        "__CLASSIFICATIE_GROOTTE__": leesbare_grootte((map_werkboek / "objectclassificatie.xlsx").stat().st_size),
         "__WERKBOEK_VERSIE__": bron["werkboek_versie"],
         "__WERKBOEK_SHA256__": bron["werkboek_sha256"],
-        "__CLASSIFICATIE_SHA256__": bron["classificatie_sha256"],
         "__AANTAL_CONTROLS__": str(len(data["controls"])),
         "__AANTAL_MAATREGELEN__": str(len(data["maatregelen"])),
         "__AANTAL_BIJLAGEN__": str(len(data["bijlagen"])),

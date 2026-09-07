@@ -36,12 +36,10 @@ een contract met een leverancier.
    Cybersecurity Dossier hoort, met de afwijkingen apart. Sla je dossier op als bestand; het is een
    gewone JSON die je later weer inleest.
 
-**Liever Excel?** Alles staat op de
-[downloadpagina](https://security-commons-nl.github.io/csir-assessment-tool/werkboek/): het
-[werkboek](werkboek/csir-control-register.xlsx) en het
-[classificatieformulier](werkboek/objectclassificatie.xlsx). Beide
-rekenen hetzelfde. Het werkboek is een sjabloon: er staat geen object in, dus kopieer het per
-object.
+**Liever Excel?** Het werkboek heeft een eigen
+[downloadpagina](https://security-commons-nl.github.io/csir-assessment-tool/werkboek/); het
+[classificatieformulier](werkboek/objectclassificatie.xlsx) staat ernaast in de repo. Beide rekenen
+hetzelfde. Het werkboek is een sjabloon: er staat geen object in, dus kopieer het per object.
 
 De uitleg bij het werkboek staat op de [uitlegpagina](https://security-commons-nl.github.io/csir-assessment-tool/uitleg/):
 de werkwijze stap voor stap en de verantwoording van elke kolom.
