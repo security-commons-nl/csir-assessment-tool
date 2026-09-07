@@ -162,7 +162,6 @@ def bouw_werkboekpagina(doel: pathlib.Path) -> pathlib.Path:
         "__AANTAL_CONTROLS__": str(len(data["controls"])),
         "__AANTAL_MAATREGELEN__": str(len(data["maatregelen"])),
         "__AANTAL_BIJLAGEN__": str(len(data["bijlagen"])),
-        "__AUTEURSRECHT__": bron["auteursrecht"],
     }
     for plaatshouder, waarde in vervangingen.items():
         html = html.replace(plaatshouder, waarde)

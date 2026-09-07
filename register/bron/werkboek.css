@@ -14,8 +14,7 @@
 
 * { box-sizing: border-box; }
 
-/* Deze pagina is kort. Zonder deze drie regels eindigt de voetregel halverwege het scherm met een
-   veld wit eronder; nu zakt hij naar de onderkant en blijft de bovenkant staan waar hij stond. */
+/* Deze pagina is kort; zonder deze regels blijft alles in de linkerbovenhoek hangen. */
 body {
   margin: 0;
   min-height: 100vh;
@@ -34,9 +33,8 @@ header .kruimel a { color: #fff; }
 header .naam { font-size: 1.5rem; font-weight: 700; margin-top: .2rem; }
 header .sub { font-size: .88rem; opacity: .9; max-width: 48em; }
 
-/* Eén kaart op een groot scherm hangt raar in de linkerbovenhoek; hij staat daarom midden in de
-   ruimte die overblijft. Op een klein scherm is die ruimte er niet en valt alles gewoon terug naar
-   boven aan. */
+/* De kaart staat midden in de ruimte onder de kop. Op een klein scherm is die ruimte er niet en valt
+   alles gewoon terug naar boven aan. */
 main { flex: 1; display: flex; flex-direction: column; justify-content: center; padding: 1.7rem 0 2.6rem; }
 main > :last-child { margin-bottom: 0; }
 h2 { font-size: 1.1rem; margin: 0 0 .5rem; color: var(--blauw); }
@@ -57,5 +55,3 @@ a { color: var(--blauw); }
 .download a:hover { background: #0f3157; }
 .download a:focus { outline: 2px solid var(--oranje); outline-offset: 2px; }
 
-footer { margin-top: auto; border-top: 1px solid var(--lijn); background: var(--vlak); font-size: .82rem; color: var(--grijs); padding: 1rem 0 1.4rem; }
-footer .rechten { margin: .5rem 0 0; }
