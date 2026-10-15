@@ -5,7 +5,7 @@
   "kennisbank": "https://security-commons-nl.github.io/kennisbank/",
   "repo": "security-commons-nl/kennisbank",
   "bestand": "handelingsperspectief.json",
-  "sha256": "ad37ac1eb3a2b1cda573c1399dac15916586d2fc037abb8e36ac74c7622086f8"
+  "sha256": "6e83b478b5fbd1d3eedabf009c1676e8952e337761cba5540ccf9cd5d274b7c8"
  },
  "handleidingen": [
   {
@@ -80,6 +80,13 @@
   },
   {
    "barriere": "crisis",
+   "item": "bcm/bedrijfscontinuiteitsplan-sjabloon",
+   "titel": "Bedrijfscontinuïteitsplan, een compact sjabloon",
+   "rol": "verdieping",
+   "url": "https://security-commons-nl.github.io/kennisbank/bcm/bedrijfscontinuiteitsplan-sjabloon/"
+  },
+  {
+   "barriere": "crisis",
    "item": "security/crisiscommunicatie",
    "titel": "Cyber-crisiscommunicatie",
    "rol": "verdieping",
@@ -93,11 +100,25 @@
    "url": "https://security-commons-nl.github.io/kennisbank/bcm/kritieke-processen-vaststellen/"
   },
   {
+   "barriere": "critical",
+   "item": "bcm/bia-en-risicoanalyse-sjabloon",
+   "titel": "BIA en risicoanalyse per kritieke dienst, een basissjabloon",
+   "rol": "verdieping",
+   "url": "https://security-commons-nl.github.io/kennisbank/bcm/bia-en-risicoanalyse-sjabloon/"
+  },
+  {
    "barriere": "dependencies",
    "item": "security/ketenafhankelijkheden",
    "titel": "Ketenafhankelijkheden in beeld",
    "rol": "fundering",
    "url": "https://security-commons-nl.github.io/kennisbank/security/ketenafhankelijkheden/"
+  },
+  {
+   "barriere": "dependencies",
+   "item": "bcm/uitwijk-regelen",
+   "titel": "Uitwijk regelen voor kritieke diensten",
+   "rol": "verdieping",
+   "url": "https://security-commons-nl.github.io/kennisbank/bcm/uitwijk-regelen/"
   },
   {
    "barriere": "edr",
@@ -268,6 +289,13 @@
    "url": "https://security-commons-nl.github.io/kennisbank/security/risicoanalyse-aanvalspaden/"
   },
   {
+   "barriere": "owner",
+   "item": "governance/risicogestuurd-managementsysteem",
+   "titel": "GRC voor security, privacy en continuïteit: één risicogestuurde PDCA-ronde",
+   "rol": "verdieping",
+   "url": "https://security-commons-nl.github.io/kennisbank/governance/risicogestuurd-managementsysteem/"
+  },
+  {
    "barriere": "patch",
    "item": "security/patchen-met-dekking",
    "titel": "Werkplekken beheerd, gehard en gepatcht",
@@ -308,6 +336,13 @@
    "titel": "Hersteltest tegen RTO en RPO",
    "rol": "fundering",
    "url": "https://security-commons-nl.github.io/kennisbank/security/hersteltest/"
+  },
+  {
+   "barriere": "restore",
+   "item": "bcm/uitwijk-regelen",
+   "titel": "Uitwijk regelen voor kritieke diensten",
+   "rol": "verdieping",
+   "url": "https://security-commons-nl.github.io/kennisbank/bcm/uitwijk-regelen/"
   },
   {
    "barriere": "review",
@@ -420,6 +455,13 @@
    "titel": "Risicoanalyse langs aanvalspaden",
    "rol": "fundering",
    "url": "https://security-commons-nl.github.io/kennisbank/security/risicoanalyse-aanvalspaden/"
+  },
+  {
+   "barriere": "treatment",
+   "item": "governance/risicogestuurd-managementsysteem",
+   "titel": "GRC voor security, privacy en continuïteit: één risicogestuurde PDCA-ronde",
+   "rol": "verdieping",
+   "url": "https://security-commons-nl.github.io/kennisbank/governance/risicogestuurd-managementsysteem/"
   },
   {
    "barriere": "unmanaged",
